@@ -1,0 +1,110 @@
+/**
+ * These arguments were used when this file was generated. They will be automatically applied on subsequent loads
+ * via the GUI or CLI. Run CLI with '--help' for additional information on how to override these arguments.
+ * @cliArgs --device "F2838x" --package "176pin" --part "F2838x_176pin" --context "CPU1" --product "C2000WARE@5.02.00.00"
+ * @versions {"tool":"1.20.0+3587"}
+ */
+
+/**
+ * Import the modules used in this configuration.
+ */
+const adc       = scripting.addModule("/driverlib/adc.js", {}, false);
+const adc1      = adc.addInstance();
+const adc2      = adc.addInstance();
+const asysctl   = scripting.addModule("/driverlib/asysctl.js");
+const cmpss     = scripting.addModule("/driverlib/cmpss.js", {}, false);
+const cmpss1    = cmpss.addInstance();
+const cputimer  = scripting.addModule("/driverlib/cputimer.js", {}, false);
+const cputimer1 = cputimer.addInstance();
+const dac       = scripting.addModule("/driverlib/dac.js", {}, false);
+const dac1      = dac.addInstance();
+const epwm      = scripting.addModule("/driverlib/epwm.js", {}, false);
+const epwm1     = epwm.addInstance();
+const flash     = scripting.addModule("/driverlib/flash.js", {}, false);
+const flash1    = flash.addInstance();
+const gpio      = scripting.addModule("/driverlib/gpio.js", {}, false);
+const gpio1     = gpio.addInstance();
+const gpio2     = gpio.addInstance();
+const ipc       = scripting.addModule("/driverlib/ipc.js");
+const sci       = scripting.addModule("/driverlib/sci.js", {}, false);
+const sci1      = sci.addInstance();
+const sysctl    = scripting.addModule("/driverlib/sysctl.js");
+
+/**
+ * Write custom configuration values to the imported modules.
+ */
+adc1.$name                   = "CPU1_ADCA";
+adc1.adcClockPrescaler       = "ADC_CLK_DIV_4_0";
+adc1.interruptPulseMode      = "ADC_PULSE_END_OF_CONV";
+adc1.enabledInts             = ["ADC_INT_NUMBER1"];
+adc1.enableInterrupt1        = true;
+adc1.interrupt1SOCSource     = "ADC_SOC_NUMBER1";
+adc1.registerInterrupts      = ["1"];
+adc1.adcInt1.enableInterrupt = true;
+
+adc2.adcBase           = "ADCB_BASE";
+adc2.$name             = "CPU1_ADCB";
+adc2.adcClockPrescaler = "ADC_CLK_DIV_4_0";
+
+cmpss1.$name                = "CMP5_P_OVP";
+cmpss1.cmpssBase            = "CMPSS5_BASE";
+cmpss1.enableModule         = true;
+cmpss1.initFilterHigh       = true;
+cmpss1.clearFilterLatchHigh = true;
+cmpss1.latchResetHigh       = true;
+cmpss1.configLatchHigh      = true;
+
+cputimer1.$name          = "SWTIRMER";
+cputimer1.emulationMode  = "CPUTIMER_EMULATIONMODE_RUNFREE";
+cputimer1.timerPrescaler = 3;
+cputimer1.timerPeriod    = 50000000;
+cputimer1.startTimer     = true;
+
+dac1.$name            = "myDAC0";
+dac1.enableOutput     = true;
+dac1.referenceVoltage = "DAC_REF_ADC_VREFHI";
+
+epwm1.$name = "BUCK_PWM";
+
+flash1.$name = "FMC_CPU1_COPY_COPY";
+
+gpio1.$name             = "CPU1_D10_GPIO31";
+gpio1.direction         = "GPIO_DIR_MODE_OUT";
+gpio1.writeInitialValue = true;
+gpio1.gpioPin.$assign   = "GPIO31";
+
+gpio2.$name             = "CPU2_D9_GPIO34";
+gpio2.direction         = "GPIO_DIR_MODE_OUT";
+gpio2.controllerCore    = "GPIO_CORE_CPU2";
+gpio2.writeInitialValue = true;
+gpio2.gpioPin.$assign   = "GPIO34";
+
+ipc.ipcRegisterFlag = ["IPC_FLAG31"];
+ipc.flagHandler31   = "IPC_SYNC";
+
+sci1.$name                 = "DEBUG_SCI";
+sci1.parity                = "SCI_CONFIG_PAR_EVEN";
+sci1.useInterrupts         = false;
+sci1.sci.sci_rxPin.$assign = "GPIO43";
+sci1.sci.sci_txPin.$assign = "GPIO42";
+
+sysctl.cpuSel_EPWM9  = "SYSCTL_CPUSEL_CPU2";
+sysctl.cpuSel_EPWM10 = "SYSCTL_CPUSEL_CPU2";
+sysctl.cpuSel_EPWM11 = "SYSCTL_CPUSEL_CPU2";
+sysctl.cpuSel_EPWM12 = "SYSCTL_CPUSEL_CPU2";
+sysctl.cpuSel_EPWM13 = "SYSCTL_CPUSEL_CPU2";
+sysctl.cpuSel_EPWM14 = "SYSCTL_CPUSEL_CPU2";
+sysctl.cpuSel_EPWM15 = "SYSCTL_CPUSEL_CPU2";
+sysctl.cpuSel_EPWM16 = "SYSCTL_CPUSEL_CPU2";
+sysctl.cpuSel_ADCC   = "SYSCTL_CPUSEL_CPU2";
+sysctl.cpuSel_ADCD   = "SYSCTL_CPUSEL_CPU2";
+
+/**
+ * Pinmux solution for unlocked pins/peripherals. This ensures that minor changes to the automatic solver in a future
+ * version of the tool will not impact the pinmux you originally saw.  These lines can be completely deleted in order to
+ * re-solve from scratch.
+ */
+epwm1.epwm.$suggestSolution           = "EPWM4";
+epwm1.epwm.epwm_aPin.$suggestSolution = "GPIO6";
+epwm1.epwm.epwm_bPin.$suggestSolution = "GPIO7";
+sci1.sci.$suggestSolution             = "SCIA";
