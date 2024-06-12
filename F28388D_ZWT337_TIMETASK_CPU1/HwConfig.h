@@ -122,5 +122,6 @@
 #define LOOP_MODE                        (CLOSE_LOOP)
 
 #define ENABLE_FORCE_PWMOUT              0
+#define TEST_S_CMD                       1
 
 #endif /* HWCONFIG_H_ */

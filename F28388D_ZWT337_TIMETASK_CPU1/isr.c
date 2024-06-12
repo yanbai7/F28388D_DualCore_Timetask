@@ -124,14 +124,34 @@ static inline void scanBrownInOut(void)
 
 }
 
+#if TEST_S_CMD
+static inline void testScmd(void)
+{
+    if(sDrv.f32RemoteVref != sDrv.sSigmoid.f32Ytarget) {
+        sDrv.f32OutputVref = setSigmoidStep(sDrv.f32RemoteVref, &sDrv.sSigmoid);
+        sDrv.f32RemoteVref = sDrv.f32OutputVref;
+    }
+    else {
+        sDrv.f32OutputVref = runSigmoidRamp(&sDrv.sSigmoid);
+    }
+
+    //Real S-curve Output
+//    sDrv.u32DacVref = (uint32_t)(sDrv.sSigmoid.f32Youtput * 4095.0f);
+    //Real S-curve Output + Trigger for Begin
+    sDrv.u32DacVref = (uint32_t)(sDrv.f32OutputVref * 4095.0f);
+    DAC_setShadowValue(myDAC0_BASE, sDrv.u32DacVref);
+}
+#endif //if TEST_S_CMD
 
 __interrupt void INT_CPU1_ADCA_1_ISR (void)
 {
 #if ENABLE_FORCE_PWMOUT
-        uint32_t u32Duty = (uint32_t)(((float32_t) COUNTING_MAX) * sDrv.f32RemoteVref);
-        SET_HRPWMAB_DUTY(u32Duty, PWM_BASE);
-        SET_PFM_PRD(u32Duty, PWM_BASE);
+    uint32_t u32Duty = (uint32_t)(((float32_t) COUNTING_MAX) * sDrv.f32RemoteVref);
+    SET_HRPWMAB_DUTY(u32Duty, PWM_BASE);
+    SET_PFM_PRD(u32Duty, PWM_BASE);
 
+#elif TEST_S_CMD
+    testScmd();
 #else
     scanMeasurement();
 
