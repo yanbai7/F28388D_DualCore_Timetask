@@ -66,8 +66,7 @@ PAGE 1 : /* Data Memory */
    RAMLS2           : origin = 0x009000, length = 0x000800    // CPU1 Ram Data
 
    RAMLS5           : origin = 0x00A800, length = 0x000800    // CLA Ram Data
-   RAMLS6           : origin = 0x00B000, length = 0x000800
-   RAMLS7           : origin = 0x00B800, length = 0x000800
+
 
    RAMGS2           : origin = 0x00F000, length = 0x001000
    RAMGS3           : origin = 0x010000, length = 0x001000

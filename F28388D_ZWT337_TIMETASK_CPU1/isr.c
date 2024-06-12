@@ -147,10 +147,11 @@ __interrupt void INT_CPU1_ADCA_1_ISR (void)
 
 #if (CLOSE_LOOP == LOOP_MODE)
             sDrv.sLoopV.f32Err = sDrv.f32Vref - sDrv.sVO.sCali.f32Out;
-            sDrv.sLoopV.u16StopUi = ((sDrv.f32Iref == sDrv.f32IrefLimitP)||(sDrv.f32Iref == sDrv.f32IrefLimitN)||(sDrv.sLoopI.u16StopUi));
+            sDrv.sLoopV.u16StopUi = ((sDrv.f32Iref != sDrv.f32Isum)||(sDrv.sLoopI.u16StopUi));
             mPI(&sDrv.sLoopV);
 
-            sDrv.f32Iref = csatf(sDrv.sLoopV.f32Out * V2I_SCALE + sDrv.sIO.sCali.f32Out, sDrv.f32IrefLimitP, sDrv.f32IrefLimitN);
+            sDrv.f32Isum = sDrv.sLoopV.f32Out * V2I_SCALE + sDrv.sIO.sCali.f32Out;
+            sDrv.f32Iref = csatf(sDrv.f32Isum, sDrv.f32IrefLimitP, sDrv.f32IrefLimitN);
             sDrv.sLoopI.f32Err = csatSpu(sDrv.f32Iref - sDrv.sIL.sCali.f32Out);
             mPI(&sDrv.sLoopI);
 

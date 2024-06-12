@@ -99,52 +99,40 @@ extern "C"
 #define DEBUG_SCI_SCITX_PIN_CONFIG GPIO_29_SCIA_TX
 
 //
-// EPWM4 -> DAB_PWM7_PRI_AH Pinmux
+// EPWM7 -> DAB_PWM7_PRI_AH Pinmux
 //
 //
-// EPWM4A - GPIO Settings
+// EPWM7A - GPIO Settings
 //
-#define GPIO_PIN_EPWM4A 151
-#define DAB_PWM7_PRI_AH_EPWMA_GPIO 151
-#define DAB_PWM7_PRI_AH_EPWMA_PIN_CONFIG GPIO_151_EPWM4A
-//
-// EPWM4B - GPIO Settings
-//
-#define GPIO_PIN_EPWM4B 152
-#define DAB_PWM7_PRI_AH_EPWMB_GPIO 152
-#define DAB_PWM7_PRI_AH_EPWMB_PIN_CONFIG GPIO_152_EPWM4B
+#define GPIO_PIN_EPWM7A 12
+#define DAB_PWM7_PRI_AH_EPWMA_GPIO 12
+#define DAB_PWM7_PRI_AH_EPWMA_PIN_CONFIG GPIO_12_EPWM7A
 
 //
-// EPWM3 -> DAB_PWM8_PRI_AL Pinmux
+// EPWM8 -> DAB_PWM8_PRI_AL Pinmux
 //
 //
-// EPWM3A - GPIO Settings
+// EPWM8A - GPIO Settings
 //
-#define GPIO_PIN_EPWM3A 149
-#define DAB_PWM8_PRI_AL_EPWMA_GPIO 149
-#define DAB_PWM8_PRI_AL_EPWMA_PIN_CONFIG GPIO_149_EPWM3A
-//
-// EPWM3B - GPIO Settings
-//
-#define GPIO_PIN_EPWM3B 150
-#define DAB_PWM8_PRI_AL_EPWMB_GPIO 150
-#define DAB_PWM8_PRI_AL_EPWMB_PIN_CONFIG GPIO_150_EPWM3B
+#define GPIO_PIN_EPWM8A 14
+#define DAB_PWM8_PRI_AL_EPWMA_GPIO 14
+#define DAB_PWM8_PRI_AL_EPWMA_PIN_CONFIG GPIO_14_EPWM8A
 
 //
-// EPWM2 -> DAB_PWM9_2ND Pinmux
+// EPWM9 -> DAB_PWM9_2ND Pinmux
 //
 //
-// EPWM2A - GPIO Settings
+// EPWM9A - GPIO Settings
 //
-#define GPIO_PIN_EPWM2A 147
-#define DAB_PWM9_2ND_EPWMA_GPIO 147
-#define DAB_PWM9_2ND_EPWMA_PIN_CONFIG GPIO_147_EPWM2A
+#define GPIO_PIN_EPWM9A 16
+#define DAB_PWM9_2ND_EPWMA_GPIO 16
+#define DAB_PWM9_2ND_EPWMA_PIN_CONFIG GPIO_16_EPWM9A
 //
-// EPWM2B - GPIO Settings
+// EPWM9B - GPIO Settings
 //
-#define GPIO_PIN_EPWM2B 148
-#define DAB_PWM9_2ND_EPWMB_GPIO 148
-#define DAB_PWM9_2ND_EPWMB_PIN_CONFIG GPIO_148_EPWM2B
+#define GPIO_PIN_EPWM9B 162
+#define DAB_PWM9_2ND_EPWMB_GPIO 162
+#define DAB_PWM9_2ND_EPWMB_PIN_CONFIG GPIO_162_EPWM9B
 
 //*****************************************************************************
 //
@@ -293,6 +281,7 @@ extern __interrupt void INT_CPU1_ADCA_1_ISR(void);
 // IPC Configurations
 //
 //*****************************************************************************
+#define IPC_SYNC IPC_FLAG31
 #define IPC_SYNC IPC_FLAG31
 #define BOOT_MODE_CPU2 BOOTMODE_BOOT_TO_FLASH_SECTOR0
 

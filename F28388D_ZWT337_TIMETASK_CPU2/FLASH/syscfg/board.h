@@ -99,52 +99,40 @@ extern "C"
 #define DEBUG_SCI_SCITX_PIN_CONFIG GPIO_29_SCIA_TX
 
 //
-// EPWM4 -> DAB_PWM7_PRI_AH Pinmux
+// EPWM7 -> DAB_PWM7_PRI_AH Pinmux
 //
 //
-// EPWM4A - GPIO Settings
+// EPWM7A - GPIO Settings
 //
-#define GPIO_PIN_EPWM4A 151
-#define DAB_PWM7_PRI_AH_EPWMA_GPIO 151
-#define DAB_PWM7_PRI_AH_EPWMA_PIN_CONFIG GPIO_151_EPWM4A
-//
-// EPWM4B - GPIO Settings
-//
-#define GPIO_PIN_EPWM4B 152
-#define DAB_PWM7_PRI_AH_EPWMB_GPIO 152
-#define DAB_PWM7_PRI_AH_EPWMB_PIN_CONFIG GPIO_152_EPWM4B
+#define GPIO_PIN_EPWM7A 12
+#define DAB_PWM7_PRI_AH_EPWMA_GPIO 12
+#define DAB_PWM7_PRI_AH_EPWMA_PIN_CONFIG GPIO_12_EPWM7A
 
 //
-// EPWM3 -> DAB_PWM8_PRI_AL Pinmux
+// EPWM8 -> DAB_PWM8_PRI_AL Pinmux
 //
 //
-// EPWM3A - GPIO Settings
+// EPWM8A - GPIO Settings
 //
-#define GPIO_PIN_EPWM3A 149
-#define DAB_PWM8_PRI_AL_EPWMA_GPIO 149
-#define DAB_PWM8_PRI_AL_EPWMA_PIN_CONFIG GPIO_149_EPWM3A
-//
-// EPWM3B - GPIO Settings
-//
-#define GPIO_PIN_EPWM3B 150
-#define DAB_PWM8_PRI_AL_EPWMB_GPIO 150
-#define DAB_PWM8_PRI_AL_EPWMB_PIN_CONFIG GPIO_150_EPWM3B
+#define GPIO_PIN_EPWM8A 14
+#define DAB_PWM8_PRI_AL_EPWMA_GPIO 14
+#define DAB_PWM8_PRI_AL_EPWMA_PIN_CONFIG GPIO_14_EPWM8A
 
 //
-// EPWM2 -> DAB_PWM9_2ND Pinmux
+// EPWM9 -> DAB_PWM9_2ND Pinmux
 //
 //
-// EPWM2A - GPIO Settings
+// EPWM9A - GPIO Settings
 //
-#define GPIO_PIN_EPWM2A 147
-#define DAB_PWM9_2ND_EPWMA_GPIO 147
-#define DAB_PWM9_2ND_EPWMA_PIN_CONFIG GPIO_147_EPWM2A
+#define GPIO_PIN_EPWM9A 16
+#define DAB_PWM9_2ND_EPWMA_GPIO 16
+#define DAB_PWM9_2ND_EPWMA_PIN_CONFIG GPIO_16_EPWM9A
 //
-// EPWM2B - GPIO Settings
+// EPWM9B - GPIO Settings
 //
-#define GPIO_PIN_EPWM2B 148
-#define DAB_PWM9_2ND_EPWMB_GPIO 148
-#define DAB_PWM9_2ND_EPWMB_PIN_CONFIG GPIO_148_EPWM2B
+#define GPIO_PIN_EPWM9B 162
+#define DAB_PWM9_2ND_EPWMB_GPIO 162
+#define DAB_PWM9_2ND_EPWMB_PIN_CONFIG GPIO_162_EPWM9B
 
 //*****************************************************************************
 //
@@ -153,11 +141,21 @@ extern "C"
 //*****************************************************************************
 #define CPU2_ADCD_BASE ADCD_BASE
 #define CPU2_ADCD_RESULT_BASE ADCDRESULT_BASE
+#define SOC0_DAB_VO ADC_SOC_NUMBER0
+#define SOC0_DAB_VO_FORCE ADC_FORCE_SOC0
+#define SOC0_DAB_VO_ADC_BASE ADCD_BASE
+#define SOC0_DAB_VO_RESULT_BASE ADCDRESULT_BASE
+#define SOC0_DAB_VO_SAMPLE_WINDOW 80
+#define SOC0_DAB_VO_TRIGGER_SOURCE ADC_TRIGGER_EPWM7_SOCA
+#define SOC0_DAB_VO_CHANNEL ADC_CH_ADCIN2
+#define SOC1_DAB_VO_OVP ADC_SOC_NUMBER1
+#define SOC1_DAB_VO_OVP_FORCE ADC_FORCE_SOC1
+#define SOC1_DAB_VO_OVP_ADC_BASE ADCD_BASE
+#define SOC1_DAB_VO_OVP_RESULT_BASE ADCDRESULT_BASE
+#define SOC1_DAB_VO_OVP_SAMPLE_WINDOW 320
+#define SOC1_DAB_VO_OVP_TRIGGER_SOURCE ADC_TRIGGER_EPWM7_SOCA
+#define SOC1_DAB_VO_OVP_CHANNEL ADC_CH_ADCIN4
 void CPU2_ADCD_init();
-
-#define CPU2_ADCC_BASE ADCC_BASE
-#define CPU2_ADCC_RESULT_BASE ADCCRESULT_BASE
-void CPU2_ADCC_init();
 
 
 //*****************************************************************************
@@ -173,7 +171,7 @@ void SWTIRMER_init();
 // EPWM Configurations
 //
 //*****************************************************************************
-#define DAB_PWM7_PRI_AH_BASE EPWM4_BASE
+#define DAB_PWM7_PRI_AH_BASE EPWM7_BASE
 #define DAB_PWM7_PRI_AH_TBPRD 0
 #define DAB_PWM7_PRI_AH_COUNTER_MODE EPWM_COUNTER_MODE_STOP_FREEZE
 #define DAB_PWM7_PRI_AH_TBPHS 0
@@ -186,7 +184,7 @@ void SWTIRMER_init();
 #define DAB_PWM7_PRI_AH_TZA_ACTION EPWM_TZ_ACTION_HIGH_Z
 #define DAB_PWM7_PRI_AH_TZB_ACTION EPWM_TZ_ACTION_HIGH_Z
 #define DAB_PWM7_PRI_AH_INTERRUPT_SOURCE EPWM_INT_TBCTR_DISABLED
-#define DAB_PWM8_PRI_AL_BASE EPWM3_BASE
+#define DAB_PWM8_PRI_AL_BASE EPWM8_BASE
 #define DAB_PWM8_PRI_AL_TBPRD 0
 #define DAB_PWM8_PRI_AL_COUNTER_MODE EPWM_COUNTER_MODE_STOP_FREEZE
 #define DAB_PWM8_PRI_AL_TBPHS 0
@@ -199,7 +197,7 @@ void SWTIRMER_init();
 #define DAB_PWM8_PRI_AL_TZA_ACTION EPWM_TZ_ACTION_HIGH_Z
 #define DAB_PWM8_PRI_AL_TZB_ACTION EPWM_TZ_ACTION_HIGH_Z
 #define DAB_PWM8_PRI_AL_INTERRUPT_SOURCE EPWM_INT_TBCTR_DISABLED
-#define DAB_PWM9_2ND_BASE EPWM2_BASE
+#define DAB_PWM9_2ND_BASE EPWM9_BASE
 #define DAB_PWM9_2ND_TBPRD 0
 #define DAB_PWM9_2ND_COUNTER_MODE EPWM_COUNTER_MODE_STOP_FREEZE
 #define DAB_PWM9_2ND_TBPHS 0
@@ -212,6 +210,16 @@ void SWTIRMER_init();
 #define DAB_PWM9_2ND_TZA_ACTION EPWM_TZ_ACTION_HIGH_Z
 #define DAB_PWM9_2ND_TZB_ACTION EPWM_TZ_ACTION_HIGH_Z
 #define DAB_PWM9_2ND_INTERRUPT_SOURCE EPWM_INT_TBCTR_DISABLED
+
+//*****************************************************************************
+//
+// FLASH Configurations
+//
+//*****************************************************************************
+#define FMC_CPU2_BASE FLASH0CTRL_BASE
+#define FMC_CPU2_ECCBASE FLASH0ECC_BASE
+#define FMC_CPU2_WAITSTATES 3
+#define FMC_CPU2_ERRORTHRESHOLD 0
 
 //*****************************************************************************
 //
@@ -230,10 +238,17 @@ extern __interrupt void INT_CPU2_ADCD_1_ISR(void);
 //
 //*****************************************************************************
 #define IPC_SYNC IPC_FLAG31
+#define IPC_SYNC IPC_FLAG31
 
 //*****************************************************************************
 //
 // SYNC Scheme Configurations
+//
+//*****************************************************************************
+
+//*****************************************************************************
+//
+// SYSCTL Configurations
 //
 //*****************************************************************************
 
@@ -254,9 +269,11 @@ void	Board_init();
 void	ADC_init();
 void	CPUTIMER_init();
 void	EPWM_init();
+void	FLASH_init();
 void	INTERRUPT_init();
 void	IPC_SYSCFG_init();
 void	SYNC_init();
+void	SYSCTL_init();
 
 //*****************************************************************************
 //

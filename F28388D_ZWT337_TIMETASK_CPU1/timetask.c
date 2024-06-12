@@ -105,9 +105,19 @@ void task2D5msec(void * s)
     }
 }
 
+void asapTask(void *s)
+{
+
+    exeModbusSlave((SCI_MODBUS *)&mbcomm);
+
+    runManualFlashApi();
+    runFlashStorage();
+}
+
 ST_TIMETASK time_task[] = {
         {task2D5msec,         0,   T_2D5MS},
         {task25msec,          0,   T_25MS},
+        {asapTask,            0,        0},
         {0, 0, 0}
 };
 

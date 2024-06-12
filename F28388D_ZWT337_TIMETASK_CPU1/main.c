@@ -92,10 +92,6 @@ void main(void)
     {
         pollTimeTask();
 
-        exeModbusSlave((SCI_MODBUS *)&mbcomm);
-
-        runManualFlashApi();
-        runFlashStorage();
     }
 }
 

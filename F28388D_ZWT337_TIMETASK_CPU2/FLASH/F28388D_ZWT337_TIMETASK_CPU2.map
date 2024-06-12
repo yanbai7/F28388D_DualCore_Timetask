@@ -1,7 +1,7 @@
 ******************************************************************************
              TMS320C2000 Linker PC v22.6.1                     
 ******************************************************************************
->> Linked Wed Jun 12 11:19:55 2024
+>> Linked Wed Jun 12 11:38:10 2024
 
 OUTPUT FILE NAME:   <F28388D_ZWT337_TIMETASK_CPU2.out>
 ENTRY POINT SYMBOL: "code_start"  address: 00080000
@@ -22,12 +22,12 @@ PAGE 0:
   RAMGS15               0001c000   00000ff8  00000a90  00000568  RWIX
   BEGIN                 00080000   00000002  00000002  00000000  RWIX
   FLASH0                00080002   00001ffe  000000b0  00001f4e  RWIX
-  FLASH1                00082000   00002000  00001152  00000eae  RWIX
+  FLASH1                00082000   00002000  000016c2  0000093e  RWIX
   FLASH2                00084000   00002000  00000000  00002000  RWIX
   FLASH3                00086000   00002000  00000303  00001cfd  RWIX
   FLASH4                00088000   00008000  000000c8  00007f38  RWIX
   FLASH5                00090000   00008000  00000000  00008000  RWIX
-  FLASH6                00098000   00008000  000002a6  00007d5a  RWIX
+  FLASH6                00098000   00008000  000002e4  00007d1c  RWIX
   FLASH7                000a0000   00008000  0000001e  00007fe2  RWIX
   FLASH8                000a8000   00008000  00000000  00008000  RWIX
   FLASH9                000b0000   00008000  00000000  00008000  RWIX
@@ -138,15 +138,15 @@ Cla1Prog   0    000a0000    0000001e     RUN ADDR = 00009800
                   000092ec    0000000a     timetask.obj (.data)
                   000092f6    00000006     rts2800_fpu64_eabi.lib : exit.c.obj (.data)
 
-.const     0    00098000    000002a6     
-                  00098000    00000100     CRC16.obj (.const:wCRCTable$40)
+.const     0    00098000    000002e4     
+                  00098000    00000100     CRC16.obj (.const:wCRCTable$39)
                   00098100    0000009c     ModbusSlave.obj (.const)
                   0009819c    00000088     ipc.obj (.const:IPC_Instance)
-                  00098224    00000038     flash.obj (.const:.string)
-                  0009825c    00000024     ModbusFunction.obj (.const)
-                  00098280    0000001d     <whole-program> (.const:.string)
-                  0009829d    00000001     --HOLE-- [fill = 0]
-                  0009829e    00000008     isr.obj (.const)
+                  00098224    00000058     <whole-program> (.const:.string)
+                  0009827c    00000038     flash.obj (.const:.string)
+                  000982b4    00000008     isr.obj (.const)
+                  000982bc    00000004     --HOLE-- [fill = 0]
+                  000982c0    00000024     ModbusFunction.obj (.const)
 
 CLAscratch 
 *          1    0000a800    00000100     UNINITIALIZED
@@ -181,70 +181,74 @@ cla_shared
 *          1    0000a900    00000006     UNINITIALIZED
                   0000a900    00000006     initCLA.obj (cla_shared)
 
-.text      0    00082000    00001152     
-                  00082000    0000019f     board.obj (.text:EPWM_init)
-                  0008219f    00000141     ModbusSlave.obj (.text:exeModbusSlave)
-                  000822e0    00000136     tbmenu.obj (.text:getModbusData)
-                  00082416    0000012f     tbmenu.obj (.text:setModbusData)
-                  00082545    0000012d     device.obj (.text:Device_enableAllPeripherals)
-                  00082672    00000109     ModbusFunction.obj (.text:writeHoldingNRegister)
-                  0008277b    00000108     ModbusFunction.obj (.text:writeHoldingRegister)
-                  00082883    000000f6     ModbusFunction.obj (.text:readHoldingRegister)
-                  00082979    00000094     linkVariables.obj (.text:initRegN)
-                  00082a0d    0000008f     main.obj (.text:initPWM)
-                  00082a9c    0000006b     memcfg.obj (.text:MemCfg_setLSRAMControllerSel)
-                  00082b07    00000064     initCLA.obj (.text:initCLA)
-                  00082b6b    00000049     timetask.obj (.text:task25msec)
-                  00082bb4    00000048     adc.obj (.text:ADC_setINLTrim)
-                  00082bfc    00000047     timetask.obj (.text:task2D5msec)
-                  00082c43    00000045     ModbusPort.obj (.text:pollModbusPort)
-                  00082c88    00000043     board.obj (.text:CPU2_ADCD_init)
-                  00082ccb    00000041     interrupt.obj (.text:Interrupt_initModule)
-                  00082d0c    00000041     main.obj (.text:main)
-                  00082d4d    0000003f     board.obj (.text:CPU2_ADCC_init)
-                  00082d8c    0000003d     ModbusSlave.obj (.text:setMbusTxData)
-                  00082dc9    0000003a     adc.obj (.text:ADC_setOffsetTrim)
-                  00082e03    00000036     interrupt.obj (.text:Interrupt_enable)
-                  00082e39    00000036     board.obj (.text:SWTIRMER_init)
-                  00082e6f    00000034     ModbusSlave.obj (.text:initMbusConfig)
-                  00082ea3    00000030     rts2800_fpu64_eabi.lib : copy_decompress_lzss.c.obj (.text:decompress:lzss)
-                  00082ed3    0000002f     timetask.obj (.text:pollTimeTask)
-                  00082f02    0000002b     rts2800_fpu64_eabi.lib : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit)
-                  00082f2d    00000029                            : exit.c.obj (.text)
-                  00082f56    00000025     board.obj (.text:Board_init)
-                  00082f7b    00000024     device.obj (.text:Device_init)
-                  00082f9f    00000023     linkVariables.obj (.text:writeReg)
-                  00082fc2    0000001e     device.obj (.text:Device_initGPIO)
-                  00082fe0    0000001d     interrupt.obj (.text:Interrupt_initVectorTable)
-                  00082ffd    0000001d     rts2800_fpu64_eabi.lib : memcpy.c.obj (.text)
-                  0008301a    0000001b     device.obj (.text:Device_enableUnbondedGPIOPullups)
-                  00083035    00000019     rts2800_fpu64_eabi.lib : boot28.asm.obj (.text)
-                  0008304e    00000017     linkVariables.obj (.text:readRegN)
-                  00083065    00000013     linkVariables.obj (.text:writeRegN)
-                  00083078    00000011     ModbusFunction.obj (.text:VSCI_writeCharNonBlocking$41)
-                  00083089    0000000f     tbmenu.obj (.text:chkValidAddress)
-                  00083098    0000000e     ModbusFunction.obj (.text:VSCI_readCharNonBlocking$41)
-                  000830a6    0000000e     ModbusSlave.obj (.text:rstModbusTimeout)
-                  000830b4    0000000d     adc.obj (.text:ADC_setMode)
-                  000830c1    0000000d     rts2800_fpu64_eabi.lib : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init_nomemset)
-                  000830ce    0000000c     interrupt.obj (.text:Interrupt_defaultHandler)
-                  000830da    0000000c     ModbusFunction.obj (.text:VSCI_getRxFIFOStatus$41)
-                  000830e6    0000000c     ModbusFunction.obj (.text:VSCI_getTxFIFOStatus$41)
-                  000830f2    0000000c     rts2800_fpu64_eabi.lib : args_main.c.obj (.text)
-                  000830fe    0000000c     CRC16.obj (.text:ucMBCRC16)
-                  0008310a    0000000a     interrupt.obj (.text:Interrupt_illegalOperationHandler)
-                  00083114    0000000a     interrupt.obj (.text:Interrupt_nmiHandler)
-                  0008311e    00000009     board.obj (.text:EPWM_setActionQualifierAction$1)
-                  00083127    00000008     rts2800_fpu64_eabi.lib : copy_decompress_none.c.obj (.text:decompress:none)
-                  0008312f    00000008     f2838x_codestartbranch.obj (.text)
-                  00083137    00000006     ModbusFunction.obj (.text:ReservedFunction)
-                  0008313d    00000006     timetask.obj (.text:pollOcpParam)
-                  00083143    00000006     timetask.obj (.text:pollOvpParam)
-                  00083149    00000003     device.obj (.text:__error__)
-                  0008314c    00000002     ModbusFunction.obj (.text:VSCI_base$41)
-                  0008314e    00000002     rts2800_fpu64_eabi.lib : pre_init.c.obj (.text)
-                  00083150    00000001                            : _lock.c.obj (.text)
-                  00083151    00000001                            : startup.c.obj (.text)
+.text      0    00082000    000016c2     
+                  00082000    000004fa     board.obj (.text:SYSCTL_init)
+                  000824fa    0000019f     board.obj (.text:EPWM_init)
+                  00082699    00000141     ModbusSlave.obj (.text:exeModbusSlave)
+                  000827da    00000136     tbmenu.obj (.text:getModbusData)
+                  00082910    0000012f     tbmenu.obj (.text:setModbusData)
+                  00082a3f    0000012d     device.obj (.text:Device_enableAllPeripherals)
+                  00082b6c    00000109     ModbusFunction.obj (.text:writeHoldingNRegister)
+                  00082c75    00000108     ModbusFunction.obj (.text:writeHoldingRegister)
+                  00082d7d    000000f6     ModbusFunction.obj (.text:readHoldingRegister)
+                  00082e73    00000094     linkVariables.obj (.text:initRegN)
+                  00082f07    0000008f     main.obj (.text:initPWM)
+                  00082f96    0000006b     memcfg.obj (.text:MemCfg_setLSRAMControllerSel)
+                  00083001    00000067     board.obj (.text:CPU2_ADCD_init)
+                  00083068    00000064     initCLA.obj (.text:initCLA)
+                  000830cc    0000005f     adc.obj (.text:ADC_setINLTrim)
+                  0008312b    00000053     adc.obj (.text:ADC_setOffsetTrim)
+                  0008317e    00000049     timetask.obj (.text:task25msec)
+                  000831c7    00000047     timetask.obj (.text:task2D5msec)
+                  0008320e    00000045     ModbusPort.obj (.text:pollModbusPort)
+                  00083253    00000041     interrupt.obj (.text:Interrupt_initModule)
+                  00083294    00000041     main.obj (.text:main)
+                  000832d5    0000003d     ModbusSlave.obj (.text:setMbusTxData)
+                  00083312    00000039     adc.obj (.text:ADC_setMode)
+                  0008334b    00000036     interrupt.obj (.text:Interrupt_enable)
+                  00083381    00000034     board.obj (.text:SWTIRMER_init)
+                  000833b5    00000034     ModbusSlave.obj (.text:initMbusConfig)
+                  000833e9    00000030     rts2800_fpu64_eabi.lib : copy_decompress_lzss.c.obj (.text:decompress:lzss)
+                  00083419    0000002f     timetask.obj (.text:pollTimeTask)
+                  00083448    0000002b     rts2800_fpu64_eabi.lib : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit)
+                  00083473    00000029                            : exit.c.obj (.text)
+                  0008349c    00000024     device.obj (.text:Device_init)
+                  000834c0    00000023     linkVariables.obj (.text:writeReg)
+                  000834e3    0000001e     cputimer.obj (.text:CPUTimer_setEmulationMode)
+                  00083501    0000001e     device.obj (.text:Device_initGPIO)
+                  0008351f    00000001     rts2800_fpu64_eabi.lib : _lock.c.obj (.text)
+                  00083520    0000001d     interrupt.obj (.text:Interrupt_initVectorTable)
+                  0008353d    0000001d     rts2800_fpu64_eabi.lib : memcpy.c.obj (.text)
+                  0008355a    0000001b     device.obj (.text:Device_enableUnbondedGPIOPullups)
+                  00083575    00000019     rts2800_fpu64_eabi.lib : boot28.asm.obj (.text)
+                  0008358e    00000017     linkVariables.obj (.text:readRegN)
+                  000835a5    00000013     linkVariables.obj (.text:writeRegN)
+                  000835b8    00000012     board.obj (.text:SysCtl_setPeripheralAccessControl)
+                  000835ca    00000011     board.obj (.text:SYNC_init)
+                  000835db    00000011     ModbusFunction.obj (.text:VSCI_writeCharNonBlocking$40)
+                  000835ec    0000000f     board.obj (.text:Board_init)
+                  000835fb    0000000f     tbmenu.obj (.text:chkValidAddress)
+                  0008360a    0000000e     ModbusFunction.obj (.text:VSCI_readCharNonBlocking$40)
+                  00083618    0000000e     ModbusSlave.obj (.text:rstModbusTimeout)
+                  00083626    0000000d     rts2800_fpu64_eabi.lib : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init_nomemset)
+                  00083633    0000000c     board.obj (.text:INTERRUPT_init)
+                  0008363f    0000000c     interrupt.obj (.text:Interrupt_defaultHandler)
+                  0008364b    0000000c     ModbusFunction.obj (.text:VSCI_getRxFIFOStatus$40)
+                  00083657    0000000c     ModbusFunction.obj (.text:VSCI_getTxFIFOStatus$40)
+                  00083663    0000000c     rts2800_fpu64_eabi.lib : args_main.c.obj (.text)
+                  0008366f    0000000c     CRC16.obj (.text:ucMBCRC16)
+                  0008367b    0000000a     interrupt.obj (.text:Interrupt_illegalOperationHandler)
+                  00083685    0000000a     interrupt.obj (.text:Interrupt_nmiHandler)
+                  0008368f    00000009     board.obj (.text:EPWM_setActionQualifierAction)
+                  00083698    00000008     rts2800_fpu64_eabi.lib : copy_decompress_none.c.obj (.text:decompress:none)
+                  000836a0    00000008     f2838x_codestartbranch.obj (.text)
+                  000836a8    00000006     ModbusFunction.obj (.text:ReservedFunction)
+                  000836ae    00000006     timetask.obj (.text:pollOcpParam)
+                  000836b4    00000006     timetask.obj (.text:pollOvpParam)
+                  000836ba    00000003     device.obj (.text:__error__)
+                  000836bd    00000002     ModbusFunction.obj (.text:VSCI_base$40)
+                  000836bf    00000002     rts2800_fpu64_eabi.lib : pre_init.c.obj (.text)
+                  000836c1    00000001                            : startup.c.obj (.text)
 
 MODULE SUMMARY
 
@@ -272,12 +276,13 @@ MODULE SUMMARY
     .\device\driverlib\
        ipc.obj                                  0       136       544    
        flash.obj                                418     56        0      
+       adc.obj                                  235     0         0      
        interrupt.obj                            180     0         0      
-       adc.obj                                  143     0         0      
        memcfg.obj                               107     0         0      
+       cputimer.obj                             30      0         0      
        sysctl.obj                               8       0         0      
     +--+----------------------------------------+-------+---------+---------+
-       Total:                                   856     192       544    
+       Total:                                   978     192       544    
                                                                          
     .\flashapi\
        f021Bbox.obj                             750     0         74     
@@ -296,14 +301,14 @@ MODULE SUMMARY
        Total:                                   2220    448       512    
                                                                          
     .\syscfg\
-       board.obj                                645     0         0      
+       board.obj                                1915    0         0      
     +--+----------------------------------------+-------+---------+---------+
-       Total:                                   645     0         0      
+       Total:                                   1915    0         0      
                                                                          
     C:\Users\User\AppData\Local\Temp\
-       {A35A8F1A-C060-448E-A97F-D5CB6001DF9B}   0       229       0      
+       {3DDE152B-84DE-4991-B776-C6EE86F3EAD2}   0       288       0      
     +--+----------------------------------------+-------+---------+---------+
-       Total:                                   0       229       0      
+       Total:                                   0       288       0      
                                                                          
     C:/Users/User/Desktop/GitHub/GW/C2000/F28388D_DualCore_Timetask/F28388D_ZWT337_TIMETASK_CPU2/F2838x_C28x_FlashAPI.lib
        FlashStateMachine.obj                    2250    0         0      
@@ -334,7 +339,7 @@ MODULE SUMMARY
        Stack:                                   0       0         1016   
        Linker Generated:                        0       176       0      
     +--+----------------------------------------+-------+---------+---------+
-       Grand Total:                             11424   1053      2694   
+       Grand Total:                             12816   1112      2694   
 
 
 LINKER GENERATED COPY TABLES
@@ -406,14 +411,16 @@ GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name
 
 page  address   name                             
 ----  -------   ----                             
-0     00082bb4  ADC_setINLTrim                   
-0     000830b4  ADC_setMode                      
-0     00082dc9  ADC_setOffsetTrim                
-0     00082f56  Board_init                       
-0     00082f2d  C$$EXIT                          
+0     00083001  ADC_init                         
+0     000830cc  ADC_setINLTrim                   
+0     00083312  ADC_setMode                      
+0     0008312b  ADC_setOffsetTrim                
+0     000835ec  Board_init                       
+0     00083473  C$$EXIT                          
 abs   00000100  CLA_SCRATCHPAD_SIZE              
-0     00082d4d  CPU2_ADCC_init                   
-0     00082c88  CPU2_ADCD_init                   
+0     00083001  CPU2_ADCD_init                   
+0     00083381  CPUTIMER_init                    
+0     000834e3  CPUTimer_setEmulationMode        
 abs   00000000  Cla1ConstLoadSize                
 1     0000a800  Cla1ConstLoadStart               
 1     0000a800  Cla1ConstRunStart                
@@ -422,11 +429,11 @@ abs   0000001e  Cla1ProgLoadSize
 0     00009800  Cla1ProgRunStart                 
 0     00009800  Cla1Task1                        
 1     000092d6  DataBuffer32                     
-0     00082545  Device_enableAllPeripherals      
-0     0008301a  Device_enableUnbondedGPIOPullups 
-0     00082f7b  Device_init                      
-0     00082fc2  Device_initGPIO                  
-0     00082000  EPWM_init                        
+0     00082a3f  Device_enableAllPeripherals      
+0     0008355a  Device_enableUnbondedGPIOPullups 
+0     0008349c  Device_init                      
+0     00083501  Device_initGPIO                  
+0     000824fa  EPWM_init                        
 0     0001c854  Fapi_GlobalInit                  
 0     0001c76a  Fapi_calculateFletcherChecksum   
 0     0001c82c  Fapi_checkFsmForReady            
@@ -442,19 +449,20 @@ abs   0000001e  Cla1ProgLoadSize
 0     0001c70a  Fapi_setupBankSectorEnable       
 0     0001c504  Fapi_setupEepromSectorEnable     
 0     0000822e  Flash_initModule                 
+0     00083633  INTERRUPT_init                   
 0     00008000  INT_CPU2_ADCD_1_ISR              
 1     0003b000  IPC_CPU1_To_CPU2_GetBuffer       
 1     0003a000  IPC_CPU1_To_CPU2_PutBuffer       
 1     00038000  IPC_CPU_To_CM_GetBuffer          
 1     00039000  IPC_CPU_To_CM_PutBuffer          
 0     0009819c  IPC_Instance                     
-0     000830ce  Interrupt_defaultHandler         
-0     00082e03  Interrupt_enable                 
-0     0008310a  Interrupt_illegalOperationHandler
-0     00082ccb  Interrupt_initModule             
-0     00082fe0  Interrupt_initVectorTable        
-0     00083114  Interrupt_nmiHandler             
-0     00082a9c  MemCfg_setLSRAMControllerSel     
+0     0008363f  Interrupt_defaultHandler         
+0     0008334b  Interrupt_enable                 
+0     0008367b  Interrupt_illegalOperationHandler
+0     00083253  Interrupt_initModule             
+0     00083520  Interrupt_initVectorTable        
+0     00083685  Interrupt_nmiHandler             
+0     00082f96  MemCfg_setLSRAMControllerSel     
 1     0000910e  ModbusFunc                       
 0     00086303  RamfuncsLoadEnd                  
 abs   00000303  RamfuncsLoadSize                 
@@ -462,8 +470,10 @@ abs   00000303  RamfuncsLoadSize
 0     00008303  RamfuncsRunEnd                   
 abs   00000303  RamfuncsRunSize                  
 0     00008000  RamfuncsRunStart                 
-0     00083137  ReservedFunction                 
-0     00082e39  SWTIRMER_init                    
+0     000836a8  ReservedFunction                 
+0     00083381  SWTIRMER_init                    
+0     000835ca  SYNC_init                        
+0     00082000  SYSCTL_init                      
 0     000082ff  SysCtl_delay                     
 0     0001c848  _Fapi_calculateOtpChecksum       
 0     0001c5e3  _Fapi_checkRegionForValue        
@@ -479,53 +489,53 @@ abs   00000303  RamfuncsRunSize
 0     00080094  __TI_Handler_Table_Limit         
 1     000007f8  __TI_STACK_END                   
 abs   000003f8  __TI_STACK_SIZE                  
-0     00082f02  __TI_auto_init_nobinit_nopinit   
+0     00083448  __TI_auto_init_nobinit_nopinit   
 1     000092f8  __TI_cleanup_ptr                 
-0     00082ea3  __TI_decompress_lzss             
-0     00083127  __TI_decompress_none             
+0     000833e9  __TI_decompress_lzss             
+0     00083698  __TI_decompress_none             
 1     000092fa  __TI_dtors_ptr                   
 1     000092f6  __TI_enable_exit_profile_output  
 abs   ffffffff  __TI_pprof_out_hndl              
 abs   ffffffff  __TI_prof_data_size              
 abs   ffffffff  __TI_prof_data_start             
-0     000830c1  __TI_zero_init_nomemset          
+0     00083626  __TI_zero_init_nomemset          
 n/a   UNDEFED   __c_args__                       
-0     00083149  __error__                        
+0     000836ba  __error__                        
 1     00000400  __stack                          
-0     000830f2  _args_main                       
-0     00083035  _c_int00                         
+0     00083663  _args_main                       
+0     00083575  _c_int00                         
 1     000091fe  _lock                            
-0     00083150  _nop                             
-0     00083151  _system_post_cinit               
-0     0008314e  _system_pre_init                 
-0     00082f2d  abort                            
+0     0008351f  _nop                             
+0     000836c1  _system_post_cinit               
+0     000836bf  _system_pre_init                 
+0     00083473  abort                            
 1     000092b8  au16DataBuffer                   
-0     00083089  chkValidAddress                  
+0     000835fb  chkValidAddress                  
 0     00080000  code_start                       
-0     0008219f  exeModbusSlave                   
-0     00082f2f  exit                             
+0     00082699  exeModbusSlave                   
+0     00083475  exit                             
 0     000baa90  fapi_ram_LoadEnd                 
 abs   00000a90  fapi_ram_LoadSize                
 0     000ba000  fapi_ram_LoadStart               
 0     0001ca90  fapi_ram_RunEnd                  
 abs   00000a90  fapi_ram_RunSize                 
 0     0001c000  fapi_ram_RunStart                
-0     000822e0  getModbusData                    
-0     00082b07  initCLA                          
-0     00082e6f  initMbusConfig                   
-0     00082979  initRegN                         
-0     00082d0c  main                             
+0     000827da  getModbusData                    
+0     00083068  initCLA                          
+0     000833b5  initMbusConfig                   
+0     00082e73  initRegN                         
+0     00083294  main                             
 1     00009040  mbcomm                           
-0     00082ffd  memcpy                           
-0     00082c43  pollModbusPort                   
-0     0008313d  pollOcpParam                     
-0     00083143  pollOvpParam                     
+0     0008353d  memcpy                           
+0     0008320e  pollModbusPort                   
+0     000836ae  pollOcpParam                     
+0     000836b4  pollOvpParam                     
 1     000092ee  pollParams                       
-0     00082ed3  pollTimeTask                     
-0     00082883  readHoldingRegister              
-0     0008304e  readRegN                         
+0     00083419  pollTimeTask                     
+0     00082d7d  readHoldingRegister              
+0     0008358e  readRegN                         
 1     00009300  regMbusData                      
-0     000830a6  rstModbusTimeout                 
+0     00083618  rstModbusTimeout                 
 0     0001c860  runFlashStorage                  
 0     0001c9d7  runManualFlashApi                
 1     00017000  sAccessCPU2                      
@@ -536,16 +546,16 @@ abs   00000a90  fapi_ram_RunSize
 1     000092d8  sFapi                            
 1     00009200  sPort                            
 1     00019000  sReadCPU1                        
-0     00082d8c  setMbusTxData                    
-0     00082416  setModbusData                    
-0     00082b6b  task25msec                       
-0     00082bfc  task2D5msec                      
+0     000832d5  setMbusTxData                    
+0     00082910  setModbusData                    
+0     0008317e  task25msec                       
+0     000831c7  task2D5msec                      
 1     000091ec  time_task                        
-0     000830fe  ucMBCRC16                        
-0     00082672  writeHoldingNRegister            
-0     0008277b  writeHoldingRegister             
-0     00082f9f  writeReg                         
-0     00083065  writeRegN                        
+0     0008366f  ucMBCRC16                        
+0     00082b6c  writeHoldingNRegister            
+0     00082c75  writeHoldingRegister             
+0     000834c0  writeReg                         
+0     000835a5  writeRegN                        
 
 
 GLOBAL SYMBOLS: SORTED BY Symbol Address 
@@ -590,63 +600,68 @@ page  address   name
 0     000800a4  __TI_CINIT_Base                  
 0     000800b8  __TI_CINIT_Limit                 
 0     000800b8  __TI_CINIT_Warm                  
-0     00082000  EPWM_init                        
-0     0008219f  exeModbusSlave                   
-0     000822e0  getModbusData                    
-0     00082416  setModbusData                    
-0     00082545  Device_enableAllPeripherals      
-0     00082672  writeHoldingNRegister            
-0     0008277b  writeHoldingRegister             
-0     00082883  readHoldingRegister              
-0     00082979  initRegN                         
-0     00082a9c  MemCfg_setLSRAMControllerSel     
-0     00082b07  initCLA                          
-0     00082b6b  task25msec                       
-0     00082bb4  ADC_setINLTrim                   
-0     00082bfc  task2D5msec                      
-0     00082c43  pollModbusPort                   
-0     00082c88  CPU2_ADCD_init                   
-0     00082ccb  Interrupt_initModule             
-0     00082d0c  main                             
-0     00082d4d  CPU2_ADCC_init                   
-0     00082d8c  setMbusTxData                    
-0     00082dc9  ADC_setOffsetTrim                
-0     00082e03  Interrupt_enable                 
-0     00082e39  SWTIRMER_init                    
-0     00082e6f  initMbusConfig                   
-0     00082ea3  __TI_decompress_lzss             
-0     00082ed3  pollTimeTask                     
-0     00082f02  __TI_auto_init_nobinit_nopinit   
-0     00082f2d  C$$EXIT                          
-0     00082f2d  abort                            
-0     00082f2f  exit                             
-0     00082f56  Board_init                       
-0     00082f7b  Device_init                      
-0     00082f9f  writeReg                         
-0     00082fc2  Device_initGPIO                  
-0     00082fe0  Interrupt_initVectorTable        
-0     00082ffd  memcpy                           
-0     0008301a  Device_enableUnbondedGPIOPullups 
-0     00083035  _c_int00                         
-0     0008304e  readRegN                         
-0     00083065  writeRegN                        
-0     00083089  chkValidAddress                  
-0     000830a6  rstModbusTimeout                 
-0     000830b4  ADC_setMode                      
-0     000830c1  __TI_zero_init_nomemset          
-0     000830ce  Interrupt_defaultHandler         
-0     000830f2  _args_main                       
-0     000830fe  ucMBCRC16                        
-0     0008310a  Interrupt_illegalOperationHandler
-0     00083114  Interrupt_nmiHandler             
-0     00083127  __TI_decompress_none             
-0     00083137  ReservedFunction                 
-0     0008313d  pollOcpParam                     
-0     00083143  pollOvpParam                     
-0     00083149  __error__                        
-0     0008314e  _system_pre_init                 
-0     00083150  _nop                             
-0     00083151  _system_post_cinit               
+0     00082000  SYSCTL_init                      
+0     000824fa  EPWM_init                        
+0     00082699  exeModbusSlave                   
+0     000827da  getModbusData                    
+0     00082910  setModbusData                    
+0     00082a3f  Device_enableAllPeripherals      
+0     00082b6c  writeHoldingNRegister            
+0     00082c75  writeHoldingRegister             
+0     00082d7d  readHoldingRegister              
+0     00082e73  initRegN                         
+0     00082f96  MemCfg_setLSRAMControllerSel     
+0     00083001  ADC_init                         
+0     00083001  CPU2_ADCD_init                   
+0     00083068  initCLA                          
+0     000830cc  ADC_setINLTrim                   
+0     0008312b  ADC_setOffsetTrim                
+0     0008317e  task25msec                       
+0     000831c7  task2D5msec                      
+0     0008320e  pollModbusPort                   
+0     00083253  Interrupt_initModule             
+0     00083294  main                             
+0     000832d5  setMbusTxData                    
+0     00083312  ADC_setMode                      
+0     0008334b  Interrupt_enable                 
+0     00083381  CPUTIMER_init                    
+0     00083381  SWTIRMER_init                    
+0     000833b5  initMbusConfig                   
+0     000833e9  __TI_decompress_lzss             
+0     00083419  pollTimeTask                     
+0     00083448  __TI_auto_init_nobinit_nopinit   
+0     00083473  C$$EXIT                          
+0     00083473  abort                            
+0     00083475  exit                             
+0     0008349c  Device_init                      
+0     000834c0  writeReg                         
+0     000834e3  CPUTimer_setEmulationMode        
+0     00083501  Device_initGPIO                  
+0     0008351f  _nop                             
+0     00083520  Interrupt_initVectorTable        
+0     0008353d  memcpy                           
+0     0008355a  Device_enableUnbondedGPIOPullups 
+0     00083575  _c_int00                         
+0     0008358e  readRegN                         
+0     000835a5  writeRegN                        
+0     000835ca  SYNC_init                        
+0     000835ec  Board_init                       
+0     000835fb  chkValidAddress                  
+0     00083618  rstModbusTimeout                 
+0     00083626  __TI_zero_init_nomemset          
+0     00083633  INTERRUPT_init                   
+0     0008363f  Interrupt_defaultHandler         
+0     00083663  _args_main                       
+0     0008366f  ucMBCRC16                        
+0     0008367b  Interrupt_illegalOperationHandler
+0     00083685  Interrupt_nmiHandler             
+0     00083698  __TI_decompress_none             
+0     000836a8  ReservedFunction                 
+0     000836ae  pollOcpParam                     
+0     000836b4  pollOvpParam                     
+0     000836ba  __error__                        
+0     000836bf  _system_pre_init                 
+0     000836c1  _system_post_cinit               
 0     00086000  RamfuncsLoadStart                
 0     00086303  RamfuncsLoadEnd                  
 0     0009819c  IPC_Instance                     
@@ -693,4 +708,4 @@ abs   ffffffff  __TI_prof_data_size
 abs   ffffffff  __TI_prof_data_start             
 n/a   UNDEFED   __c_args__                       
 
-[140 symbols]
+[145 symbols]

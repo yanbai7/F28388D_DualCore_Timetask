@@ -99,6 +99,7 @@ typedef volatile struct {
 
     float32_t f32IrefLimitP;
     float32_t f32IrefLimitN;
+    float32_t f32Isum;
     float32_t f32Iref;
     float32_t f32Vref;
     float32_t f32Vout;
