@@ -79,7 +79,7 @@ void PinMux_init()
 	//
 	
 	//
-	// EPWM4 -> BUCK_PWM Pinmux
+	// EPWM1 -> BUCK_PWM Pinmux
 	//
 	GPIO_setPinConfig(BUCK_PWM_EPWMA_PIN_CONFIG);
 	GPIO_setPadConfig(BUCK_PWM_EPWMA_GPIO, GPIO_PIN_TYPE_STD);
@@ -109,7 +109,7 @@ void PinMux_init()
 	//
 	
 	//
-	// EPWM3 -> DAB_PWM7_PRI_AH Pinmux
+	// EPWM4 -> DAB_PWM7_PRI_AH Pinmux
 	//
 	GPIO_setPinConfig(DAB_PWM7_PRI_AH_EPWMA_PIN_CONFIG);
 	GPIO_setPadConfig(DAB_PWM7_PRI_AH_EPWMA_GPIO, GPIO_PIN_TYPE_STD);
@@ -120,7 +120,7 @@ void PinMux_init()
 	GPIO_setQualificationMode(DAB_PWM7_PRI_AH_EPWMB_GPIO, GPIO_QUAL_SYNC);
 
 	//
-	// EPWM2 -> DAB_PWM8_PRI_AL Pinmux
+	// EPWM3 -> DAB_PWM8_PRI_AL Pinmux
 	//
 	GPIO_setPinConfig(DAB_PWM8_PRI_AL_EPWMA_PIN_CONFIG);
 	GPIO_setPadConfig(DAB_PWM8_PRI_AL_EPWMA_GPIO, GPIO_PIN_TYPE_STD);
@@ -131,7 +131,7 @@ void PinMux_init()
 	GPIO_setQualificationMode(DAB_PWM8_PRI_AL_EPWMB_GPIO, GPIO_QUAL_SYNC);
 
 	//
-	// EPWM1 -> DAB_PWM9_2ND Pinmux
+	// EPWM2 -> DAB_PWM9_2ND Pinmux
 	//
 	GPIO_setPinConfig(DAB_PWM9_2ND_EPWMA_PIN_CONFIG);
 	GPIO_setPadConfig(DAB_PWM9_2ND_EPWMA_GPIO, GPIO_PIN_TYPE_STD);
@@ -162,7 +162,7 @@ void CPU1_ADCA_init(){
 	//
 	// Configures the analog-to-digital converter resolution and signal mode.
 	//
-	ADC_setMode(CPU1_ADCA_BASE, ADC_RESOLUTION_12BIT, ADC_MODE_SINGLE_ENDED);
+	ADC_setMode(CPU1_ADCA_BASE, ADC_RESOLUTION_16BIT, ADC_MODE_DIFFERENTIAL);
 	//
 	// Sets the timing of the end-of-conversion pulse
 	//
@@ -186,6 +186,45 @@ void CPU1_ADCA_init(){
 	//
 	ADC_setSOCPriority(CPU1_ADCA_BASE, ADC_PRI_ALL_ROUND_ROBIN);
 	//
+	// Start of Conversion 0 Configuration
+	//
+	//
+	// Configures a start-of-conversion (SOC) in the ADC and its interrupt SOC trigger.
+	// 	  	SOC number		: 0
+	//	  	Trigger			: ADC_TRIGGER_EPWM1_SOCA
+	//	  	Channel			: ADC_CH_ADCIN14_ADCIN15
+	//	 	Sample Window	: 64 SYSCLK cycles
+	//		Interrupt Trigger: ADC_INT_SOC_TRIGGER_NONE
+	//
+	ADC_setupSOC(CPU1_ADCA_BASE, ADC_SOC_NUMBER0, ADC_TRIGGER_EPWM1_SOCA, ADC_CH_ADCIN14_ADCIN15, 64U);
+	ADC_setInterruptSOCTrigger(CPU1_ADCA_BASE, ADC_SOC_NUMBER0, ADC_INT_SOC_TRIGGER_NONE);
+	//
+	// Start of Conversion 1 Configuration
+	//
+	//
+	// Configures a start-of-conversion (SOC) in the ADC and its interrupt SOC trigger.
+	// 	  	SOC number		: 1
+	//	  	Trigger			: ADC_TRIGGER_EPWM1_SOCA
+	//	  	Channel			: ADC_CH_ADCIN2_ADCIN3
+	//	 	Sample Window	: 64 SYSCLK cycles
+	//		Interrupt Trigger: ADC_INT_SOC_TRIGGER_NONE
+	//
+	ADC_setupSOC(CPU1_ADCA_BASE, ADC_SOC_NUMBER1, ADC_TRIGGER_EPWM1_SOCA, ADC_CH_ADCIN2_ADCIN3, 64U);
+	ADC_setInterruptSOCTrigger(CPU1_ADCA_BASE, ADC_SOC_NUMBER1, ADC_INT_SOC_TRIGGER_NONE);
+	//
+	// Start of Conversion 2 Configuration
+	//
+	//
+	// Configures a start-of-conversion (SOC) in the ADC and its interrupt SOC trigger.
+	// 	  	SOC number		: 2
+	//	  	Trigger			: ADC_TRIGGER_EPWM1_SOCA
+	//	  	Channel			: ADC_CH_ADCIN4_ADCIN5
+	//	 	Sample Window	: 64 SYSCLK cycles
+	//		Interrupt Trigger: ADC_INT_SOC_TRIGGER_NONE
+	//
+	ADC_setupSOC(CPU1_ADCA_BASE, ADC_SOC_NUMBER2, ADC_TRIGGER_EPWM1_SOCA, ADC_CH_ADCIN4_ADCIN5, 64U);
+	ADC_setInterruptSOCTrigger(CPU1_ADCA_BASE, ADC_SOC_NUMBER2, ADC_INT_SOC_TRIGGER_NONE);
+	//
 	// ADC Interrupt 1 Configuration
 	// 		Source	: ADC_SOC_NUMBER1
 	// 		Interrupt Source: enabled
@@ -205,7 +244,7 @@ void CPU1_ADCB_init(){
 	//
 	// Configures the analog-to-digital converter resolution and signal mode.
 	//
-	ADC_setMode(CPU1_ADCB_BASE, ADC_RESOLUTION_12BIT, ADC_MODE_SINGLE_ENDED);
+	ADC_setMode(CPU1_ADCB_BASE, ADC_RESOLUTION_16BIT, ADC_MODE_DIFFERENTIAL);
 	//
 	// Sets the timing of the end-of-conversion pulse
 	//
@@ -232,6 +271,45 @@ void CPU1_ADCB_init(){
 	// Sets the priority mode of the SOCs.
 	//
 	ADC_setSOCPriority(CPU1_ADCB_BASE, ADC_PRI_ALL_ROUND_ROBIN);
+	//
+	// Start of Conversion 0 Configuration
+	//
+	//
+	// Configures a start-of-conversion (SOC) in the ADC and its interrupt SOC trigger.
+	// 	  	SOC number		: 0
+	//	  	Trigger			: ADC_TRIGGER_EPWM1_SOCA
+	//	  	Channel			: ADC_CH_ADCIN2_ADCIN3
+	//	 	Sample Window	: 64 SYSCLK cycles
+	//		Interrupt Trigger: ADC_INT_SOC_TRIGGER_NONE
+	//
+	ADC_setupSOC(CPU1_ADCB_BASE, ADC_SOC_NUMBER0, ADC_TRIGGER_EPWM1_SOCA, ADC_CH_ADCIN2_ADCIN3, 64U);
+	ADC_setInterruptSOCTrigger(CPU1_ADCB_BASE, ADC_SOC_NUMBER0, ADC_INT_SOC_TRIGGER_NONE);
+	//
+	// Start of Conversion 1 Configuration
+	//
+	//
+	// Configures a start-of-conversion (SOC) in the ADC and its interrupt SOC trigger.
+	// 	  	SOC number		: 1
+	//	  	Trigger			: ADC_TRIGGER_EPWM1_SOCA
+	//	  	Channel			: ADC_CH_ADCIN2_ADCIN3
+	//	 	Sample Window	: 64 SYSCLK cycles
+	//		Interrupt Trigger: ADC_INT_SOC_TRIGGER_NONE
+	//
+	ADC_setupSOC(CPU1_ADCB_BASE, ADC_SOC_NUMBER1, ADC_TRIGGER_EPWM1_SOCA, ADC_CH_ADCIN2_ADCIN3, 64U);
+	ADC_setInterruptSOCTrigger(CPU1_ADCB_BASE, ADC_SOC_NUMBER1, ADC_INT_SOC_TRIGGER_NONE);
+	//
+	// Start of Conversion 2 Configuration
+	//
+	//
+	// Configures a start-of-conversion (SOC) in the ADC and its interrupt SOC trigger.
+	// 	  	SOC number		: 2
+	//	  	Trigger			: ADC_TRIGGER_EPWM1_SOCA
+	//	  	Channel			: ADC_CH_ADCIN2_ADCIN3
+	//	 	Sample Window	: 64 SYSCLK cycles
+	//		Interrupt Trigger: ADC_INT_SOC_TRIGGER_NONE
+	//
+	ADC_setupSOC(CPU1_ADCB_BASE, ADC_SOC_NUMBER2, ADC_TRIGGER_EPWM1_SOCA, ADC_CH_ADCIN2_ADCIN3, 64U);
+	ADC_setInterruptSOCTrigger(CPU1_ADCB_BASE, ADC_SOC_NUMBER2, ADC_INT_SOC_TRIGGER_NONE);
 }
 
 //*****************************************************************************
@@ -255,6 +333,7 @@ void ASYSCTL_init(){
 //*****************************************************************************
 void CMPSS_init(){
 	CMP5_P_OVP_init();
+	CMP2_P_OCP_init();
 }
 
 void CMP5_P_OVP_init(){
@@ -338,6 +417,96 @@ void CMP5_P_OVP_init(){
     // Causes a software reset of the high comparator digital filter output latch.
     //
     CMPSS_clearFilterLatchHigh(CMP5_P_OVP_BASE);
+}
+void CMP2_P_OCP_init(){
+    //
+    // Sets the configuration for the high comparator.
+    //
+    CMPSS_configHighComparator(CMP2_P_OCP_BASE,(CMPSS_INSRC_DAC));
+    //
+    // Sets the configuration for the low comparator.
+    //
+    CMPSS_configLowComparator(CMP2_P_OCP_BASE,(CMPSS_INSRC_DAC));
+    //
+    // Sets the configuration for the internal comparator DACs.
+    //
+    CMPSS_configDAC(CMP2_P_OCP_BASE,(CMPSS_DACVAL_SYSCLK | CMPSS_DACREF_VDDA | CMPSS_DACSRC_SHDW));
+    //
+    // Sets the value of the internal DAC of the high comparator.
+    //
+    CMPSS_setDACValueHigh(CMP2_P_OCP_BASE,0U);
+    //
+    // Sets the value of the internal DAC of the low comparator.
+    //
+    CMPSS_setDACValueLow(CMP2_P_OCP_BASE,0U);
+    //
+    //  Configures the digital filter of the high comparator.
+    //
+    CMPSS_configFilterHigh(CMP2_P_OCP_BASE, 0U, 1U, 1U);
+    //
+    // Configures the digital filter of the low comparator.
+    //
+    CMPSS_configFilterLow(CMP2_P_OCP_BASE, 0U, 1U, 1U);
+    //
+    // Initializes the digital filter of the high comparator.
+    //
+    CMPSS_initFilterHigh(CMP2_P_OCP_BASE);
+    //
+    // Initializes the digital filter of the low comparator.
+    //
+    CMPSS_initFilterLow(CMP2_P_OCP_BASE);
+    //
+    // Sets the output signal configuration for the high comparator.
+    //
+    CMPSS_configOutputsHigh(CMP2_P_OCP_BASE,(CMPSS_TRIPOUT_ASYNC_COMP | CMPSS_TRIP_ASYNC_COMP));
+    //
+    // Sets the output signal configuration for the low comparator.
+    //
+    CMPSS_configOutputsLow(CMP2_P_OCP_BASE,(CMPSS_TRIPOUT_ASYNC_COMP | CMPSS_TRIP_ASYNC_COMP));
+    //
+    // Sets the comparator hysteresis settings.
+    //
+    CMPSS_setHysteresis(CMP2_P_OCP_BASE,0U);
+    //
+    // Configures the comparator subsystem's ramp generator.
+    //
+    CMPSS_configRamp(CMP2_P_OCP_BASE,0U,0U,0U,1U,true);
+    //
+    // Enables reset of HIGH comparator digital filter output latch on PWMSYNC
+    //
+    CMPSS_enableLatchResetOnPWMSYNCHigh(CMP2_P_OCP_BASE);
+    //
+    // Enables reset of LOW comparator digital filter output latch on PWMSYNC
+    //
+    CMPSS_enableLatchResetOnPWMSYNCLow(CMP2_P_OCP_BASE);
+    //
+    // Sets the ePWM module blanking signal that holds trip in reset.
+    //
+    CMPSS_configBlanking(CMP2_P_OCP_BASE,1U);
+    //
+    // Disables an ePWM blanking signal from holding trip in reset.
+    //
+    CMPSS_disableBlanking(CMP2_P_OCP_BASE);
+    //
+    // Configures whether or not the digital filter latches are reset by PWMSYNC
+    //
+    CMPSS_configLatchOnPWMSYNC(CMP2_P_OCP_BASE,false,false);
+    //
+    // Enables the CMPSS module.
+    //
+    CMPSS_enableModule(CMP2_P_OCP_BASE);
+    //
+    // Delay for CMPSS DAC to power up.
+    //
+    DEVICE_DELAY_US(500);
+    //
+    // Causes a software reset of the high comparator digital filter output latch.
+    //
+    CMPSS_clearFilterLatchHigh(CMP2_P_OCP_BASE);
+    //
+    // Causes a software reset of the low comparator digital filter output latch.
+    //
+    CMPSS_clearFilterLatchLow(CMP2_P_OCP_BASE);
 }
 
 //*****************************************************************************
@@ -439,7 +608,7 @@ void EPWM_init(){
 #endif
 void FLASH_init(){
     //
-    // FMC_CPU1_COPY_COPY Initialization
+    // FMC_CPU1 Initialization
     // 
     //
     // This function sets the fallback power mode of the flash bank specified by
@@ -450,18 +619,18 @@ void FLASH_init(){
     //
     // Set available banks to active power mode
     // 
-    Flash_setBankPowerMode(FMC_CPU1_COPY_COPY_BASE, FLASH_BANK, FLASH_BANK_PWR_ACTIVE);
+    Flash_setBankPowerMode(FMC_CPU1_BASE, FLASH_BANK, FLASH_BANK_PWR_ACTIVE);
     //
     // Sets the fallback power mode of the charge pump.
     //
     // Set pump power mode to active
     //
-    Flash_setPumpPowerMode(FMC_CPU1_COPY_COPY_BASE, FLASH_PUMP_PWR_ACTIVE);
+    Flash_setPumpPowerMode(FMC_CPU1_BASE, FLASH_PUMP_PWR_ACTIVE);
     //
     // Disable cache and prefetch mechanism before changing wait states
     //
-    Flash_disableCache(FMC_CPU1_COPY_COPY_BASE);
-    Flash_disablePrefetch(FMC_CPU1_COPY_COPY_BASE);
+    Flash_disableCache(FMC_CPU1_BASE);
+    Flash_disablePrefetch(FMC_CPU1_BASE);
     //
     // This function sets the number of wait states for a flash read access. The
     // waitstates parameter is a number between 0 and 15. It is important
@@ -472,23 +641,23 @@ void FLASH_init(){
     //
     // Set flash wait states
     //
-    Flash_setWaitstates(FMC_CPU1_COPY_COPY_BASE, FMC_CPU1_COPY_COPY_WAITSTATES); 
+    Flash_setWaitstates(FMC_CPU1_BASE, FMC_CPU1_WAITSTATES); 
     //
     // Enable prefetch
     //
-    Flash_enablePrefetch(FMC_CPU1_COPY_COPY_BASE);
+    Flash_enablePrefetch(FMC_CPU1_BASE);
     //
     // Enable cache
     //
-    Flash_enableCache(FMC_CPU1_COPY_COPY_BASE);
+    Flash_enableCache(FMC_CPU1_BASE);
     //
     // Enables flash error correction code (ECC) protection.
     //
-    Flash_enableECC(FMC_CPU1_COPY_COPY_ECCBASE);
+    Flash_enableECC(FMC_CPU1_ECCBASE);
     //
     // Sets the single bit error threshold. Valid ranges are from 0-65535.
     //
-    Flash_setErrorThreshold(FMC_CPU1_COPY_COPY_ECCBASE, FMC_CPU1_COPY_COPY_ERRORTHRESHOLD);
+    Flash_setErrorThreshold(FMC_CPU1_ECCBASE, FMC_CPU1_ERRORTHRESHOLD);
     //
     // Force a pipeline flush to ensure that the write to the last register
     // configured occurs before returning.
@@ -605,22 +774,22 @@ void SYSCTL_init(){
     SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL0_EPWM, 4, SYSCTL_CPUSEL_CPU1);
     SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL0_EPWM, 5, SYSCTL_CPUSEL_CPU1);
     SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL0_EPWM, 6, SYSCTL_CPUSEL_CPU1);
-    SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL0_EPWM, 7, SYSCTL_CPUSEL_CPU1);
-    SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL0_EPWM, 8, SYSCTL_CPUSEL_CPU1);
+    SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL0_EPWM, 7, SYSCTL_CPUSEL_CPU2);
+    SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL0_EPWM, 8, SYSCTL_CPUSEL_CPU2);
     SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL0_EPWM, 9, SYSCTL_CPUSEL_CPU2);
     SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL0_EPWM, 10, SYSCTL_CPUSEL_CPU2);
     SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL0_EPWM, 11, SYSCTL_CPUSEL_CPU2);
     SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL0_EPWM, 12, SYSCTL_CPUSEL_CPU2);
-    SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL0_EPWM, 13, SYSCTL_CPUSEL_CPU2);
-    SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL0_EPWM, 14, SYSCTL_CPUSEL_CPU2);
-    SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL0_EPWM, 15, SYSCTL_CPUSEL_CPU2);
-    SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL0_EPWM, 16, SYSCTL_CPUSEL_CPU2);
+    SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL0_EPWM, 13, SYSCTL_CPUSEL_CPU1);
+    SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL0_EPWM, 14, SYSCTL_CPUSEL_CPU1);
+    SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL0_EPWM, 15, SYSCTL_CPUSEL_CPU1);
+    SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL0_EPWM, 16, SYSCTL_CPUSEL_CPU1);
     SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL1_ECAP, 1, SYSCTL_CPUSEL_CPU1);
     SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL1_ECAP, 2, SYSCTL_CPUSEL_CPU1);
     SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL1_ECAP, 3, SYSCTL_CPUSEL_CPU1);
-    SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL1_ECAP, 4, SYSCTL_CPUSEL_CPU1);
-    SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL1_ECAP, 5, SYSCTL_CPUSEL_CPU1);
-    SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL1_ECAP, 6, SYSCTL_CPUSEL_CPU1);
+    SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL1_ECAP, 4, SYSCTL_CPUSEL_CPU2);
+    SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL1_ECAP, 5, SYSCTL_CPUSEL_CPU2);
+    SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL1_ECAP, 6, SYSCTL_CPUSEL_CPU2);
     SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL1_ECAP, 7, SYSCTL_CPUSEL_CPU1);
     SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL2_EQEP, 1, SYSCTL_CPUSEL_CPU1);
     SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL2_EQEP, 2, SYSCTL_CPUSEL_CPU1);
@@ -629,8 +798,8 @@ void SYSCTL_init(){
     SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL4_SD, 2, SYSCTL_CPUSEL_CPU1);
     SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL5_SCI, 1, SYSCTL_CPUSEL_CPU1);
     SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL5_SCI, 2, SYSCTL_CPUSEL_CPU1);
-    SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL5_SCI, 3, SYSCTL_CPUSEL_CPU1);
-    SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL5_SCI, 4, SYSCTL_CPUSEL_CPU1);
+    SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL5_SCI, 3, SYSCTL_CPUSEL_CPU2);
+    SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL5_SCI, 4, SYSCTL_CPUSEL_CPU2);
     SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL6_SPI, 1, SYSCTL_CPUSEL_CPU1);
     SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL6_SPI, 2, SYSCTL_CPUSEL_CPU1);
     SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL6_SPI, 3, SYSCTL_CPUSEL_CPU1);
@@ -649,10 +818,10 @@ void SYSCTL_init(){
     SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL12_CMPSS, 2, SYSCTL_CPUSEL_CPU1);
     SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL12_CMPSS, 3, SYSCTL_CPUSEL_CPU1);
     SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL12_CMPSS, 4, SYSCTL_CPUSEL_CPU1);
-    SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL12_CMPSS, 5, SYSCTL_CPUSEL_CPU1);
-    SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL12_CMPSS, 6, SYSCTL_CPUSEL_CPU1);
-    SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL12_CMPSS, 7, SYSCTL_CPUSEL_CPU1);
-    SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL12_CMPSS, 8, SYSCTL_CPUSEL_CPU1);
+    SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL12_CMPSS, 5, SYSCTL_CPUSEL_CPU2);
+    SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL12_CMPSS, 6, SYSCTL_CPUSEL_CPU2);
+    SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL12_CMPSS, 7, SYSCTL_CPUSEL_CPU2);
+    SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL12_CMPSS, 8, SYSCTL_CPUSEL_CPU2);
     SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL14_DAC, 1, SYSCTL_CPUSEL_CPU1);
     SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL14_DAC, 2, SYSCTL_CPUSEL_CPU1);
     SysCtl_selectCPUForPeripheral(SYSCTL_CPUSEL14_DAC, 3, SYSCTL_CPUSEL_CPU1);
@@ -1138,8 +1307,8 @@ void SYSCTL_init(){
     SysCtl_disablePeripheral(SYSCTL_PERIPH_CLK_TBCLKSYNC);
     SysCtl_disablePeripheral(SYSCTL_PERIPH_CLK_GTBCLKSYNC);
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_ERAD);
-    SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_EMIF1);
-    SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_EMIF2);
+    SysCtl_disablePeripheral(SYSCTL_PERIPH_CLK_EMIF1);
+    SysCtl_disablePeripheral(SYSCTL_PERIPH_CLK_EMIF2);
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_EPWM1);
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_EPWM2);
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_EPWM3);
@@ -1163,26 +1332,26 @@ void SYSCTL_init(){
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_ECAP5);
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_ECAP6);
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_ECAP7);
-    SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_EQEP1);
-    SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_EQEP2);
-    SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_EQEP3);
-    SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_SD1);
-    SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_SD2);
+    SysCtl_disablePeripheral(SYSCTL_PERIPH_CLK_EQEP1);
+    SysCtl_disablePeripheral(SYSCTL_PERIPH_CLK_EQEP2);
+    SysCtl_disablePeripheral(SYSCTL_PERIPH_CLK_EQEP3);
+    SysCtl_disablePeripheral(SYSCTL_PERIPH_CLK_SD1);
+    SysCtl_disablePeripheral(SYSCTL_PERIPH_CLK_SD2);
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_SCIA);
-    SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_SCIB);
-    SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_SCIC);
-    SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_SCID);
+    SysCtl_disablePeripheral(SYSCTL_PERIPH_CLK_SCIB);
+    SysCtl_disablePeripheral(SYSCTL_PERIPH_CLK_SCIC);
+    SysCtl_disablePeripheral(SYSCTL_PERIPH_CLK_SCID);
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_SPIA);
-    SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_SPIB);
-    SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_SPIC);
+    SysCtl_disablePeripheral(SYSCTL_PERIPH_CLK_SPIB);
+    SysCtl_disablePeripheral(SYSCTL_PERIPH_CLK_SPIC);
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_SPID);
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_I2CA);
-    SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_I2CB);
+    SysCtl_disablePeripheral(SYSCTL_PERIPH_CLK_I2CB);
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_CANA);
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_CANB);
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_MCANA);
-    SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_MCBSPA);
-    SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_MCBSPB);
+    SysCtl_disablePeripheral(SYSCTL_PERIPH_CLK_MCBSPA);
+    SysCtl_disablePeripheral(SYSCTL_PERIPH_CLK_MCBSPB);
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_USBA);
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_ADCA);
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_ADCB);

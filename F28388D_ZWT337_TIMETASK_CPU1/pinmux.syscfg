@@ -1,7 +1,7 @@
 /**
  * These arguments were used when this file was generated. They will be automatically applied on subsequent loads
  * via the GUI or CLI. Run CLI with '--help' for additional information on how to override these arguments.
- * @cliArgs --device "F2838x" --package "176pin" --part "F2838x_176pin" --context "CPU1" --product "C2000WARE@5.02.00.00"
+ * @cliArgs --device "F2838x" --package "337bga" --part "F2838x_337bga" --context "CPU1" --product "C2000WARE@5.02.00.00"
  * @versions {"tool":"1.20.0+3587"}
  */
 
@@ -14,6 +14,7 @@ const adc2      = adc.addInstance();
 const asysctl   = scripting.addModule("/driverlib/asysctl.js");
 const cmpss     = scripting.addModule("/driverlib/cmpss.js", {}, false);
 const cmpss1    = cmpss.addInstance();
+const cmpss2    = cmpss.addInstance();
 const cputimer  = scripting.addModule("/driverlib/cputimer.js", {}, false);
 const cputimer1 = cputimer.addInstance();
 const dac       = scripting.addModule("/driverlib/dac.js", {}, false);
@@ -33,18 +34,56 @@ const sysctl    = scripting.addModule("/driverlib/sysctl.js");
 /**
  * Write custom configuration values to the imported modules.
  */
+adc.synchronousModeCheck = true;
+
 adc1.$name                   = "CPU1_ADCA";
 adc1.adcClockPrescaler       = "ADC_CLK_DIV_4_0";
-adc1.interruptPulseMode      = "ADC_PULSE_END_OF_CONV";
+adc1.soc0Name                = "SOC0_BUCK_IL";
+adc1.soc0IndependentNameMode = true;
+adc1.soc1IndependentNameMode = true;
+adc1.soc2Name                = "SOC2_BUCK_VO";
+adc1.soc2IndependentNameMode = true;
+adc1.soc2Channel             = "ADC_CH_ADCIN4_ADCIN5";
+adc1.soc2SampleWindow        = 64;
 adc1.enabledInts             = ["ADC_INT_NUMBER1"];
 adc1.enableInterrupt1        = true;
-adc1.interrupt1SOCSource     = "ADC_SOC_NUMBER1";
 adc1.registerInterrupts      = ["1"];
+adc1.interruptPulseMode      = "ADC_PULSE_END_OF_CONV";
+adc1.interrupt1SOCSource     = "ADC_SOC_NUMBER1";
+adc1.adcResolutionMode       = "ADC_RESOLUTION_16BIT";
+adc1.adcSignalMode           = "ADC_MODE_DIFFERENTIAL";
+adc1.soc0Channel             = "ADC_CH_ADCIN14_ADCIN15";
+adc1.soc0SampleWindow        = 64;
+adc1.soc0Trigger             = "ADC_TRIGGER_EPWM1_SOCA";
+adc1.soc1Trigger             = "ADC_TRIGGER_EPWM1_SOCA";
+adc1.soc1SampleWindow        = 64;
+adc1.enabledSOCs             = ["ADC_SOC_NUMBER0","ADC_SOC_NUMBER1","ADC_SOC_NUMBER2"];
+adc1.soc1Name                = "SOC1_BUCK_VIN";
+adc1.soc1Channel             = "ADC_CH_ADCIN2_ADCIN3";
+adc1.soc2Trigger             = "ADC_TRIGGER_EPWM1_SOCA";
 adc1.adcInt1.enableInterrupt = true;
 
-adc2.adcBase           = "ADCB_BASE";
-adc2.$name             = "CPU1_ADCB";
-adc2.adcClockPrescaler = "ADC_CLK_DIV_4_0";
+adc2.$name                   = "CPU1_ADCB";
+adc2.adcBase                 = "ADCB_BASE";
+adc2.adcClockPrescaler       = "ADC_CLK_DIV_4_0";
+adc2.soc0IndependentNameMode = true;
+adc2.soc1IndependentNameMode = true;
+adc2.soc2Name                = "SOC2_BUCK_IO";
+adc2.soc2IndependentNameMode = true;
+adc2.soc2Channel             = "ADC_CH_ADCIN2_ADCIN3";
+adc2.soc2SampleWindow        = 64;
+adc2.adcResolutionMode       = "ADC_RESOLUTION_16BIT";
+adc2.adcSignalMode           = "ADC_MODE_DIFFERENTIAL";
+adc2.enabledSOCs             = ["ADC_SOC_NUMBER0","ADC_SOC_NUMBER1","ADC_SOC_NUMBER2"];
+adc2.soc0Name                = "SOC0_BUCK_IO";
+adc2.soc0Channel             = "ADC_CH_ADCIN2_ADCIN3";
+adc2.soc0Trigger             = "ADC_TRIGGER_EPWM1_SOCA";
+adc2.soc0SampleWindow        = 64;
+adc2.soc1Name                = "SOC1_BUCK_IO";
+adc2.soc1Channel             = "ADC_CH_ADCIN2_ADCIN3";
+adc2.soc1Trigger             = "ADC_TRIGGER_EPWM1_SOCA";
+adc2.soc1SampleWindow        = 64;
+adc2.soc2Trigger             = "ADC_TRIGGER_EPWM1_SOCA";
 
 cmpss1.$name                = "CMP5_P_OVP";
 cmpss1.cmpssBase            = "CMPSS5_BASE";
@@ -53,30 +92,42 @@ cmpss1.initFilterHigh       = true;
 cmpss1.clearFilterLatchHigh = true;
 cmpss1.latchResetHigh       = true;
 cmpss1.configLatchHigh      = true;
+cmpss2.$name                = "CMP2_P_OCP";
+cmpss2.cmpssBase            = "CMPSS2_BASE";
+cmpss2.initFilterHigh       = true;
+cmpss2.clearFilterLatchHigh = true;
+cmpss2.latchResetHigh       = true;
+cmpss2.enableModule         = true;
+cmpss2.initFilterLow        = true;
+cmpss2.clearFilterLatchLow  = true;
+cmpss2.latchResetLow        = true;
 
 cputimer1.$name          = "SWTIRMER";
-cputimer1.emulationMode  = "CPUTIMER_EMULATIONMODE_RUNFREE";
 cputimer1.timerPrescaler = 3;
 cputimer1.timerPeriod    = 50000000;
 cputimer1.startTimer     = true;
+cputimer1.emulationMode  = "CPUTIMER_EMULATIONMODE_RUNFREE";
 
 dac1.$name            = "myDAC0";
-dac1.enableOutput     = true;
 dac1.referenceVoltage = "DAC_REF_ADC_VREFHI";
+dac1.enableOutput     = true;
 
-epwm1.$name = "BUCK_PWM";
+epwm1.$name                  = "BUCK_PWM";
+epwm1.epwm.$assign           = "EPWM1";
+epwm1.epwm.epwm_aPin.$assign = "GPIO0";
+epwm1.epwm.epwm_bPin.$assign = "GPIO1";
 
-flash1.$name = "FMC_CPU1_COPY_COPY";
+flash1.$name = "FMC_CPU1";
 
-gpio1.$name             = "CPU1_D10_GPIO31";
 gpio1.direction         = "GPIO_DIR_MODE_OUT";
 gpio1.writeInitialValue = true;
+gpio1.$name             = "CPU1_D10_GPIO31";
 gpio1.gpioPin.$assign   = "GPIO31";
 
-gpio2.$name             = "CPU2_D9_GPIO34";
 gpio2.direction         = "GPIO_DIR_MODE_OUT";
 gpio2.controllerCore    = "GPIO_CORE_CPU2";
 gpio2.writeInitialValue = true;
+gpio2.$name             = "CPU2_D9_GPIO34";
 gpio2.gpioPin.$assign   = "GPIO34";
 
 ipc.ipcRegisterFlag = ["IPC_FLAG31"];
@@ -85,26 +136,39 @@ ipc.flagHandler31   = "IPC_SYNC";
 sci1.$name                 = "DEBUG_SCI";
 sci1.parity                = "SCI_CONFIG_PAR_EVEN";
 sci1.useInterrupts         = false;
-sci1.sci.sci_rxPin.$assign = "GPIO43";
-sci1.sci.sci_txPin.$assign = "GPIO42";
+sci1.sci.$assign           = "SCIA";
+sci1.sci.sci_rxPin.$assign = "GPIO28";
+sci1.sci.sci_txPin.$assign = "GPIO29";
 
-sysctl.cpuSel_EPWM9  = "SYSCTL_CPUSEL_CPU2";
-sysctl.cpuSel_EPWM10 = "SYSCTL_CPUSEL_CPU2";
-sysctl.cpuSel_EPWM11 = "SYSCTL_CPUSEL_CPU2";
-sysctl.cpuSel_EPWM12 = "SYSCTL_CPUSEL_CPU2";
-sysctl.cpuSel_EPWM13 = "SYSCTL_CPUSEL_CPU2";
-sysctl.cpuSel_EPWM14 = "SYSCTL_CPUSEL_CPU2";
-sysctl.cpuSel_EPWM15 = "SYSCTL_CPUSEL_CPU2";
-sysctl.cpuSel_EPWM16 = "SYSCTL_CPUSEL_CPU2";
-sysctl.cpuSel_ADCC   = "SYSCTL_CPUSEL_CPU2";
-sysctl.cpuSel_ADCD   = "SYSCTL_CPUSEL_CPU2";
-
-/**
- * Pinmux solution for unlocked pins/peripherals. This ensures that minor changes to the automatic solver in a future
- * version of the tool will not impact the pinmux you originally saw.  These lines can be completely deleted in order to
- * re-solve from scratch.
- */
-epwm1.epwm.$suggestSolution           = "EPWM4";
-epwm1.epwm.epwm_aPin.$suggestSolution = "GPIO6";
-epwm1.epwm.epwm_bPin.$suggestSolution = "GPIO7";
-sci1.sci.$suggestSolution             = "SCIA";
+sysctl.cpuSel_EPWM7                    = "SYSCTL_CPUSEL_CPU2";
+sysctl.cpuSel_EPWM8                    = "SYSCTL_CPUSEL_CPU2";
+sysctl.cpuSel_EPWM9                    = "SYSCTL_CPUSEL_CPU2";
+sysctl.cpuSel_EPWM10                   = "SYSCTL_CPUSEL_CPU2";
+sysctl.cpuSel_EPWM11                   = "SYSCTL_CPUSEL_CPU2";
+sysctl.cpuSel_EPWM12                   = "SYSCTL_CPUSEL_CPU2";
+sysctl.enable_SYSCTL_PERIPH_CLK_SCIB   = false;
+sysctl.enable_SYSCTL_PERIPH_CLK_SCIC   = false;
+sysctl.enable_SYSCTL_PERIPH_CLK_SCID   = false;
+sysctl.enable_SYSCTL_PERIPH_CLK_I2CB   = false;
+sysctl.enable_SYSCTL_PERIPH_CLK_SPIC   = false;
+sysctl.enable_SYSCTL_PERIPH_CLK_SPIB   = false;
+sysctl.enable_SYSCTL_PERIPH_CLK_MCBSPA = false;
+sysctl.enable_SYSCTL_PERIPH_CLK_MCBSPB = false;
+sysctl.cpuSel_ADCD                     = "SYSCTL_CPUSEL_CPU2";
+sysctl.cpuSel_CMPSS7                   = "SYSCTL_CPUSEL_CPU2";
+sysctl.cpuSel_CMPSS8                   = "SYSCTL_CPUSEL_CPU2";
+sysctl.enable_SYSCTL_PERIPH_CLK_EMIF1  = false;
+sysctl.enable_SYSCTL_PERIPH_CLK_EMIF2  = false;
+sysctl.enable_SYSCTL_PERIPH_CLK_EQEP1  = false;
+sysctl.enable_SYSCTL_PERIPH_CLK_EQEP2  = false;
+sysctl.enable_SYSCTL_PERIPH_CLK_EQEP3  = false;
+sysctl.enable_SYSCTL_PERIPH_CLK_SD1    = false;
+sysctl.enable_SYSCTL_PERIPH_CLK_SD2    = false;
+sysctl.cpuSel_ECAP4                    = "SYSCTL_CPUSEL_CPU2";
+sysctl.cpuSel_ECAP5                    = "SYSCTL_CPUSEL_CPU2";
+sysctl.cpuSel_ECAP6                    = "SYSCTL_CPUSEL_CPU2";
+sysctl.cpuSel_SCIC                     = "SYSCTL_CPUSEL_CPU2";
+sysctl.cpuSel_SCID                     = "SYSCTL_CPUSEL_CPU2";
+sysctl.cpuSel_ADCC                     = "SYSCTL_CPUSEL_CPU2";
+sysctl.cpuSel_CMPSS5                   = "SYSCTL_CPUSEL_CPU2";
+sysctl.cpuSel_CMPSS6                   = "SYSCTL_CPUSEL_CPU2";

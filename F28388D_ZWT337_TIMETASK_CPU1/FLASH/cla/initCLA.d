@@ -13,16 +13,16 @@ cla/initCLA.obj: C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/includ
 cla/initCLA.obj: C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include/machine/_types.h
 cla/initCLA.obj: C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include/machine/_stdint.h
 cla/initCLA.obj: C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include/sys/_stdint.h
-cla/initCLA.obj: C:/Users/User/workspace_v12/F28388D_ZWT337_TIMETASK_CPU1/device/driverlib/inc/hw_memcfg.h
-cla/initCLA.obj: C:/Users/User/workspace_v12/F28388D_ZWT337_TIMETASK_CPU1/device/driverlib/inc/hw_memmap.h
-cla/initCLA.obj: C:/Users/User/workspace_v12/F28388D_ZWT337_TIMETASK_CPU1/device/driverlib/inc/hw_types.h
-cla/initCLA.obj: C:/Users/User/workspace_v12/F28388D_ZWT337_TIMETASK_CPU1/device/driverlib/cla.h
-cla/initCLA.obj: C:/Users/User/workspace_v12/F28388D_ZWT337_TIMETASK_CPU1/device/driverlib/cpu.h
-cla/initCLA.obj: C:/Users/User/workspace_v12/F28388D_ZWT337_TIMETASK_CPU1/device/driverlib/debug.h
-cla/initCLA.obj: C:/Users/User/workspace_v12/F28388D_ZWT337_TIMETASK_CPU1/device/driverlib/inc/hw_cla.h
-cla/initCLA.obj: C:/Users/User/workspace_v12/F28388D_ZWT337_TIMETASK_CPU1/device/driverlib/inc/hw_sysctl.h
-cla/initCLA.obj: C:/Users/User/workspace_v12/F28388D_ZWT337_TIMETASK_CPU1/device/driverlib/memcfg.h
-cla/initCLA.obj: C:/Users/User/workspace_v12/F28388D_ZWT337_TIMETASK_CPU1/HwConfig.h
+cla/initCLA.obj: C:/Users/User/Desktop/GitHub/GW/C2000/F28388D_DualCore_Timetask/F28388D_ZWT337_TIMETASK_CPU1/device/driverlib/inc/hw_memcfg.h
+cla/initCLA.obj: C:/Users/User/Desktop/GitHub/GW/C2000/F28388D_DualCore_Timetask/F28388D_ZWT337_TIMETASK_CPU1/device/driverlib/inc/hw_memmap.h
+cla/initCLA.obj: C:/Users/User/Desktop/GitHub/GW/C2000/F28388D_DualCore_Timetask/F28388D_ZWT337_TIMETASK_CPU1/device/driverlib/inc/hw_types.h
+cla/initCLA.obj: C:/Users/User/Desktop/GitHub/GW/C2000/F28388D_DualCore_Timetask/F28388D_ZWT337_TIMETASK_CPU1/device/driverlib/cla.h
+cla/initCLA.obj: C:/Users/User/Desktop/GitHub/GW/C2000/F28388D_DualCore_Timetask/F28388D_ZWT337_TIMETASK_CPU1/device/driverlib/cpu.h
+cla/initCLA.obj: C:/Users/User/Desktop/GitHub/GW/C2000/F28388D_DualCore_Timetask/F28388D_ZWT337_TIMETASK_CPU1/device/driverlib/debug.h
+cla/initCLA.obj: C:/Users/User/Desktop/GitHub/GW/C2000/F28388D_DualCore_Timetask/F28388D_ZWT337_TIMETASK_CPU1/device/driverlib/inc/hw_cla.h
+cla/initCLA.obj: C:/Users/User/Desktop/GitHub/GW/C2000/F28388D_DualCore_Timetask/F28388D_ZWT337_TIMETASK_CPU1/device/driverlib/inc/hw_sysctl.h
+cla/initCLA.obj: C:/Users/User/Desktop/GitHub/GW/C2000/F28388D_DualCore_Timetask/F28388D_ZWT337_TIMETASK_CPU1/device/driverlib/memcfg.h
+cla/initCLA.obj: C:/Users/User/Desktop/GitHub/GW/C2000/F28388D_DualCore_Timetask/F28388D_ZWT337_TIMETASK_CPU1/HwConfig.h
 cla/initCLA.obj: ../cla/cla_task.h
 
 ../cla/initCLA.c:
@@ -51,25 +51,25 @@ C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include/machine/_stdint
 
 C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include/sys/_stdint.h:
 
-C:/Users/User/workspace_v12/F28388D_ZWT337_TIMETASK_CPU1/device/driverlib/inc/hw_memcfg.h:
+C:/Users/User/Desktop/GitHub/GW/C2000/F28388D_DualCore_Timetask/F28388D_ZWT337_TIMETASK_CPU1/device/driverlib/inc/hw_memcfg.h:
 
-C:/Users/User/workspace_v12/F28388D_ZWT337_TIMETASK_CPU1/device/driverlib/inc/hw_memmap.h:
+C:/Users/User/Desktop/GitHub/GW/C2000/F28388D_DualCore_Timetask/F28388D_ZWT337_TIMETASK_CPU1/device/driverlib/inc/hw_memmap.h:
 
-C:/Users/User/workspace_v12/F28388D_ZWT337_TIMETASK_CPU1/device/driverlib/inc/hw_types.h:
+C:/Users/User/Desktop/GitHub/GW/C2000/F28388D_DualCore_Timetask/F28388D_ZWT337_TIMETASK_CPU1/device/driverlib/inc/hw_types.h:
 
-C:/Users/User/workspace_v12/F28388D_ZWT337_TIMETASK_CPU1/device/driverlib/cla.h:
+C:/Users/User/Desktop/GitHub/GW/C2000/F28388D_DualCore_Timetask/F28388D_ZWT337_TIMETASK_CPU1/device/driverlib/cla.h:
 
-C:/Users/User/workspace_v12/F28388D_ZWT337_TIMETASK_CPU1/device/driverlib/cpu.h:
+C:/Users/User/Desktop/GitHub/GW/C2000/F28388D_DualCore_Timetask/F28388D_ZWT337_TIMETASK_CPU1/device/driverlib/cpu.h:
 
-C:/Users/User/workspace_v12/F28388D_ZWT337_TIMETASK_CPU1/device/driverlib/debug.h:
+C:/Users/User/Desktop/GitHub/GW/C2000/F28388D_DualCore_Timetask/F28388D_ZWT337_TIMETASK_CPU1/device/driverlib/debug.h:
 
-C:/Users/User/workspace_v12/F28388D_ZWT337_TIMETASK_CPU1/device/driverlib/inc/hw_cla.h:
+C:/Users/User/Desktop/GitHub/GW/C2000/F28388D_DualCore_Timetask/F28388D_ZWT337_TIMETASK_CPU1/device/driverlib/inc/hw_cla.h:
 
-C:/Users/User/workspace_v12/F28388D_ZWT337_TIMETASK_CPU1/device/driverlib/inc/hw_sysctl.h:
+C:/Users/User/Desktop/GitHub/GW/C2000/F28388D_DualCore_Timetask/F28388D_ZWT337_TIMETASK_CPU1/device/driverlib/inc/hw_sysctl.h:
 
-C:/Users/User/workspace_v12/F28388D_ZWT337_TIMETASK_CPU1/device/driverlib/memcfg.h:
+C:/Users/User/Desktop/GitHub/GW/C2000/F28388D_DualCore_Timetask/F28388D_ZWT337_TIMETASK_CPU1/device/driverlib/memcfg.h:
 
-C:/Users/User/workspace_v12/F28388D_ZWT337_TIMETASK_CPU1/HwConfig.h:
+C:/Users/User/Desktop/GitHub/GW/C2000/F28388D_DualCore_Timetask/F28388D_ZWT337_TIMETASK_CPU1/HwConfig.h:
 
 ../cla/cla_task.h:
 

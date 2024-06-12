@@ -8,6 +8,15 @@
 #ifndef LUT_SIGMOID_H_
 #define LUT_SIGMOID_H_
 
+#define COSINE_TYPE    0
+#define EXP_TYPE       1
+#define TABLE_TYPE     COSINE_TYPE
+
+#if (TABLE_TYPE == COSINE_TYPE)
+#define STEP_SCALE    1.0f
+#else
+#define STEP_SCALE    0.5f
+#endif
 
 // Constants for the lookup table
 #define LOOKUP_SIZE 65

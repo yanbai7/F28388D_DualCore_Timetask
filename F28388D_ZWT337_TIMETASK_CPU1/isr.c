@@ -7,9 +7,8 @@
 
 #include <math.h>
 #include "common.h"
-#include "cali_param.h"
 #include "cali_system.h"
-#include "c28protection.h"
+#include "lut_sigmoid.h"
 
 
 ST_DRV sDrv = {
@@ -139,7 +138,6 @@ __interrupt void INT_CPU1_ADCA_1_ISR (void)
     runCalibration(&sDrv.sCaliSys);
     if(GET_STAT(_CSTAT_INIT_SUCCESS, sDrv)) {
         SET_DEBUG_ADC_EOC();
-
 
         scanProtection();
 
