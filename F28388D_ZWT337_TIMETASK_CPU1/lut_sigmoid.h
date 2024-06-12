@@ -80,13 +80,13 @@ static inline float32_t setSigmoidStep(float32_t f32Target, HAL_SIGMOID v)
     if(0.0f < v->f32Ydelta) {
         v->f32Xindex = 0.0f;
         v->f32Xtrans = v->f32Ydelta * v->f32Xperiod;
-        v->f32Xstep = v->f32Xsample / v->f32Xtrans * 0.5f;
+        v->f32Xstep = v->f32Xsample / v->f32Xtrans * STEP_SCALE;
 
     }
     else if(0.0f > v->f32Ydelta) {
         v->f32Xindex = 0.0f;
         v->f32Xtrans = -1.0f * v->f32Ydelta * v->f32Xperiod;
-        v->f32Xstep = v->f32Xsample / v->f32Xtrans * 0.5f;
+        v->f32Xstep = v->f32Xsample / v->f32Xtrans * STEP_SCALE;
     }
     else { // if(v->f32Yoffset == v->f32Ytarget)
         v->f32Xindex = 0.0f;

@@ -1,7 +1,7 @@
 ******************************************************************************
              TMS320C2000 Linker PC v22.6.1                     
 ******************************************************************************
->> Linked Wed Jun 12 15:18:50 2024
+>> Linked Wed Jun 12 19:48:06 2024
 
 OUTPUT FILE NAME:   <F28388D_ZWT337_TIMETASK_CPU1.out>
 ENTRY POINT SYMBOL: "code_start"  address: 00080000
@@ -13,7 +13,7 @@ MEMORY CONFIGURATION
 ----------------------  --------  ---------  --------  --------  ----  --------
 PAGE 0:
   RAMM0                 000001b1   0000024f  00000000  0000024f  RWIX
-  RAMLS01               00008000   00001000  00000284  00000d7c  RWIX
+  RAMLS01               00008000   00001000  00000280  00000d80  RWIX
   RAMLS34               00009000   00000800  0000001e  000007e2  RWIX
   RAMD0                 0000c000   00000800  00000000  00000800  RWIX
   RAMGS0                0000d000   00001000  00000000  00001000  RWIX
@@ -23,7 +23,7 @@ PAGE 0:
   FLASH0                00080002   00001ffe  000000e2  00001f1c  RWIX
   FLASH1                00082000   00002000  00002000  00000000  RWIX
   FLASH2                00084000   00002000  00000c69  00001397  RWIX
-  FLASH3                00086000   00002000  00000284  00001d7c  RWIX
+  FLASH3                00086000   00002000  00000280  00001d80  RWIX
   FLASH4                00088000   00008000  000000d8  00007f28  RWIX
   FLASH5                00090000   00008000  00000000  00008000  RWIX
   FLASH6                00098000   00008000  00000596  00007a6a  RWIX
@@ -75,11 +75,11 @@ codestart
                   00080000    00000002     f2838x_codestartbranch.obj (codestart)
 
 .TI.ramfunc 
-*          0    00086000    00000284     RUN ADDR = 00008000
-                  00086000    00000179     isr.obj (.TI.ramfunc:INT_CPU1_ADCA_1_ISR)
-                  00086179    000000d1     flash.obj (.TI.ramfunc:Flash_initModule)
-                  0008624a    00000036     board.obj (.TI.ramfunc:FLASH_init)
-                  00086280    00000004     sysctl.obj (.TI.ramfunc)
+*          0    00086000    00000280     RUN ADDR = 00008000
+                  00086000    00000175     isr.obj (.TI.ramfunc:INT_CPU1_ADCA_1_ISR)
+                  00086175    000000d1     flash.obj (.TI.ramfunc:Flash_initModule)
+                  00086246    00000036     board.obj (.TI.ramfunc:FLASH_init)
+                  0008627c    00000004     sysctl.obj (.TI.ramfunc)
 
 .switch    0    00088000    000000d8     
                   00088000    0000005c     <whole-program> (.switch:getModbusData)
@@ -305,12 +305,12 @@ MODULE SUMMARY
        Module                                   code    ro data   rw data
        ------                                   ----    -------   -------
     .\
-       isr.obj                                  754     0         222    
+       isr.obj                                  746     0         222    
        main.obj                                 270     0         296    
        timetask.obj                             334     0         34     
        lut_sigmoid.obj                          0       130       0      
     +--+----------------------------------------+-------+---------+---------+
-       Total:                                   1358    130       552    
+       Total:                                   1350    130       552    
                                                                          
     .\cla\
        initCLA.obj                              100     0         6      
@@ -361,7 +361,7 @@ MODULE SUMMARY
        Total:                                   2923    0         0      
                                                                          
     C:\Users\User\AppData\Local\Temp\
-       {469CDE6B-DA01-42BE-9425-E8E30858C060}   0       814       0      
+       {B9896F88-E4CA-41E4-ACBE-836F03AFDF99}   0       814       0      
     +--+----------------------------------------+-------+---------+---------+
        Total:                                   0       814       0      
                                                                          
@@ -399,7 +399,7 @@ MODULE SUMMARY
        Stack:                                   0       0         1016   
        Linker Generated:                        0       225       0      
     +--+----------------------------------------+-------+---------+---------+
-       Grand Total:                             18149   1865      2761   
+       Grand Total:                             18141   1865      2761   
 
 
 LINKER GENERATED COPY TABLES
@@ -512,7 +512,7 @@ abs   0000001e  Cla1ProgLoadSize
 0     00084a69  Device_initGPIO                  
 0     00084afd  Device_verifyXTAL                
 0     000838be  EPWM_init                        
-0     0000824a  FLASH_init                       
+0     00008246  FLASH_init                       
 0     0001b854  Fapi_GlobalInit                  
 0     0001b76a  Fapi_calculateFletcherChecksum   
 0     0001b82c  Fapi_checkFsmForReady            
@@ -527,7 +527,7 @@ abs   0000001e  Cla1ProgLoadSize
 0     0001b73b  Fapi_setActiveFlashBank          
 0     0001b70a  Fapi_setupBankSectorEnable       
 0     0001b504  Fapi_setupEepromSectorEnable     
-0     00008179  Flash_initModule                 
+0     00008175  Flash_initModule                 
 0     00084798  GPIO_setControllerCore           
 0     000848b4  GPIO_setDirectionMode            
 0     0008445e  GPIO_setPadConfig                
@@ -552,11 +552,11 @@ abs   0000001e  Cla1ProgLoadSize
 0     00083f5b  MemCfg_setLSRAMControllerSel     
 1     0000910e  ModbusFunc                       
 0     00083d7d  PinMux_init                      
-0     00086284  RamfuncsLoadEnd                  
-abs   00000284  RamfuncsLoadSize                 
+0     00086280  RamfuncsLoadEnd                  
+abs   00000280  RamfuncsLoadSize                 
 0     00086000  RamfuncsLoadStart                
-0     00008284  RamfuncsRunEnd                   
-abs   00000284  RamfuncsRunSize                  
+0     00008280  RamfuncsRunEnd                   
+abs   00000280  RamfuncsRunSize                  
 0     00008000  RamfuncsRunStart                 
 0     00084c57  ReservedFunction                 
 0     000843bc  SCI_clearInterruptStatus         
@@ -568,7 +568,7 @@ abs   00000284  RamfuncsRunSize
 0     00084bce  SYNC_init                        
 0     00082000  SYSCTL_init                      
 0     000848e0  SysCtl_configureType             
-0     00008280  SysCtl_delay                     
+0     0000827c  SysCtl_delay                     
 0     00083c00  SysCtl_getAuxClock               
 0     00083ee9  SysCtl_getClock                  
 0     00084985  SysCtl_getLowSpeedClock          
@@ -674,10 +674,10 @@ page  address   name
 ----  -------   ----                             
 0     00008000  INT_CPU1_ADCA_1_ISR              
 0     00008000  RamfuncsRunStart                 
-0     00008179  Flash_initModule                 
-0     0000824a  FLASH_init                       
-0     00008280  SysCtl_delay                     
-0     00008284  RamfuncsRunEnd                   
+0     00008175  Flash_initModule                 
+0     00008246  FLASH_init                       
+0     0000827c  SysCtl_delay                     
+0     00008280  RamfuncsRunEnd                   
 0     00009000  Cla1ProgRunStart                 
 0     00009000  Cla1Task1                        
 0     0001b000  fapi_ram_RunStart                
@@ -812,7 +812,7 @@ page  address   name
 0     00084c66  _system_pre_init                 
 0     00084c68  _system_post_cinit               
 0     00086000  RamfuncsLoadStart                
-0     00086284  RamfuncsLoadEnd                  
+0     00086280  RamfuncsLoadEnd                  
 0     0009841c  IPC_Instance                     
 0     000984a4  sigmoidLookup                    
 0     000a0000  Cla1ProgLoadStart                
@@ -852,8 +852,8 @@ page  address   name
 abs   00000000  Cla1ConstLoadSize                
 abs   0000001e  Cla1ProgLoadSize                 
 abs   00000100  CLA_SCRATCHPAD_SIZE              
-abs   00000284  RamfuncsLoadSize                 
-abs   00000284  RamfuncsRunSize                  
+abs   00000280  RamfuncsLoadSize                 
+abs   00000280  RamfuncsRunSize                  
 abs   000003f8  __TI_STACK_SIZE                  
 abs   00000aa6  fapi_ram_LoadSize                
 abs   00000aa6  fapi_ram_RunSize                 
