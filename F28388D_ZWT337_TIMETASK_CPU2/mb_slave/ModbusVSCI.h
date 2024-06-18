@@ -23,8 +23,8 @@ static inline int16_t VSCI_getRxFIFOStatus(uint32_t base)
 
 static inline uint16_t VSCI_readCharNonBlocking(uint32_t base)
 {
-    uint16_t u16Temp = sReadCPU1.u16RAM[sAccessCPU2.popRcnts++];
-    if(MBUS_BUFFER_SIZE == sAccessCPU2.popRcnts) sAccessCPU2.popRcnts = 0;
+    uint16_t u16Temp = sReadCPU1.u16RxRAM[sAccessCPU2.popRcnts++];
+    if(MBUS_SHARERAM_SIZE == sAccessCPU2.popRcnts) sAccessCPU2.popRcnts = 0;
     return u16Temp;
 }
 
@@ -35,7 +35,7 @@ static inline int16_t VSCI_getTxFIFOStatus(uint32_t base)
 
 static inline void VSCI_writeCharNonBlocking(uint32_t base, uint16_t data)
 {
-    sAccessCPU2.u16RAM[sAccessCPU2.pushTcnts++] = data;
+    sAccessCPU2.u16TxRAM[sAccessCPU2.pushTcnts++] = data;
     if(MBUS_SHARERAM_SIZE == sAccessCPU2.pushTcnts) sAccessCPU2.pushTcnts = 0;
 }
 

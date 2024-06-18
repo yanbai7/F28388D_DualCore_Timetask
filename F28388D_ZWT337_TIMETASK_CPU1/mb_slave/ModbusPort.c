@@ -43,8 +43,8 @@ void pushRxByteToFIFO(SCI_MODBUS *mbus)
 {
     if(0<mbus->getRsize(mbus->sci)) {
         uint16_t u16Temp = (mbus->rdfunc(mbus->sci) & 0x00FF);
-        sAccessCPU1.u16RAM[sAccessCPU1.pushRcnts++] = u16Temp;
-        if(MBUS_BUFFER_SIZE == sAccessCPU1.pushRcnts) sAccessCPU1.pushRcnts = 0;
+        sAccessCPU1.u16RxRAM[sAccessCPU1.pushRcnts++] = u16Temp;
+        if(MBUS_SHARERAM_SIZE == sAccessCPU1.pushRcnts) sAccessCPU1.pushRcnts = 0;
         sPort.u16RAM[sPort.pushRcnts++] = u16Temp;
     }
 }
@@ -64,10 +64,10 @@ void popFIFOtoTxData(SCI_MODBUS *mbus)
 
         if(sAccessCPU1.popTcnts != sReadCPU2.pushTcnts) {
             if(SCI_FIFO_TX16 > mbus->getWsize(mbus->sci)) {
-                uint16_t u16Temp = sReadCPU2.u16RAM[sAccessCPU1.popTcnts];
+                uint16_t u16Temp = sReadCPU2.u16TxRAM[sAccessCPU1.popTcnts];
                 mbus->wrfunc(mbus->sci, u16Temp);
                 sAccessCPU1.popTcnts++;
-                if(MBUS_BUFFER_SIZE == sAccessCPU1.popTcnts) sAccessCPU1.popTcnts = 0;
+                if(MBUS_SHARERAM_SIZE == sAccessCPU1.popTcnts) sAccessCPU1.popTcnts = 0;
             }
         }
     }
