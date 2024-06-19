@@ -143,7 +143,7 @@ all: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(GEN_CMDS)
 cla_ex4_pwm_control.out: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: C2000 Linker'
-	"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/bin/cl2000" -v28 -ml -mt --cla_support=cla2 --float_support=fpu64 --idiv_support=idiv0 --tmu_support=tmu0 --vcu_support=vcrc -Ooff --define=_FLASH --define=CPU1 --diag_suppress=10063 --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --cla_background_task=off --cla_signed_compare_workaround=on -z -m"cla_ex4_pwm_control.map" --heap_size=0x200 --stack_size=0x3F8 --warn_sections -i"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/lib" -i"C:/ti/c2000/C2000Ware_5_02_00_00" -i"C:/Users/User/workspace_v12/cla_ex4_pwm_control/CPU1_FLASH/syscfg" -i"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include" --reread_libs --define=_FLASH --diag_wrap=off --display_error_number --xml_link_info="cla_ex4_pwm_control_linkInfo.xml" --entry_point=code_start --rom_model -o "cla_ex4_pwm_control.out" $(ORDERED_OBJS)
+	"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/bin/cl2000" -v28 -ml -mt --cla_support=cla2 --float_support=fpu64 --idiv_support=idiv0 --tmu_support=tmu0 --vcu_support=vcrc -Ooff --define=_FLASH --define=CPU1 --diag_suppress=10063 --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --abi=eabi --cla_background_task=off --cla_signed_compare_workaround=on -z -m"cla_ex4_pwm_control.map" --heap_size=0x200 --stack_size=0x3F8 --warn_sections -i"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/lib" -i"C:/ti/c2000/C2000Ware_5_02_00_00" -i"C:/Users/User/Desktop/GitHub/GW/C2000/F28388D_DualCore_Timetask/cla_ex4_pwm_control/CPU1_FLASH/syscfg" -i"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include" --reread_libs --define=_FLASH --diag_wrap=off --display_error_number --xml_link_info="cla_ex4_pwm_control_linkInfo.xml" --entry_point=code_start --rom_model -o "cla_ex4_pwm_control.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 	@$(MAKE) --no-print-directory post-build
@@ -161,9 +161,9 @@ clean:
 
 post-build:
 	-echo "========= Build of the CLB simulation has moved to the CLB Tool. Click the '?' icon by the _Generate CLB Simulation File_ enable for more details (located in the Global Parameters of the Tile Design SysConfig module) ============="
-	-if 0 == 1  C:/ti/ccs1240/ccs/tools/node/node.exe "C:/ti/c2000/C2000Ware_5_02_00_00/utilities/clb_tool/clb_syscfg/dot_file_libraries/clbDotUtility.js"  "C:/ti/c2000/C2000Ware_5_02_00_00/utilities/clb_tool/clb_syscfg/" "C:/Users/User/workspace_v12/cla_ex4_pwm_control/CPU1_FLASH/syscfg" "C:/Users/User/workspace_v12/cla_ex4_pwm_control/CPU1_FLASH/syscfg/clb.dot"
-	-if 0 == 1  mkdir "C:/Users/User/workspace_v12/cla_ex4_pwm_control/CPU1_FLASH/diagrams"
-	-if 0 == 1  C:/ti/ccs1240/ccs/tools/node/node.exe "C:/ti/c2000/C2000Ware_5_02_00_00/driverlib/.meta/generate_diagrams.js" "C:/ti/c2000/C2000Ware_5_02_00_00" "C:/Users/User/workspace_v12/cla_ex4_pwm_control/CPU1_FLASH/diagrams" "C:/Users/User/workspace_v12/cla_ex4_pwm_control/CPU1_FLASH/syscfg"
+	-if 0 == 1  C:/ti/ccs1240/ccs/tools/node/node.exe "C:/ti/c2000/C2000Ware_5_02_00_00/utilities/clb_tool/clb_syscfg/dot_file_libraries/clbDotUtility.js"  "C:/ti/c2000/C2000Ware_5_02_00_00/utilities/clb_tool/clb_syscfg/" "C:/Users/User/Desktop/GitHub/GW/C2000/F28388D_DualCore_Timetask/cla_ex4_pwm_control/CPU1_FLASH/syscfg" "C:/Users/User/Desktop/GitHub/GW/C2000/F28388D_DualCore_Timetask/cla_ex4_pwm_control/CPU1_FLASH/syscfg/clb.dot"
+	-if 0 == 1  mkdir "C:/Users/User/Desktop/GitHub/GW/C2000/F28388D_DualCore_Timetask/cla_ex4_pwm_control/CPU1_FLASH/diagrams"
+	-if 0 == 1  C:/ti/ccs1240/ccs/tools/node/node.exe "C:/ti/c2000/C2000Ware_5_02_00_00/driverlib/.meta/generate_diagrams.js" "C:/ti/c2000/C2000Ware_5_02_00_00" "C:/Users/User/Desktop/GitHub/GW/C2000/F28388D_DualCore_Timetask/cla_ex4_pwm_control/CPU1_FLASH/diagrams" "C:/Users/User/Desktop/GitHub/GW/C2000/F28388D_DualCore_Timetask/cla_ex4_pwm_control/CPU1_FLASH/syscfg"
 	-@echo ' '
 
 .PHONY: all clean dependents

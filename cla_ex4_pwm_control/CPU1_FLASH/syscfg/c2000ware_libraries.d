@@ -3,7 +3,7 @@
 syscfg/c2000ware_libraries.obj: syscfg/c2000ware_libraries.c
 syscfg/c2000ware_libraries.obj: syscfg/c2000ware_libraries.h
 syscfg/c2000ware_libraries.obj: syscfg/board.h
-syscfg/c2000ware_libraries.obj: C:/Users/User/workspace_v12/cla_ex4_pwm_control/device/driverlib.h
+syscfg/c2000ware_libraries.obj: C:/Users/User/Desktop/GitHub/GW/C2000/F28388D_DualCore_Timetask/cla_ex4_pwm_control/device/driverlib.h
 syscfg/c2000ware_libraries.obj: C:/ti/c2000/C2000Ware_5_02_00_00/driverlib/f2838x/driverlib/inc/hw_memmap.h
 syscfg/c2000ware_libraries.obj: C:/ti/c2000/C2000Ware_5_02_00_00/driverlib/f2838x/driverlib/adc.h
 syscfg/c2000ware_libraries.obj: C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include/stdbool.h
@@ -105,7 +105,7 @@ syscfg/c2000ware_libraries.obj: C:/ti/c2000/C2000Ware_5_02_00_00/driverlib/f2838
 syscfg/c2000ware_libraries.obj: C:/ti/c2000/C2000Ware_5_02_00_00/driverlib/f2838x/driverlib/inc/hw_mcanss.h
 syscfg/c2000ware_libraries.obj: C:/ti/c2000/C2000Ware_5_02_00_00/driverlib/f2838x/driverlib/inc/hw_types_mcan.h
 syscfg/c2000ware_libraries.obj: C:/ti/c2000/C2000Ware_5_02_00_00/driverlib/f2838x/driverlib/driver_inclusive_terminology_mapping.h
-syscfg/c2000ware_libraries.obj: C:/Users/User/workspace_v12/cla_ex4_pwm_control/device/device.h
+syscfg/c2000ware_libraries.obj: C:/Users/User/Desktop/GitHub/GW/C2000/F28388D_DualCore_Timetask/cla_ex4_pwm_control/device/device.h
 syscfg/c2000ware_libraries.obj: C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include/stddef.h
 
 syscfg/c2000ware_libraries.c:
@@ -114,7 +114,7 @@ syscfg/c2000ware_libraries.h:
 
 syscfg/board.h:
 
-C:/Users/User/workspace_v12/cla_ex4_pwm_control/device/driverlib.h:
+C:/Users/User/Desktop/GitHub/GW/C2000/F28388D_DualCore_Timetask/cla_ex4_pwm_control/device/driverlib.h:
 
 C:/ti/c2000/C2000Ware_5_02_00_00/driverlib/f2838x/driverlib/inc/hw_memmap.h:
 
@@ -318,7 +318,7 @@ C:/ti/c2000/C2000Ware_5_02_00_00/driverlib/f2838x/driverlib/inc/hw_types_mcan.h:
 
 C:/ti/c2000/C2000Ware_5_02_00_00/driverlib/f2838x/driverlib/driver_inclusive_terminology_mapping.h:
 
-C:/Users/User/workspace_v12/cla_ex4_pwm_control/device/device.h:
+C:/Users/User/Desktop/GitHub/GW/C2000/F28388D_DualCore_Timetask/cla_ex4_pwm_control/device/device.h:
 
 C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include/stddef.h:
 

@@ -153,7 +153,7 @@ void myCLA0_init(){
     // CLA Task 1
     //
     CLA_mapTaskVector(myCLA0_BASE, CLA_MVECT_1, (uint16_t)&Cla1Task1);
-    CLA_setTriggerSource(CLA_TASK_1, CLA_TRIGGER_EPWM4INT);
+    CLA_setTriggerSource(CLA_TASK_1, CLA_TRIGGER_ADCA1);
 #pragma diag_warning=770
 	//
     // Enable the IACK instruction to start a task on CLA in software

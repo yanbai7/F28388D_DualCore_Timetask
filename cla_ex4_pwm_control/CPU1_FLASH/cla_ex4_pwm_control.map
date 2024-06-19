@@ -1,7 +1,7 @@
 ******************************************************************************
              TMS320C2000 Linker PC v22.6.1                     
 ******************************************************************************
->> Linked Wed Jun 19 19:26:45 2024
+>> Linked Wed Jun 19 19:44:14 2024
 
 OUTPUT FILE NAME:   <cla_ex4_pwm_control.out>
 ENTRY POINT SYMBOL: "code_start"  address: 00080000
@@ -23,7 +23,7 @@ MEMORY CONFIGURATION
   RAMLS2                00009000   00000800  00000000  00000800  RWIX
   RAMLS3                00009800   00000800  00000000  00000800  RWIX
   RAMLS4                0000a000   00000800  0000000c  000007f4  RWIX
-  RAMLS5                0000a800   00000800  000000d4  0000072c  RWIX
+  RAMLS5                0000a800   00000800  000000aa  00000756  RWIX
   RAMLS6                0000b000   00000800  00000000  00000800  RWIX
   RAMLS7                0000b800   00000800  00000000  00000800  RWIX
   RAMD0                 0000c000   00000800  00000122  000006de  RWIX
@@ -55,7 +55,7 @@ MEMORY CONFIGURATION
   FLASH1                00082000   00002000  000018e0  00000720  RWIX
   FLASH2                00084000   00002000  00000000  00002000  RWIX
   FLASH3                00086000   00002000  00000122  00001ede  RWIX
-  FLASH4                00088000   00008000  000000d4  00007f2c  RWIX
+  FLASH4                00088000   00008000  000000aa  00007f56  RWIX
   FLASH5                00090000   00008000  0000038c  00007c74  RWIX
   FLASH6                00098000   00008000  00000000  00008000  RWIX
   FLASH7                000a0000   00008000  00000000  00008000  RWIX
@@ -111,10 +111,9 @@ codestart
                   00090341    00000001     --HOLE-- [fill = 0]
                   00090342    0000004a                   : adc.obj (.const:.string)
 
-Cla1Prog   0    00088000    000000d4     RUN ADDR = 0000a800
+Cla1Prog   0    00088000    000000aa     RUN ADDR = 0000a800
                   00088000    00000064     cla_ex4_pwm_control_cla.obj (Cla1Prog:EPWM_setCounterCompareValue)
-                  00088064    0000004e     cla_ex4_pwm_control_cla.obj (Cla1Prog:Cla1Task1)
-                  000880b2    00000022     cla_ex4_pwm_control_cla.obj (Cla1Prog:EPWM_clearEventTriggerInterruptFlag)
+                  00088064    00000046     cla_ex4_pwm_control_cla.obj (Cla1Prog:Cla1Task1)
 
 CLAscratch 
 *          0    00008800    00000100     UNINITIALIZED
@@ -123,7 +122,6 @@ CLAscratch
 .scratchpad 
 *          0    00008900    00000008     UNINITIALIZED
                   00008900    00000008     cla_ex4_pwm_control_cla.obj (.scratchpad:Cla1Prog:EPWM_setCounterCompareValue)
-                  00008900    00000002     cla_ex4_pwm_control_cla.obj (.scratchpad:Cla1Prog:EPWM_clearEventTriggerInterruptFlag)
 
 .bss_cla   0    00008908    00000002     UNINITIALIZED
                   00008908    00000002     cla_ex4_pwm_control_cla.obj (.bss_cla)
@@ -292,9 +290,9 @@ MODULE SUMMARY
        ------                        ----   -------   -------
     .\
        cla_ex4_pwm_control.obj       757    0         2      
-       cla_ex4_pwm_control_cla.obj   424    0         12     
+       cla_ex4_pwm_control_cla.obj   340    0         10     
     +--+-----------------------------+------+---------+---------+
-       Total:                        1181   0         14     
+       Total:                        1097   0         12     
                                                              
     .\device\
        device.obj                    607    0         0      
@@ -340,7 +338,7 @@ MODULE SUMMARY
        Stack:                        0      0         1016   
        Linker Generated:             0      36        0      
     +--+-----------------------------+------+---------+---------+
-       Grand Total:                  7338   940       1040   
+       Grand Total:                  7254   940       1038   
 
 
 LINKER GENERATED COPY TABLES
@@ -393,8 +391,8 @@ abs   00000000  Cla1ConstLoadSize
 0     00008800  Cla1ConstLoadStart                       
 0     00008800  Cla1ConstRunStart                        
 0     0000a864  Cla1Task1                                
-0     000880d4  Cla1funcsLoadEnd                         
-abs   000000d4  Cla1funcsLoadSize                        
+0     000880aa  Cla1funcsLoadEnd                         
+abs   000000aa  Cla1funcsLoadSize                        
 0     00088000  Cla1funcsLoadStart                       
 0     0000a800  Cla1funcsRunStart                        
 0     0008266f  DCC_verifyClockFrequency                 
@@ -570,9 +568,9 @@ page  address   name
 0     00086000  RamfuncsLoadStart                        
 0     00086122  RamfuncsLoadEnd                          
 0     00088000  Cla1funcsLoadStart                       
-0     000880d4  Cla1funcsLoadEnd                         
+0     000880aa  Cla1funcsLoadEnd                         
 abs   00000000  Cla1ConstLoadSize                        
-abs   000000d4  Cla1funcsLoadSize                        
+abs   000000aa  Cla1funcsLoadSize                        
 abs   00000100  CLA_SCRATCHPAD_SIZE                      
 abs   00000122  RamfuncsLoadSize                         
 abs   00000122  RamfuncsRunSize                          

@@ -2,7 +2,7 @@
 
 syscfg/board.obj: syscfg/board.c
 syscfg/board.obj: syscfg/board.h
-syscfg/board.obj: C:/Users/User/workspace_v12/cla_ex4_pwm_control/device/driverlib.h
+syscfg/board.obj: C:/Users/User/Desktop/GitHub/GW/C2000/F28388D_DualCore_Timetask/cla_ex4_pwm_control/device/driverlib.h
 syscfg/board.obj: C:/ti/c2000/C2000Ware_5_02_00_00/driverlib/f2838x/driverlib/inc/hw_memmap.h
 syscfg/board.obj: C:/ti/c2000/C2000Ware_5_02_00_00/driverlib/f2838x/driverlib/adc.h
 syscfg/board.obj: C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include/stdbool.h
@@ -104,14 +104,14 @@ syscfg/board.obj: C:/ti/c2000/C2000Ware_5_02_00_00/driverlib/f2838x/driverlib/mc
 syscfg/board.obj: C:/ti/c2000/C2000Ware_5_02_00_00/driverlib/f2838x/driverlib/inc/hw_mcanss.h
 syscfg/board.obj: C:/ti/c2000/C2000Ware_5_02_00_00/driverlib/f2838x/driverlib/inc/hw_types_mcan.h
 syscfg/board.obj: C:/ti/c2000/C2000Ware_5_02_00_00/driverlib/f2838x/driverlib/driver_inclusive_terminology_mapping.h
-syscfg/board.obj: C:/Users/User/workspace_v12/cla_ex4_pwm_control/device/device.h
+syscfg/board.obj: C:/Users/User/Desktop/GitHub/GW/C2000/F28388D_DualCore_Timetask/cla_ex4_pwm_control/device/device.h
 syscfg/board.obj: C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include/stddef.h
 
 syscfg/board.c:
 
 syscfg/board.h:
 
-C:/Users/User/workspace_v12/cla_ex4_pwm_control/device/driverlib.h:
+C:/Users/User/Desktop/GitHub/GW/C2000/F28388D_DualCore_Timetask/cla_ex4_pwm_control/device/driverlib.h:
 
 C:/ti/c2000/C2000Ware_5_02_00_00/driverlib/f2838x/driverlib/inc/hw_memmap.h:
 
@@ -315,7 +315,7 @@ C:/ti/c2000/C2000Ware_5_02_00_00/driverlib/f2838x/driverlib/inc/hw_types_mcan.h:
 
 C:/ti/c2000/C2000Ware_5_02_00_00/driverlib/f2838x/driverlib/driver_inclusive_terminology_mapping.h:
 
-C:/Users/User/workspace_v12/cla_ex4_pwm_control/device/device.h:
+C:/Users/User/Desktop/GitHub/GW/C2000/F28388D_DualCore_Timetask/cla_ex4_pwm_control/device/device.h:
 
 C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include/stddef.h:
 

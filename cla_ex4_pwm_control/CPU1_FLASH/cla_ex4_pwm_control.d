@@ -1,8 +1,8 @@
 # FIXED
 
 cla_ex4_pwm_control.obj: ../cla_ex4_pwm_control.c
-cla_ex4_pwm_control.obj: C:/Users/User/workspace_v12/cla_ex4_pwm_control/cla_ex4_pwm_control_shared.h
-cla_ex4_pwm_control.obj: C:/Users/User/workspace_v12/cla_ex4_pwm_control/device/driverlib.h
+cla_ex4_pwm_control.obj: C:/Users/User/Desktop/GitHub/GW/C2000/F28388D_DualCore_Timetask/cla_ex4_pwm_control/cla_ex4_pwm_control_shared.h
+cla_ex4_pwm_control.obj: C:/Users/User/Desktop/GitHub/GW/C2000/F28388D_DualCore_Timetask/cla_ex4_pwm_control/device/driverlib.h
 cla_ex4_pwm_control.obj: C:/ti/c2000/C2000Ware_5_02_00_00/driverlib/f2838x/driverlib/inc/hw_memmap.h
 cla_ex4_pwm_control.obj: C:/ti/c2000/C2000Ware_5_02_00_00/driverlib/f2838x/driverlib/adc.h
 cla_ex4_pwm_control.obj: C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include/stdbool.h
@@ -104,15 +104,15 @@ cla_ex4_pwm_control.obj: C:/ti/c2000/C2000Ware_5_02_00_00/driverlib/f2838x/drive
 cla_ex4_pwm_control.obj: C:/ti/c2000/C2000Ware_5_02_00_00/driverlib/f2838x/driverlib/inc/hw_mcanss.h
 cla_ex4_pwm_control.obj: C:/ti/c2000/C2000Ware_5_02_00_00/driverlib/f2838x/driverlib/inc/hw_types_mcan.h
 cla_ex4_pwm_control.obj: C:/ti/c2000/C2000Ware_5_02_00_00/driverlib/f2838x/driverlib/driver_inclusive_terminology_mapping.h
-cla_ex4_pwm_control.obj: C:/Users/User/workspace_v12/cla_ex4_pwm_control/device/device.h
+cla_ex4_pwm_control.obj: C:/Users/User/Desktop/GitHub/GW/C2000/F28388D_DualCore_Timetask/cla_ex4_pwm_control/device/device.h
 cla_ex4_pwm_control.obj: C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include/stddef.h
 cla_ex4_pwm_control.obj: syscfg/board.h
 
 ../cla_ex4_pwm_control.c:
 
-C:/Users/User/workspace_v12/cla_ex4_pwm_control/cla_ex4_pwm_control_shared.h:
+C:/Users/User/Desktop/GitHub/GW/C2000/F28388D_DualCore_Timetask/cla_ex4_pwm_control/cla_ex4_pwm_control_shared.h:
 
-C:/Users/User/workspace_v12/cla_ex4_pwm_control/device/driverlib.h:
+C:/Users/User/Desktop/GitHub/GW/C2000/F28388D_DualCore_Timetask/cla_ex4_pwm_control/device/driverlib.h:
 
 C:/ti/c2000/C2000Ware_5_02_00_00/driverlib/f2838x/driverlib/inc/hw_memmap.h:
 
@@ -316,7 +316,7 @@ C:/ti/c2000/C2000Ware_5_02_00_00/driverlib/f2838x/driverlib/inc/hw_types_mcan.h:
 
 C:/ti/c2000/C2000Ware_5_02_00_00/driverlib/f2838x/driverlib/driver_inclusive_terminology_mapping.h:
 
-C:/Users/User/workspace_v12/cla_ex4_pwm_control/device/device.h:
+C:/Users/User/Desktop/GitHub/GW/C2000/F28388D_DualCore_Timetask/cla_ex4_pwm_control/device/device.h:
 
 C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-c2000_22.6.1.LTS/include/stddef.h:
 

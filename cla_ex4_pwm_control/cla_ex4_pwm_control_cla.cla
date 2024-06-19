@@ -90,10 +90,10 @@ __attribute__((interrupt)) void Cla1Task1 ( void )
     duty += 0.1f;
     duty = (duty > 0.9f) ? 0.1f : duty;
 
-    //
-    // Clear EPWM4 interrupt flag so that next interrupt can come in
-    //
-    EPWM_clearEventTriggerInterruptFlag(EPWM4_BASE);
+//    //
+//    // Clear EPWM4 interrupt flag so that next interrupt can come in
+//    //
+//    EPWM_clearEventTriggerInterruptFlag(EPWM4_BASE);
 }
 
 //-----------------------------------------------------------------------------
