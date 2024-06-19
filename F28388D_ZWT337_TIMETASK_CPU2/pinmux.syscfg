@@ -75,3 +75,5 @@ flash1.$name = "FMC_CPU2";
 
 ipc.ipcRegisterFlag = ["IPC_FLAG31"];
 ipc.flagHandler31   = "IPC_SYNC";
+
+sysctl.enable_SYSCTL_PERIPH_CLK_TBCLKSYNC = true;

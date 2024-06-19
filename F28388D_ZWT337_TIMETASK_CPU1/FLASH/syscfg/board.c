@@ -218,12 +218,12 @@ void CPU1_ADCA_init(){
 	ADC_setInterruptSOCTrigger(CPU1_ADCA_BASE, ADC_SOC_NUMBER2, ADC_INT_SOC_TRIGGER_NONE);
 	//
 	// ADC Interrupt 1 Configuration
-	// 		Source	: ADC_SOC_NUMBER1
+	// 		Source	: ADC_SOC_NUMBER2
 	// 		Interrupt Source: enabled
 	// 		Continuous Mode	: disabled
 	//
 	//
-	ADC_setInterruptSource(CPU1_ADCA_BASE, ADC_INT_NUMBER1, ADC_SOC_NUMBER1);
+	ADC_setInterruptSource(CPU1_ADCA_BASE, ADC_INT_NUMBER1, ADC_SOC_NUMBER2);
 	ADC_clearInterruptStatus(CPU1_ADCA_BASE, ADC_INT_NUMBER1);
 	ADC_disableContinuousMode(CPU1_ADCA_BASE, ADC_INT_NUMBER1);
 	ADC_enableInterrupt(CPU1_ADCA_BASE, ADC_INT_NUMBER1);
@@ -1296,11 +1296,11 @@ void SYSCTL_init(){
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_CPUBGCRC);
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_CLA1BGCRC);
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_HRCAL);
-    SysCtl_disablePeripheral(SYSCTL_PERIPH_CLK_TBCLKSYNC);
-    SysCtl_disablePeripheral(SYSCTL_PERIPH_CLK_GTBCLKSYNC);
+    SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_TBCLKSYNC);
+    SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_GTBCLKSYNC);
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_ERAD);
-    SysCtl_disablePeripheral(SYSCTL_PERIPH_CLK_EMIF1);
-    SysCtl_disablePeripheral(SYSCTL_PERIPH_CLK_EMIF2);
+    SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_EMIF1);
+    SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_EMIF2);
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_EPWM1);
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_EPWM2);
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_EPWM3);
@@ -1324,26 +1324,26 @@ void SYSCTL_init(){
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_ECAP5);
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_ECAP6);
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_ECAP7);
-    SysCtl_disablePeripheral(SYSCTL_PERIPH_CLK_EQEP1);
-    SysCtl_disablePeripheral(SYSCTL_PERIPH_CLK_EQEP2);
-    SysCtl_disablePeripheral(SYSCTL_PERIPH_CLK_EQEP3);
-    SysCtl_disablePeripheral(SYSCTL_PERIPH_CLK_SD1);
-    SysCtl_disablePeripheral(SYSCTL_PERIPH_CLK_SD2);
+    SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_EQEP1);
+    SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_EQEP2);
+    SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_EQEP3);
+    SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_SD1);
+    SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_SD2);
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_SCIA);
-    SysCtl_disablePeripheral(SYSCTL_PERIPH_CLK_SCIB);
-    SysCtl_disablePeripheral(SYSCTL_PERIPH_CLK_SCIC);
-    SysCtl_disablePeripheral(SYSCTL_PERIPH_CLK_SCID);
+    SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_SCIB);
+    SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_SCIC);
+    SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_SCID);
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_SPIA);
-    SysCtl_disablePeripheral(SYSCTL_PERIPH_CLK_SPIB);
-    SysCtl_disablePeripheral(SYSCTL_PERIPH_CLK_SPIC);
+    SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_SPIB);
+    SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_SPIC);
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_SPID);
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_I2CA);
-    SysCtl_disablePeripheral(SYSCTL_PERIPH_CLK_I2CB);
+    SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_I2CB);
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_CANA);
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_CANB);
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_MCANA);
-    SysCtl_disablePeripheral(SYSCTL_PERIPH_CLK_MCBSPA);
-    SysCtl_disablePeripheral(SYSCTL_PERIPH_CLK_MCBSPB);
+    SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_MCBSPA);
+    SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_MCBSPB);
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_USBA);
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_ADCA);
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_ADCB);

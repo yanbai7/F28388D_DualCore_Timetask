@@ -89,6 +89,11 @@ PAGE 1 : /* Data Memory */
    CANA_MSG_RAM     : origin = 0x049000, length = 0x000800
    CANB_MSG_RAM     : origin = 0x04B000, length = 0x000800
 
+   CLA1_MSGRAMLOW   : origin = 0x001480,   length = 0x000080
+   CLA1_MSGRAMHIGH  : origin = 0x001500,   length = 0x000080
+   CLA1_DMA_MSGRAM  : origin = 0x001680,   length = 0x000080
+   DMA_CLA1_MSGRAM  : origin = 0x001700,   length = 0x000080
+
 }
 
 SECTIONS
@@ -152,6 +157,17 @@ SECTIONS
                     RUN_START(Cla1ProgRunStart),
                     LOAD_SIZE(Cla1ProgLoadSize),
                     PAGE = 0, ALIGN(8)
+
+
+   CLADataLS0       : > RAMLS5
+   CLADataLS1       : > RAMLS5
+
+   Cla1ToCpuMsgRAM  : > CLA1_MSGRAMLOW, type=NOINIT
+   CpuToCla1MsgRAM  : > CLA1_MSGRAMHIGH, type=NOINIT
+   Cla1ToDmaMsgRAM  : > CLA1_DMA_MSGRAM, type=NOINIT
+   DmaToCla1MsgRAM  : > DMA_CLA1_MSGRAM, type=NOINIT
+
+   Cla1DataRam      : > RAMLS5
 
 #ifdef CLA_C
    /* CLA C compiler sections */

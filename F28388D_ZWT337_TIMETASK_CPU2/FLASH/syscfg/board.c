@@ -814,7 +814,7 @@ void SYSCTL_init(){
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_TIMER2);
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_CPUBGCRC);
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_CLA1BGCRC);
-    SysCtl_disablePeripheral(SYSCTL_PERIPH_CLK_TBCLKSYNC);
+    SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_TBCLKSYNC);
     SysCtl_disablePeripheral(SYSCTL_PERIPH_CLK_GTBCLKSYNC);
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_ERAD);
     SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_EPWM1);

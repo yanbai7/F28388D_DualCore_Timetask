@@ -25,11 +25,11 @@ void main(void)
     Device_init();
 
 
-#ifdef _STANDALONE
+#ifdef _FLASH
     //
     // Send boot command to allow the CPU2 application to begin execution
     //
-    Device_bootCPU2(C1C2_BROM_BOOTMODE_BOOT_FROM_FLASH);
+    Device_bootCPU2(BOOT_MODE_CPU2);
 #endif // _STANDALONE
 
     //
@@ -73,7 +73,6 @@ void main(void)
     Board_init();
     initCLA();
     initPWM();
-
 
     //
     // Sync CPUs so the blinking starts at the same time, though the LEDs toggle at different frequency
