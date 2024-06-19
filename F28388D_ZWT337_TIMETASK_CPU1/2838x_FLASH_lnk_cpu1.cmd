@@ -153,9 +153,9 @@ SECTIONS
    /* CLA specific sections */
    Cla1Prog    :    LOAD = FLASH7,
                     RUN = RAMLS34,
-                    LOAD_START(Cla1ProgLoadStart),
-                    RUN_START(Cla1ProgRunStart),
-                    LOAD_SIZE(Cla1ProgLoadSize),
+                    LOAD_START(Cla1funcsLoadStart),
+                    RUN_START(Cla1funcsRunStart),
+                    LOAD_SIZE(Cla1funcsLoadSize),
                     PAGE = 0, ALIGN(8)
 
 

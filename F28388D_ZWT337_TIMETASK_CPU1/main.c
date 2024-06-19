@@ -13,6 +13,8 @@ uint32_t MEP_ScaleFactor;
 
 volatile uint32_t ePWM[] = {0, EPWM1_BASE, EPWM2_BASE, EPWM3_BASE, EPWM4_BASE};
 
+void initEPWM(void);
+void initCLA(void);
 
 //
 // Main

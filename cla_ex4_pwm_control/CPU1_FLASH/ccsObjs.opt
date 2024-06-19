@@ -1,0 +1,10 @@
+"./cla_ex4_pwm_control.obj"
+"./syscfg/board.obj"
+"./syscfg/c2000ware_libraries.obj"
+"./cla_ex4_pwm_control_cla.obj"
+"./device/device.obj"
+"./device/f2838x_codestartbranch.obj"
+"../2838x_FLASH_CLA_lnk_cpu1.cmd"
+"C:/ti/c2000/C2000Ware_5_02_00_00/driverlib/f2838x/driverlib/ccs/Debug/driverlib.lib"
+-lc2000ware_libraries.cmd.genlibs
+-llibc.a

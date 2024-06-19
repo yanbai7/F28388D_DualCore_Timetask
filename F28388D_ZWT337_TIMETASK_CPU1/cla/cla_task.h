@@ -14,7 +14,7 @@
 #include "inc/hw_memmap.h"
 #include "inc/hw_types.h"
 
-extern uint32_t Cla1ProgRunStart, Cla1ProgLoadStart, Cla1ProgLoadSize;
+extern uint32_t Cla1funcsRunStart, Cla1funcsLoadStart, Cla1funcsLoadSize;
 extern uint32_t Cla1ConstRunStart, Cla1ConstLoadStart, Cla1ConstLoadSize;
 
 //CLA C Tasks defined in Cla1Tasks_C.cla
