@@ -127,5 +127,4 @@ SUBDIRS := \
 . \
 device \
 device/driverlib \
-mb_slave \
 

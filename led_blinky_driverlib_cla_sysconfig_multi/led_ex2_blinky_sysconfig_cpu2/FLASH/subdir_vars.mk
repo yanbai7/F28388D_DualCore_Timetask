@@ -20,8 +20,7 @@ LIB_SRCS += \
 C_SRCS += \
 ../main.c \
 ./syscfg/board.c \
-./syscfg/c2000ware_libraries.c \
-../timetask.c 
+./syscfg/c2000ware_libraries.c 
 
 GEN_FILES += \
 ./syscfg/board.c \
@@ -38,8 +37,7 @@ GEN_MISC_DIRS += \
 C_DEPS += \
 ./main.d \
 ./syscfg/board.d \
-./syscfg/c2000ware_libraries.d \
-./timetask.d 
+./syscfg/c2000ware_libraries.d 
 
 GEN_OPTS += \
 ./syscfg/board.opt \
@@ -49,8 +47,7 @@ OBJS += \
 ./cla_ex4_pwm_control_cla.obj \
 ./main.obj \
 ./syscfg/board.obj \
-./syscfg/c2000ware_libraries.obj \
-./timetask.obj 
+./syscfg/c2000ware_libraries.obj 
 
 GEN_MISC_FILES += \
 ./syscfg/board.h \
@@ -68,8 +65,7 @@ OBJS__QUOTED += \
 "cla_ex4_pwm_control_cla.obj" \
 "main.obj" \
 "syscfg\board.obj" \
-"syscfg\c2000ware_libraries.obj" \
-"timetask.obj" 
+"syscfg\c2000ware_libraries.obj" 
 
 GEN_MISC_FILES__QUOTED += \
 "syscfg\board.h" \
@@ -83,8 +79,7 @@ GEN_MISC_FILES__QUOTED += \
 C_DEPS__QUOTED += \
 "main.d" \
 "syscfg\board.d" \
-"syscfg\c2000ware_libraries.d" \
-"timetask.d" 
+"syscfg\c2000ware_libraries.d" 
 
 GEN_FILES__QUOTED += \
 "syscfg\board.c" \
@@ -98,8 +93,7 @@ CLA_DEPS__QUOTED += \
 C_SRCS__QUOTED += \
 "../main.c" \
 "./syscfg/board.c" \
-"./syscfg/c2000ware_libraries.c" \
-"../timetask.c" 
+"./syscfg/c2000ware_libraries.c" 
 
 SYSCFG_SRCS__QUOTED += \
 "../pinmux.syscfg" 

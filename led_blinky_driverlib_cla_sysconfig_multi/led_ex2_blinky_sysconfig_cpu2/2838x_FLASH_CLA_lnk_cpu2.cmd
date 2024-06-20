@@ -20,21 +20,14 @@ MEMORY
    RAMLS5           : origin = 0x00A800, length = 0x000800
    RAMLS6           : origin = 0x00B000, length = 0x000800
    RAMLS7           : origin = 0x00B800, length = 0x000800
-   RAMGS5           : origin = 0x012000, length = 0x001000
-   RAMGS6           : origin = 0x013000, length = 0x001000
-   RAMGS7           : origin = 0x014000, length = 0x001000
    RAMGS8           : origin = 0x015000, length = 0x001000
    RAMGS9           : origin = 0x016000, length = 0x001000
-
-//   RAMGS10          : origin = 0x017000, length = 0x001000
-//   RAMGS11          : origin = 0x018000, length = 0x001000
-   RAMGS10_11       : origin = 0x017000, length = 0x002000
-//   RAMGS12          : origin = 0x019000, length = 0x001000
-//   RAMGS13          : origin = 0x01A000, length = 0x001000
-   RAMGS12_13       : origin = 0x019000, length = 0x002000
-
-
-   RAMGS15          : origin = 0x01C000, length = 0x000FF8       // .fapi_ram for CPU1
+   RAMGS10          : origin = 0x017000, length = 0x001000
+   RAMGS11          : origin = 0x018000, length = 0x001000
+   RAMGS12          : origin = 0x019000, length = 0x001000
+   RAMGS13          : origin = 0x01A000, length = 0x001000
+   RAMGS14          : origin = 0x01B000, length = 0x001000
+   RAMGS15          : origin = 0x01C000, length = 0x000FF8
 //   RAMGS15_RSVD     : origin = 0x01CFF8, length = 0x000008     /* Reserve and do not use for code as per the errata advisory "Memory: Prefetching Beyond Valid Memory" */
 
    /* Flash sectors */
@@ -135,18 +128,15 @@ SECTIONS
                         LOAD_SIZE(Cla1ConstLoadSize)
 
 
-   .TI.ramfunc : {} LOAD = FLASH3,
-                    RUN = RAMD0,
-                    LOAD_START(RamfuncsLoadStart),
-                    LOAD_SIZE(RamfuncsLoadSize),
-                    LOAD_END(RamfuncsLoadEnd),
-                    RUN_START(RamfuncsRunStart),
-                    RUN_SIZE(RamfuncsRunSize),
-                    RUN_END(RamfuncsRunEnd),
-                    ALIGN(8)
-
-    RW_CPU2       : > RAMGS10_11,         PAGE = 1
-    RD_CPU1       : > RAMGS12_13,         PAGE = 1
+       .TI.ramfunc : {} LOAD = FLASH3,
+                        RUN = RAMD0,
+                        LOAD_START(RamfuncsLoadStart),
+                        LOAD_SIZE(RamfuncsLoadSize),
+                        LOAD_END(RamfuncsLoadEnd),
+                        RUN_START(RamfuncsRunStart),
+                        RUN_SIZE(RamfuncsRunSize),
+                        RUN_END(RamfuncsRunEnd),
+                        ALIGN(8)
 
 }
 
