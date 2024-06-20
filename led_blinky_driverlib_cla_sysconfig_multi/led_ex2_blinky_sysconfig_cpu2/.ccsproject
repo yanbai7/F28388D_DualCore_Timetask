@@ -13,4 +13,6 @@
 	<templateProperties value="id=led_ex2_blinky_sysconfig.projectspec.led_ex2_blinky_sysconfig_cpu2"/>
 	<origin value="C:\ti\c2000\C2000Ware_5_02_00_00\driverlib\f2838x\examples\c28x_dual\led\CCS\led_ex2_blinky_sysconfig.projectspec"/>
 	<filesToOpen value=""/>
+	<connection value="common/targetdb/connections/TIXDS100v2_Connection.xml"/>
+	<isTargetManual value="false"/>
 </projectOptions>

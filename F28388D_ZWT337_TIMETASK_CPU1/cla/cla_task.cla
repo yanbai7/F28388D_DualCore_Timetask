@@ -19,7 +19,7 @@ __attribute__((interrupt)) void Cla1Task1 ( void )
     //
     // Uncomment this to debug the CLA while connected to the debugger
     //
-    __mdebugstop();
+    //__mdebugstop();
 
     sCLA.u32HeartBeat++;
     sCLA.u32HeartBeat &= 0x7FFFFFFF;

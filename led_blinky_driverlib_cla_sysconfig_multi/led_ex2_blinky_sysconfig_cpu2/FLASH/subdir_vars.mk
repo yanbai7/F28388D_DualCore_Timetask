@@ -9,7 +9,7 @@ CMD_SRCS += \
 ../2838x_FLASH_CLA_lnk_cpu2.cmd 
 
 SYSCFG_SRCS += \
-../led_ex2_blinky_sysconfig_cpu2.syscfg 
+../pinmux.syscfg 
 
 CLA_SRCS += \
 ../cla_ex4_pwm_control_cla.cla 
@@ -18,7 +18,7 @@ LIB_SRCS += \
 ../driverlib.lib 
 
 C_SRCS += \
-../led_ex2_blinky_sysconfig_cpu2.c \
+../main.c \
 ./syscfg/board.c \
 ./syscfg/c2000ware_libraries.c 
 
@@ -35,7 +35,7 @@ GEN_MISC_DIRS += \
 ./syscfg/ 
 
 C_DEPS += \
-./led_ex2_blinky_sysconfig_cpu2.d \
+./main.d \
 ./syscfg/board.d \
 ./syscfg/c2000ware_libraries.d 
 
@@ -45,7 +45,7 @@ GEN_OPTS += \
 
 OBJS += \
 ./cla_ex4_pwm_control_cla.obj \
-./led_ex2_blinky_sysconfig_cpu2.obj \
+./main.obj \
 ./syscfg/board.obj \
 ./syscfg/c2000ware_libraries.obj 
 
@@ -63,7 +63,7 @@ GEN_MISC_DIRS__QUOTED += \
 
 OBJS__QUOTED += \
 "cla_ex4_pwm_control_cla.obj" \
-"led_ex2_blinky_sysconfig_cpu2.obj" \
+"main.obj" \
 "syscfg\board.obj" \
 "syscfg\c2000ware_libraries.obj" 
 
@@ -77,7 +77,7 @@ GEN_MISC_FILES__QUOTED += \
 "syscfg\clocktree.h" 
 
 C_DEPS__QUOTED += \
-"led_ex2_blinky_sysconfig_cpu2.d" \
+"main.d" \
 "syscfg\board.d" \
 "syscfg\c2000ware_libraries.d" 
 
@@ -91,11 +91,11 @@ CLA_DEPS__QUOTED += \
 "cla_ex4_pwm_control_cla.d" 
 
 C_SRCS__QUOTED += \
-"../led_ex2_blinky_sysconfig_cpu2.c" \
+"../main.c" \
 "./syscfg/board.c" \
 "./syscfg/c2000ware_libraries.c" 
 
 SYSCFG_SRCS__QUOTED += \
-"../led_ex2_blinky_sysconfig_cpu2.syscfg" 
+"../pinmux.syscfg" 
 
 

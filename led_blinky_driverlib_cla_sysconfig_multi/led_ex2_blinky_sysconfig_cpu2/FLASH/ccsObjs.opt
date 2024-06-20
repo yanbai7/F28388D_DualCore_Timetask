@@ -1,5 +1,5 @@
 "./cla_ex4_pwm_control_cla.obj"
-"./led_ex2_blinky_sysconfig_cpu2.obj"
+"./main.obj"
 "./syscfg/board.obj"
 "./syscfg/c2000ware_libraries.obj"
 "./device/device.obj"

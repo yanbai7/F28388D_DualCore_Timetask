@@ -1,16 +1,6 @@
-// The user must define CLA_C in the project linker settings if using the
-// CLA C compiler
-// Project Properties -> C2000 Linker -> Advanced Options -> Command File 
-// Preprocessing -> --define
-#ifdef CLA_C
-// Define a size for the CLA scratchpad area that will be used
-// by the CLA compiler for local symbols and temps
-// Also force references to the special symbols that mark the
-// scratchpad are. 
 CLA_SCRATCHPAD_SIZE = 0x100;
 --undef_sym=__cla_scratchpad_end
 --undef_sym=__cla_scratchpad_start
-#endif //CLA_C
 
 MEMORY
 {
@@ -153,9 +143,9 @@ SECTIONS
    /* CLA specific sections */
    Cla1Prog    :    LOAD = FLASH7,
                     RUN = RAMLS34,
-                    LOAD_START(Cla1funcsLoadStart),
-                    RUN_START(Cla1funcsRunStart),
-                    LOAD_SIZE(Cla1funcsLoadSize),
+                    LOAD_START(Cla1ProgLoadStart),
+                    RUN_START(Cla1ProgRunStart),
+                    LOAD_SIZE(Cla1ProgLoadSize),
                     PAGE = 0, ALIGN(8)
 
 
@@ -169,7 +159,6 @@ SECTIONS
 
    Cla1DataRam      : > RAMLS5
 
-#ifdef CLA_C
    /* CLA C compiler sections */
    //
    // Must be allocated to memory the CLA has write access to
@@ -182,14 +171,12 @@ SECTIONS
    .scratchpad      : > RAMLS5,       PAGE = 1
    .bss_cla		    : > RAMLS5,       PAGE = 1
    cla_shared	    : > RAMLS5,       PAGE = 1
-   .const_cla  :    LOAD = FLASHH,
+   .const_cla  :    LOAD = FLASH7,
                     RUN = RAMLS5,
                     RUN_START(Cla1ConstRunStart),
                     LOAD_START(Cla1ConstLoadStart),
                     LOAD_SIZE(Cla1ConstLoadSize),
                     PAGE = 1, ALIGN(8)
-
-#endif //CLA_C
 }
 
 /*

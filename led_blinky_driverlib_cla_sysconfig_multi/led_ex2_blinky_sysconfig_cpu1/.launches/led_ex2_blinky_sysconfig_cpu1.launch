@@ -5,7 +5,7 @@
     <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_PROJECT.TMS320F28388D.ccxml.Texas Instruments XDS100v2 USB Debug Probe_0/C28xx_CPU1" value="led_ex2_blinky_sysconfig_cpu1"/>
     <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_TARGET_CONFIG" value="${target_config_active_default:led_ex2_blinky_sysconfig_cpu1}"/>
     <stringAttribute key="com.ti.ccstudio.debug.debugModel.MRU_PROGRAM.TMS320F28388D.ccxml.Texas Instruments XDS100v2 USB Debug Probe_0/C28xx_CPU1" value="${build_artifact:led_ex2_blinky_sysconfig_cpu1}"/>
-    <stringAttribute key="com.ti.ccstudio.debug.debugModel.MRU_PROGRAM.TMS320F28388D.ccxml.Texas Instruments XDS100v2 USB Debug Probe_0/C28xx_CPU2" value="C:\Users\User\workspace_v12\led_ex2_blinky_sysconfig_cpu2\FLASH\led_ex2_blinky_sysconfig_cpu2.out"/>
+    <stringAttribute key="com.ti.ccstudio.debug.debugModel.MRU_PROGRAM.TMS320F28388D.ccxml.Texas Instruments XDS100v2 USB Debug Probe_0/C28xx_CPU2" value="C:\Users\User\Desktop\GitHub\GW\C2000\F28388D_DualCore_Timetask\led_blinky_driverlib_cla_sysconfig_multi\led_ex2_blinky_sysconfig_cpu2\FLASH\led_ex2_blinky_sysconfig_cpu2.out"/>
     <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
         <listEntry value="/led_ex2_blinky_sysconfig_cpu1"/>
     </listAttribute>
