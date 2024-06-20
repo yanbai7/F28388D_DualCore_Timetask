@@ -1,7 +1,7 @@
 ******************************************************************************
              TMS320C2000 Linker PC v22.6.1                     
 ******************************************************************************
->> Linked Thu Jun 20 11:23:38 2024
+>> Linked Thu Jun 20 13:33:58 2024
 
 OUTPUT FILE NAME:   <F28388D_ZWT337_TIMETASK_CPU1.out>
 ENTRY POINT SYMBOL: "code_start"  address: 00080000
@@ -14,7 +14,7 @@ MEMORY CONFIGURATION
 PAGE 0:
   RAMM0                 000001b1   0000024f  00000000  0000024f  RWIX
   RAMLS01               00008000   00001000  00000280  00000d80  RWIX
-  RAMLS34               00009000   00000800  0000001e  000007e2  RWIX
+  RAMLS34               00009800   00000800  0000001e  000007e2  RWIX
   RAMD0                 0000c000   00000800  00000000  00000800  RWIX
   RAMGS0                0000d000   00001000  00000000  00001000  RWIX
   RAMGS1                0000e000   00001000  00000000  00001000  RWIX
@@ -98,7 +98,7 @@ codestart
 .init_array 
 *          0    00090000    00000000     UNINITIALIZED
 
-Cla1Prog   0    000a0000    0000001e     RUN ADDR = 00009000
+Cla1Prog   0    000a0000    0000001e     RUN ADDR = 00009800
                   000a0000    0000001e     cla_task.obj (Cla1Prog:Cla1Task1)
 
 .fapi_ram 
@@ -368,7 +368,7 @@ MODULE SUMMARY
        Total:                                   2958    0         0      
                                                                          
     C:\Users\User\AppData\Local\Temp\
-       {2BEBA72E-BAB3-45B3-BCC9-FD5396A8022A}   0       814       0      
+       {FB20577F-A416-4F69-91DA-9FC58245994F}   0       814       0      
     +--+----------------------------------------+-------+---------+---------+
        Total:                                   0       814       0      
                                                                          
@@ -507,8 +507,8 @@ abs   00000000  Cla1ConstLoadSize
 1     0000a800  Cla1ConstRunStart                
 abs   0000001e  Cla1ProgLoadSize                 
 0     000a0000  Cla1ProgLoadStart                
-0     00009000  Cla1ProgRunStart                 
-0     00009000  Cla1Task1                        
+0     00009800  Cla1ProgRunStart                 
+0     00009800  Cla1Task1                        
 0     00084ad3  DAC_init                         
 0     000826b8  DCC_verifyClockFrequency         
 0     00084000  DEBUG_SCI_init                   
@@ -687,8 +687,8 @@ page  address   name
 0     00008246  FLASH_init                       
 0     0000827c  SysCtl_delay                     
 0     00008280  RamfuncsRunEnd                   
-0     00009000  Cla1ProgRunStart                 
-0     00009000  Cla1Task1                        
+0     00009800  Cla1ProgRunStart                 
+0     00009800  Cla1Task1                        
 0     0001b000  fapi_ram_RunStart                
 0     0001b2e1  Fapi_issueProgrammingCommand     
 0     0001b486  _Fapi_loopRegionForValue         

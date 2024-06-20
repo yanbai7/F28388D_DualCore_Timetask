@@ -15,7 +15,7 @@ PAGE 0 :  /* Program Memory */
 //   RAMLS0          	: origin = 0x008000, length = 0x000800    // CPU1 Ram Function
 //   RAMLS1          	: origin = 0x008800, length = 0x000800    // CPU1 Ram Function
 
-   RAMLS34          : origin = 0x009000, length = 0x000800        // CLA Ram Function
+   RAMLS34          : origin = 0x009800, length = 0x000800        // CLA Ram Function
 //   RAMLS3           : origin = 0x009800, length = 0x000800      // CLA Ram Function
 //   RAMLS4           : origin = 0x00A000, length = 0x000800      // CLA Ram Function
    RAMGS0           : origin = 0x00D000, length = 0x001000
