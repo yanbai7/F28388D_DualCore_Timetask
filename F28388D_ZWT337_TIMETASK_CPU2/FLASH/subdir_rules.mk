@@ -15,7 +15,7 @@ SHELL = cmd.exe
 build-1678707887: ../pinmux.syscfg
 	@echo 'Building file: "$<"'
 	@echo 'Invoking: SysConfig'
-	"C:/ti/sysconfig_1.20.0/sysconfig_cli.bat" -s "C:/ti/c2000/C2000Ware_5_02_00_00/.metadata/sdk.json" -d "F2838x" --script "C:/Users/User/Desktop/GitHub/GW/C2000/F28388D_DualCore_Timetask/F28388D_ZWT337_TIMETASK_CPU1/pinmux.syscfg" --context "CPU1" --script "C:/Users/User/Desktop/GitHub/GW/C2000/F28388D_DualCore_Timetask/F28388D_ZWT337_TIMETASK_CPU2/pinmux.syscfg" --context "CPU2" -o "syscfg" --package 337bga --part F2838x_337bga --compiler ccs
+	"C:/ti/ccs1240/ccs/utils/sysconfig_1.17.0/sysconfig_cli.bat" -s "C:/ti/c2000/C2000Ware_5_02_00_00/.metadata/sdk.json" -d "F2838x" --script "C:/Users/User/Desktop/GitHub/GW/C2000/F28388D_DualCore_Timetask/F28388D_ZWT337_TIMETASK_CPU1/pinmux.syscfg" --context "CPU1" --script "C:/Users/User/Desktop/GitHub/GW/C2000/F28388D_DualCore_Timetask/F28388D_ZWT337_TIMETASK_CPU2/pinmux.syscfg" --context "CPU2" -o "syscfg" --package 337bga --part F2838x_337bga --compiler ccs
 	@echo 'Finished building: "$<"'
 	@echo ' '
 

@@ -13,4 +13,5 @@
 	<templateProperties value="id=cla_ex4_pwm_control.projectspec.cla_ex4_pwm_control"/>
 	<origin value="C:\ti\c2000\C2000Ware_5_02_00_00\driverlib\f2838x\examples\c28x\cla\CCS\cla_ex4_pwm_control.projectspec"/>
 	<filesToOpen value=""/>
+	<sourceLookupPath value=""/>
 </projectOptions>

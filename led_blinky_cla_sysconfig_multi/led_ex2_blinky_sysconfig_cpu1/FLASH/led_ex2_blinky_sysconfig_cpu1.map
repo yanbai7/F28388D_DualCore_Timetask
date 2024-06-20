@@ -1,0 +1,667 @@
+******************************************************************************
+             TMS320C2000 Linker PC v22.6.1                     
+******************************************************************************
+>> Linked Thu Jun 20 10:31:52 2024
+
+OUTPUT FILE NAME:   <led_ex2_blinky_sysconfig_cpu1.out>
+ENTRY POINT SYMBOL: "code_start"  address: 00080000
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  BOOT_RSVD             00000002   000001af  00000000  000001af  RWIX
+  RAMM0                 000001b1   0000024f  00000000  0000024f  RWIX
+  RAMM1                 00000400   000003f8  000003f8  00000000  RWIX
+  CLA1_MSGRAMLOW        00001480   00000080  00000000  00000080  RWIX
+  CLA1_MSGRAMHIGH       00001500   00000080  00000000  00000080  RWIX
+  CLA1_DMA_MSGRAM       00001680   00000080  00000000  00000080  RWIX
+  DMA_CLA1_MSGRAM       00001700   00000080  00000000  00000080  RWIX
+  RAMLS0                00008000   00000800  00000000  00000800  RWIX
+  RAMLS1                00008800   00000800  00000110  000006f0  RWIX
+  RAMLS2                00009000   00000800  00000000  00000800  RWIX
+  RAMLS3                00009800   00000800  00000000  00000800  RWIX
+  RAMLS4                0000a000   00000800  0000000c  000007f4  RWIX
+  RAMLS5                0000a800   00000800  0000024e  000005b2  RWIX
+  RAMLS6                0000b000   00000800  00000000  00000800  RWIX
+  RAMLS7                0000b800   00000800  00000000  00000800  RWIX
+  RAMD0                 0000c000   00000800  00000122  000006de  RWIX
+  RAMD1                 0000c800   00000800  00000000  00000800  RWIX
+  RAMGS0                0000d000   00001000  00000000  00001000  RWIX
+  RAMGS1                0000e000   00001000  00000000  00001000  RWIX
+  RAMGS2                0000f000   00001000  00000000  00001000  RWIX
+  RAMGS3                00010000   00001000  00000000  00001000  RWIX
+  RAMGS4                00011000   00001000  00000000  00001000  RWIX
+  RAMGS5                00012000   00001000  00000000  00001000  RWIX
+  RAMGS6                00013000   00001000  00000000  00001000  RWIX
+  RAMGS7                00014000   00001000  00000000  00001000  RWIX
+  CMTOCPURAM            00038000   00000800  00000088  00000778  RWIX
+  CPUTOCMRAM            00039000   00000800  00000088  00000778  RWIX
+  CPU1TOCPU2RAM         0003a000   00000800  00000088  00000778  RWIX
+  CPU2TOCPU1RAM         0003b000   00000800  00000088  00000778  RWIX
+  CANA_MSG_RAM          00049000   00000800  00000000  00000800  RWIX
+  CANB_MSG_RAM          0004b000   00000800  00000000  00000800  RWIX
+  BEGIN                 00080000   00000002  00000002  00000000  RWIX
+  FLASH0                00080002   00001ffe  00000000  00001ffe  RWIX
+  FLASH1                00082000   00002000  00001dc1  0000023f  RWIX
+  FLASH2                00084000   00002000  00000000  00002000  RWIX
+  FLASH3                00086000   00002000  00000122  00001ede  RWIX
+  FLASH4                00088000   00008000  0000024e  00007db2  RWIX
+  FLASH5                00090000   00008000  000005fe  00007a02  RWIX
+  FLASH6                00098000   00008000  00000000  00008000  RWIX
+  FLASH7                000a0000   00008000  00000000  00008000  RWIX
+  FLASH8                000a8000   00008000  00000000  00008000  RWIX
+  FLASH9                000b0000   00008000  00000000  00008000  RWIX
+  FLASH10               000b8000   00002000  00000000  00002000  RWIX
+  FLASH11               000ba000   00002000  00000000  00002000  RWIX
+  FLASH12               000bc000   00002000  00000000  00002000  RWIX
+  FLASH13               000be000   00001ff0  00000000  00001ff0  RWIX
+  RESET                 003fffc0   00000002  00000000  00000002  RWIX
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+codestart 
+*          0    00080000    00000002     
+                  00080000    00000002     f2838x_codestartbranch.obj (codestart)
+
+.cinit     0    00083da0    00000024     
+                  00083da0    0000000a     (.cinit..data.load) [load image, compression = lzss]
+                  00083daa    00000006     (__TI_handler_table)
+                  00083db0    00000004     (.cinit..bss_cla.load) [load image, compression = zero_init]
+                  00083db4    00000004     (.cinit..scratchpad.load) [load image, compression = zero_init]
+                  00083db8    0000000c     (__TI_cinit_table)
+
+.reset     0    003fffc0    00000000     DSECT
+
+.stack     0    00000400    000003f8     UNINITIALIZED
+                  00000400    000003f8     --HOLE--
+
+.init_array 
+*          0    00082000    00000000     UNINITIALIZED
+
+.data      0    0000a000    0000000c     UNINITIALIZED
+                  0000a000    00000006     rts2800_fpu64_eabi.lib : exit.c.obj (.data)
+                  0000a006    00000002                            : _lock.c.obj (.data:_lock)
+                  0000a008    00000002                            : _lock.c.obj (.data:_unlock)
+                  0000a00a    00000002     led_ex2_blinky_sysconfig_cpu1.obj (.data)
+
+MSGRAM_CM_TO_CPU 
+*          0    00038000    00000088     UNINITIALIZED
+                  00038000    00000088     driverlib.lib : ipc.obj (MSGRAM_CM_TO_CPU)
+
+MSGRAM_CPU_TO_CM 
+*          0    00039000    00000088     UNINITIALIZED
+                  00039000    00000088     driverlib.lib : ipc.obj (MSGRAM_CPU_TO_CM)
+
+MSGRAM_CPU1_TO_CPU2 
+*          0    0003a000    00000088     UNINITIALIZED
+                  0003a000    00000088     driverlib.lib : ipc.obj (MSGRAM_CPU1_TO_CPU2)
+
+MSGRAM_CPU2_TO_CPU1 
+*          0    0003b000    00000088     UNINITIALIZED
+                  0003b000    00000088     driverlib.lib : ipc.obj (MSGRAM_CPU2_TO_CPU1)
+
+.const     0    00090000    000005fe     
+                  00090000    000000c9     board.obj (.const:.string)
+                  000900c9    00000001     --HOLE-- [fill = 0]
+                  000900ca    000000c9     led_ex2_blinky_sysconfig_cpu1.obj (.const:.string)
+                  00090193    00000001     --HOLE-- [fill = 0]
+                  00090194    00000098     driverlib.lib : flash.obj (.const:.string)
+                  0009022c    00000097                   : epwm.obj (.const:.string)
+                  000902c3    00000001     --HOLE-- [fill = 0]
+                  000902c4    00000097                   : gpio.obj (.const:.string)
+                  0009035b    00000001     --HOLE-- [fill = 0]
+                  0009035c    00000097                   : sysctl.obj (.const:.string)
+                  000903f3    00000001     --HOLE-- [fill = 0]
+                  000903f4    00000094                   : dcc.obj (.const:.string)
+                  00090488    00000088                   : ipc.obj (.const:IPC_Instance)
+                  00090510    00000055     device.obj (.const:.string)
+                  00090565    00000001     --HOLE-- [fill = 0]
+                  00090566    0000004d     driverlib.lib : memcfg.obj (.const:.string)
+                  000905b3    00000001     --HOLE-- [fill = 0]
+                  000905b4    0000004a                   : adc.obj (.const:.string)
+
+Cla1Prog   0    00088000    0000024e     RUN ADDR = 0000a800
+                  00088000    00000168     cla_ex4_pwm_control_cla.obj (Cla1Prog:EPWM_isBaseValid)
+                  00088168    000000a0     cla_ex4_pwm_control_cla.obj (Cla1Prog:EPWM_setCounterCompareValue)
+                  00088208    00000046     cla_ex4_pwm_control_cla.obj (Cla1Prog:Cla1Task1)
+
+CLAscratch 
+*          0    00008800    00000100     UNINITIALIZED
+                  00008800    00000100     --HOLE--
+
+.scratchpad 
+*          0    00008900    0000000e     UNINITIALIZED
+                  00008900    0000000a     cla_ex4_pwm_control_cla.obj (.scratchpad:Cla1Prog:EPWM_setCounterCompareValue)
+                  0000890a    00000004     cla_ex4_pwm_control_cla.obj (.scratchpad:Cla1Prog:EPWM_isBaseValid)
+
+.bss_cla   0    0000890e    00000002     UNINITIALIZED
+                  0000890e    00000002     cla_ex4_pwm_control_cla.obj (.bss_cla)
+
+.const_cla 
+*          0    00008800    00000000     UNINITIALIZED
+
+.TI.ramfunc 
+*          0    00086000    00000122     RUN ADDR = 0000c000
+                  00086000    0000003f     driverlib.lib : flash.obj (.TI.ramfunc:Flash_initModule)
+                  0008603f    0000002c                   : flash.obj (.TI.ramfunc:Flash_setBankPowerMode)
+                  0008606b    00000022                   : flash.obj (.TI.ramfunc:Flash_setWaitstates)
+                  0008608d    0000001d                   : flash.obj (.TI.ramfunc:Flash_setPumpPowerMode)
+                  000860aa    00000018                   : flash.obj (.TI.ramfunc:Flash_disableCache)
+                  000860c2    00000018                   : flash.obj (.TI.ramfunc:Flash_disablePrefetch)
+                  000860da    00000017                   : flash.obj (.TI.ramfunc:Flash_enableCache)
+                  000860f1    00000017                   : flash.obj (.TI.ramfunc:Flash_enablePrefetch)
+                  00086108    00000016                   : flash.obj (.TI.ramfunc:Flash_enableECC)
+                  0008611e    00000004                   : sysctl.obj (.TI.ramfunc)
+
+.text      0    00082000    00001d9d     
+                  00082000    0000019d     board.obj (.text:MEMCFG_init)
+                  0008219d    00000167     device.obj (.text:Device_enableAllPeripherals)
+                  00082304    0000013b     driverlib.lib : sysctl.obj (.text:SysCtl_setClock)
+                  0008243f    00000118                   : sysctl.obj (.text:SysCtl_isPLLValid)
+                  00082557    00000118                   : sysctl.obj (.text:SysCtl_setAuxClock)
+                  0008266f    000000cb                   : dcc.obj (.text:DCC_verifyClockFrequency)
+                  0008273a    000000a9                   : memcfg.obj (.text:MemCfg_setProtection)
+                  000827e3    00000092                   : memcfg.obj (.text:MemCfg_getInitStatus)
+                  00082875    00000088     rts2800_fpu64_eabi.lib : fs_div28.asm.obj (.text)
+                  000828fd    0000007d     driverlib.lib : memcfg.obj (.text:MemCfg_initSections)
+                  0008297a    00000075     led_ex2_blinky_sysconfig_cpu1.obj (.text:EPWM_setADCTriggerSource)
+                  000829ef    00000073     driverlib.lib : dcc.obj (.text:DCC_setCounterSeeds)
+                  00082a62    00000073                   : sysctl.obj (.text:DCC_setCounterSeeds)
+                  00082ad5    00000073     led_ex2_blinky_sysconfig_cpu1.obj (.text:initEPWM)
+                  00082b48    0000006f     device.obj (.text:Device_init)
+                  00082bb7    0000006c     driverlib.lib : adc.obj (.text:ADC_setINLTrim)
+                  00082c23    00000068     led_ex2_blinky_sysconfig_cpu1.obj (.text:main)
+                  00082c8b    00000061     driverlib.lib : sysctl.obj (.text:SysCtl_getAuxClock)
+                  00082cec    00000060                   : sysctl.obj (.text:SysCtl_getClock)
+                  00082d4c    0000005e                   : sysctl.obj (.text:SysCtl_selectOscSourceAuxPLL)
+                  00082daa    0000005d                   : adc.obj (.text:ADC_setOffsetTrim)
+                  00082e07    00000052                   : gpio.obj (.text:GPIO_setPadConfig)
+                  00082e59    0000004b                   : epwm.obj (.text:EPWM_isBaseValid)
+                  00082ea4    0000004b     led_ex2_blinky_sysconfig_cpu1.obj (.text:EPWM_isBaseValid)
+                  00082eef    0000004b     led_ex2_blinky_sysconfig_cpu1.obj (.text:EPWM_setInterruptSource)
+                  00082f3a    00000049     led_ex2_blinky_sysconfig_cpu1.obj (.text:INT_CPU1_ADCA_1_ISR)
+                  00082f83    00000049     driverlib.lib : sysctl.obj (.text:SysCtl_pollX1Counter)
+                  00082fcc    00000048     board.obj (.text:CPU1_ADCA_init)
+                  00083014    00000046     board.obj (.text:ADC_setupSOC)
+                  0008305a    00000044     led_ex2_blinky_sysconfig_cpu1.obj (.text:GPIO_writePin)
+                  0008309e    00000042     driverlib.lib : sysctl.obj (.text:SysCtl_selectOscSource)
+                  000830e0    00000040     led_ex2_blinky_sysconfig_cpu1.obj (.text:EPWM_setActionQualifierAction)
+                  00083120    00000040     driverlib.lib : sysctl.obj (.text:SysCtl_selectXTAL)
+                  00083160    0000003e     led_ex2_blinky_sysconfig_cpu1.obj (.text:EPWM_setCounterCompareShadowLoadMode)
+                  0008319e    0000003d     driverlib.lib : interrupt.obj (.text:Interrupt_initModule)
+                  000831db    0000003a     led_ex2_blinky_sysconfig_cpu1.obj (.text:EPWM_setADCTriggerEventPrescale)
+                  00083215    00000039     driverlib.lib : memcfg.obj (.text:MemCfg_setLSRAMControllerSel)
+                  0008324e    00000037                   : gpio.obj (.text:GPIO_setControllerCore)
+                  00083285    00000037                   : gpio.obj (.text:GPIO_setPinConfig)
+                  000832bc    00000037                   : gpio.obj (.text:GPIO_setQualificationMode)
+                  000832f3    00000037                   : interrupt.obj (.text:Interrupt_enable)
+                  0008332a    00000031                   : gpio.obj (.text:GPIO_setDirectionMode)
+                  0008335b    00000030     rts2800_fpu64_eabi.lib : copy_decompress_lzss.c.obj (.text:decompress:lzss)
+                  0008338b    0000002f     board.obj (.text:ADC_setInterruptSource)
+                  000833ba    0000002e     board.obj (.text:ADC_setInterruptSOCTrigger)
+                  000833e8    0000002b     rts2800_fpu64_eabi.lib : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit)
+                  00083413    00000029                            : exit.c.obj (.text)
+                  0008343c    00000028     driverlib.lib : adc.obj (.text:ADC_setMode)
+                  00083464    00000028     led_ex2_blinky_sysconfig_cpu1.obj (.text:EPWM_setInterruptEventCount)
+                  0008348c    00000026     driverlib.lib : cla.obj (.text:CLA_setTriggerSource)
+                  000834b2    00000026                   : memcfg.obj (.text:MemCfg_setGSRAMControllerSel)
+                  000834d8    00000025                   : sysctl.obj (.text:SysCtl_selectXTALSingleEnded)
+                  000834fd    00000024                   : dcc.obj (.text:DCC_enableSingleShotMode)
+                  00083521    00000024                   : sysctl.obj (.text:DCC_enableSingleShotMode)
+                  00083545    00000024     board.obj (.text:MemCfg_setCLAMemType)
+                  00083569    00000022     led_ex2_blinky_sysconfig_cpu1.obj (.text:EPWM_setCounterCompareValue)
+                  0008358b    00000021     board.obj (.text:ADC_disableContinuousMode)
+                  000835ac    00000021     device.obj (.text:Device_initGPIO)
+                  000835cd    00000021     driverlib.lib : sysctl.obj (.text:SysCtl_controlCPU2Reset)
+                  000835ee    00000020     board.obj (.text:ADC_enableInterrupt)
+                  0008360e    0000001e     driverlib.lib : dcc.obj (.text:DCC_setCounter0ClkSource)
+                  0008362c    0000001e                   : sysctl.obj (.text:DCC_setCounter0ClkSource)
+                  0008364a    0000001e                   : dcc.obj (.text:DCC_setCounter1ClkSource)
+                  00083668    0000001e                   : sysctl.obj (.text:DCC_setCounter1ClkSource)
+                  00083686    0000001e     device.obj (.text:Device_verifyXTAL)
+                  000836a4    0000001e     driverlib.lib : interrupt.obj (.text:Interrupt_initVectorTable)
+                  000836c2    0000001d     rts2800_fpu64_eabi.lib : memcpy.c.obj (.text)
+                  000836df    0000001c     board.obj (.text:ADC_setSOCPriority)
+                  000836fb    0000001c     driverlib.lib : dcc.obj (.text:DCC_getErrorStatus)
+                  00083717    0000001c                   : dcc.obj (.text:DCC_getSingleShotStatus)
+                  00083733    0000001c     led_ex2_blinky_sysconfig_cpu1.obj (.text:EPWM_disableADCTrigger)
+                  0008374f    0000001c     led_ex2_blinky_sysconfig_cpu1.obj (.text:EPWM_enableADCTrigger)
+                  0008376b    0000001c     led_ex2_blinky_sysconfig_cpu1.obj (.text:EPWM_setClockPrescaler)
+                  00083787    0000001b     board.obj (.text:ADC_isBaseValid)
+                  000837a2    0000001b     driverlib.lib : adc.obj (.text:ADC_isBaseValid)
+                  000837bd    0000001b     led_ex2_blinky_sysconfig_cpu1.obj (.text:ADC_isBaseValid)
+                  000837d8    0000001a     driverlib.lib : dcc.obj (.text:DCC_isBaseValid)
+                  000837f2    0000001a                   : sysctl.obj (.text:DCC_isBaseValid)
+                  0008380c    0000001a                   : sysctl.obj (.text:SysCtl_getLowSpeedClock)
+                  00083826    00000019     device.obj (.text:IPC_setBootMode)
+                  0008383f    00000019     rts2800_fpu64_eabi.lib : boot28.asm.obj (.text)
+                  00083858    00000018     led_ex2_blinky_sysconfig_cpu1.obj (.text:SysCtl_disablePeripheral)
+                  00083870    00000017     board.obj (.text:CLA_init)
+                  00083887    00000017     device.obj (.text:SysCtl_enablePeripheral)
+                  0008389e    00000017     driverlib.lib : sysctl.obj (.text:SysCtl_enablePeripheral)
+                  000838b5    00000017     led_ex2_blinky_sysconfig_cpu1.obj (.text:SysCtl_enablePeripheral)
+                  000838cc    00000016     board.obj (.text:ADC_setInterruptPulseMode)
+                  000838e2    00000016     board.obj (.text:ADC_setPrescaler)
+                  000838f8    00000016     board.obj (.text:CLA_enableTasks)
+                  0008390e    00000016     board.obj (.text:CLA_mapTaskVector)
+                  00083924    00000016     driverlib.lib : dcc.obj (.text:DCC_disableDoneSignal)
+                  0008393a    00000016                   : sysctl.obj (.text:DCC_disableDoneSignal)
+                  00083950    00000016                   : dcc.obj (.text:DCC_enableDoneSignal)
+                  00083966    00000016     device.obj (.text:Device_bootCPU2)
+                  0008397c    00000016     driverlib.lib : epwm.obj (.text:EPWM_setEmulationMode)
+                  00083992    00000016                   : interrupt.obj (.text:Interrupt_defaultHandler)
+                  000839a8    00000015     board.obj (.text:ADC_disableBurstMode)
+                  000839bd    00000015     board.obj (.text:CLA_enableIACK)
+                  000839d2    00000015     driverlib.lib : dcc.obj (.text:DCC_clearDoneFlag)
+                  000839e7    00000015                   : sysctl.obj (.text:DCC_clearDoneFlag)
+                  000839fc    00000015                   : dcc.obj (.text:DCC_clearErrorFlag)
+                  00083a11    00000015                   : sysctl.obj (.text:DCC_clearErrorFlag)
+                  00083a26    00000015                   : dcc.obj (.text:DCC_disableErrorSignal)
+                  00083a3b    00000015                   : sysctl.obj (.text:DCC_disableErrorSignal)
+                  00083a50    00000015     device.obj (.text:GPIO_unlockPortConfig)
+                  00083a65    00000015     board.obj (.text:myCLA0_init)
+                  00083a7a    00000014     board.obj (.text:ADC_clearInterruptStatus)
+                  00083a8e    00000014     led_ex2_blinky_sysconfig_cpu1.obj (.text:ADC_clearInterruptStatus)
+                  00083aa2    00000014     board.obj (.text:CPU1_LED_init)
+                  00083ab6    00000014     board.obj (.text:CPU2_LED_init)
+                  00083aca    00000014     driverlib.lib : dcc.obj (.text:DCC_disableModule)
+                  00083ade    00000014                   : sysctl.obj (.text:DCC_disableModule)
+                  00083af2    00000014                   : dcc.obj (.text:DCC_enableErrorSignal)
+                  00083b06    00000014                   : dcc.obj (.text:DCC_enableModule)
+                  00083b1a    00000014                   : sysctl.obj (.text:DCC_enableModule)
+                  00083b2e    00000014     led_ex2_blinky_sysconfig_cpu1.obj (.text:EPWM_setTimeBaseCounterMode)
+                  00083b42    00000014     led_ex2_blinky_sysconfig_cpu1.obj (.text:EPWM_setTimeBasePeriod)
+                  00083b56    00000014     led_ex2_blinky_sysconfig_cpu1.obj (.text:IPC_waitForAck)
+                  00083b6a    00000013     board.obj (.text:ADC_enableConverter)
+                  00083b7d    00000013     device.obj (.text:Device_enableUnbondedGPIOPullupsFor176Pin)
+                  00083b90    00000013     led_ex2_blinky_sysconfig_cpu1.obj (.text:EPWM_enableInterrupt)
+                  00083ba3    00000013     led_ex2_blinky_sysconfig_cpu1.obj (.text:IPC_sync)
+                  00083bb6    00000012     led_ex2_blinky_sysconfig_cpu1.obj (.text:EPWM_setTimeBaseCounter)
+                  00083bc8    00000012     led_ex2_blinky_sysconfig_cpu1.obj (.text:IPC_waitForFlag)
+                  00083bda    00000011     board.obj (.text:Board_init)
+                  00083beb    00000011     device.obj (.text:Device_enableUnbondedGPIOPullups)
+                  00083bfc    00000011     device.obj (.text:SysCtl_setCMClk)
+                  00083c0d    00000010     driverlib.lib : flash.obj (.text:Flash_isCtrlBaseValid)
+                  00083c1d    00000010                   : flash.obj (.text:Flash_isECCBaseValid)
+                  00083c2d    0000000f     board.obj (.text:CLA_isBaseValid)
+                  00083c3c    0000000f     led_ex2_blinky_sysconfig_cpu1.obj (.text:IPC_ackFlagRtoL)
+                  00083c4b    0000000f     device.obj (.text:IPC_setFlagLtoR)
+                  00083c5a    0000000f     led_ex2_blinky_sysconfig_cpu1.obj (.text:IPC_setFlagLtoR)
+                  00083c69    0000000f     board.obj (.text:Interrupt_register)
+                  00083c78    0000000f     driverlib.lib : ipc.obj (.text:Interrupt_unregister)
+                  00083c87    0000000f                   : sysctl.obj (.text:SysCtl_setPLLSysClk)
+                  00083c96    0000000e                   : gpio.obj (.text:GPIO_isPinValid)
+                  00083ca4    0000000e     led_ex2_blinky_sysconfig_cpu1.obj (.text:GPIO_isPinValid)
+                  00083cb2    0000000d     board.obj (.text:INTERRUPT_init)
+                  00083cbf    0000000d     driverlib.lib : interrupt.obj (.text:Interrupt_disableGlobal)
+                  00083ccc    0000000d                   : interrupt.obj (.text:Interrupt_enableGlobal)
+                  00083cd9    0000000d     device.obj (.text:SysCtl_setLowSpeedClock)
+                  00083ce6    0000000d     rts2800_fpu64_eabi.lib : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init_nomemset)
+                  00083cf3    0000000c                            : args_main.c.obj (.text)
+                  00083cff    0000000b     board.obj (.text:MemCfg_disableCorrErrorInterrupt)
+                  00083d0a    0000000b     device.obj (.text:SysCtl_disableWatchdog)
+                  00083d15    0000000b     device.obj (.text:SysCtl_isCPU2Reset)
+                  00083d20    0000000b     driverlib.lib : sysctl.obj (.text:SysCtl_isMCDClockFailureDetected)
+                  00083d2b    0000000a                   : interrupt.obj (.text:Interrupt_illegalOperationHandler)
+                  00083d35    0000000a                   : interrupt.obj (.text:Interrupt_nmiHandler)
+                  00083d3f    0000000a     board.obj (.text:PinMux_init)
+                  00083d49    00000009     board.obj (.text:MemCfg_disableROMPrefetch)
+                  00083d52    00000009     board.obj (.text:MemCfg_enableROMWaitState)
+                  00083d5b    00000009     board.obj (.text:MemCfg_setCorrErrorThreshold)
+                  00083d64    00000009     rts2800_fpu64_eabi.lib : _lock.c.obj (.text)
+                  00083d6d    00000008                            : copy_decompress_none.c.obj (.text:decompress:none)
+                  00083d75    00000008     f2838x_codestartbranch.obj (.text)
+                  00083d7d    00000007     driverlib.lib : sysctl.obj (.text:SysCtl_resetMCD)
+                  00083d84    00000007     device.obj (.text:__error__)
+                  00083d8b    00000006     led_ex2_blinky_sysconfig_cpu1.obj (.text:Interrupt_clearACKGroup)
+                  00083d91    00000005     board.obj (.text:GPIO_init)
+                  00083d96    00000003     board.obj (.text:ADC_init)
+                  00083d99    00000002     rts2800_fpu64_eabi.lib : pre_init.c.obj (.text)
+                  00083d9b    00000001     board.obj (.text:IPC_SYSCFG_init)
+                  00083d9c    00000001     rts2800_fpu64_eabi.lib : startup.c.obj (.text)
+
+MODULE SUMMARY
+
+       Module                              code   ro data   rw data
+       ------                              ----   -------   -------
+    .\
+       led_ex2_blinky_sysconfig_cpu1.obj   1247   201       2      
+       cla_ex4_pwm_control_cla.obj         1180   0         16     
+    +--+-----------------------------------+------+---------+---------+
+       Total:                              2427   201       18     
+                                                                   
+    .\device\
+       device.obj                          734    85        0      
+       f2838x_codestartbranch.obj          10     0         0      
+    +--+-----------------------------------+------+---------+---------+
+       Total:                              744    85        0      
+                                                                   
+    .\syscfg\
+       board.obj                           1174   201       0      
+    +--+-----------------------------------+------+---------+---------+
+       Total:                              1174   201       0      
+                                                                   
+    C:/ti/c2000/C2000Ware_5_02_00_00/driverlib/f2838x/driverlib/ccs/Debug/driverlib.lib
+       sysctl.obj                          1887   151       0      
+       dcc.obj                             663    148       0      
+       flash.obj                           604    152       0      
+       ipc.obj                             15     136       544    
+       memcfg.obj                          535    77        0      
+       gpio.obj                            310    151       0      
+       adc.obj                             268    74        0      
+       epwm.obj                            97     151       0      
+       interrupt.obj                       214    0         0      
+       cla.obj                             38     0         0      
+    +--+-----------------------------------+------+---------+---------+
+       Total:                              4631   1040      544    
+                                                                   
+    C:\ti\ccs1240\ccs\tools\compiler\ti-cgt-c2000_22.6.1.LTS\lib\rts2800_fpu64_eabi.lib
+       fs_div28.asm.obj                    136    0         0      
+       copy_decompress_lzss.c.obj          48     0         0      
+       exit.c.obj                          41     0         6      
+       autoinit.c.obj                      43     0         0      
+       memcpy.c.obj                        29     0         0      
+       boot28.asm.obj                      25     0         0      
+       _lock.c.obj                         9      0         4      
+       copy_zero_init.c.obj                13     0         0      
+       args_main.c.obj                     12     0         0      
+       copy_decompress_none.c.obj          8      0         0      
+       pre_init.c.obj                      2      0         0      
+       startup.c.obj                       1      0         0      
+    +--+-----------------------------------+------+---------+---------+
+       Total:                              367    0         10     
+                                                                   
+       Stack:                              0      0         1016   
+       Linker Generated:                   0      36        0      
+    +--+-----------------------------------+------+---------+---------+
+       Grand Total:                        9343   1563      1588   
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 00083db8 records: 3, size/record: 4, table size: 12
+	.data: load addr=00083da0, load size=0000000a bytes, run addr=0000a000, run size=0000000c bytes, compression=lzss
+	.bss_cla: load addr=00083db0, load size=00000004 bytes, run addr=0000890e, run size=00000002 bytes, compression=zero_init
+	.scratchpad: load addr=00083db4, load size=00000004 bytes, run addr=00008900, run size=0000000e bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 00083daa records: 3, size/record: 2, table size: 6
+	index: 0, handler: __TI_decompress_lzss
+	index: 1, handler: __TI_decompress_none
+	index: 2, handler: __TI_zero_init
+
+
+GLOBAL DATA SYMBOLS: SORTED BY DATA PAGE
+
+address     data page           name
+--------    ----------------    ----
+00000400      10 (00000400)     __stack
+
+0000890e     224 (00008900)     duty
+
+0000a000     280 (0000a000)     __TI_enable_exit_profile_output
+0000a002     280 (0000a000)     __TI_cleanup_ptr
+0000a004     280 (0000a000)     __TI_dtors_ptr
+0000a006     280 (0000a000)     _lock
+0000a008     280 (0000a000)     _unlock
+0000a00a     280 (0000a000)     u32C28cnts
+
+00038000     e00 (00038000)     IPC_CPU_To_CM_GetBuffer
+
+00039000     e40 (00039000)     IPC_CPU_To_CM_PutBuffer
+
+0003a000     e80 (0003a000)     IPC_CPU1_To_CPU2_PutBuffer
+
+0003b000     ec0 (0003b000)     IPC_CPU1_To_CPU2_GetBuffer
+
+00090488    2412 (00090480)     IPC_Instance
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+page  address   name                                     
+----  -------   ----                                     
+0     00083d96  ADC_init                                 
+0     00082bb7  ADC_setINLTrim                           
+0     0008343c  ADC_setMode                              
+0     00082daa  ADC_setOffsetTrim                        
+0     00083bda  Board_init                               
+0     00083413  C$$EXIT                                  
+abs   00000100  CLA_SCRATCHPAD_SIZE                      
+0     00083870  CLA_init                                 
+0     0008348c  CLA_setTriggerSource                     
+0     00082fcc  CPU1_ADCA_init                           
+0     00083aa2  CPU1_LED_init                            
+0     00083ab6  CPU2_LED_init                            
+abs   00000000  Cla1ConstLoadSize                        
+0     00008800  Cla1ConstLoadStart                       
+0     00008800  Cla1ConstRunStart                        
+0     0000aa08  Cla1Task1                                
+0     0008824e  Cla1funcsLoadEnd                         
+abs   0000024e  Cla1funcsLoadSize                        
+0     00088000  Cla1funcsLoadStart                       
+0     0000a800  Cla1funcsRunStart                        
+0     0008266f  DCC_verifyClockFrequency                 
+0     00083966  Device_bootCPU2                          
+0     0008219d  Device_enableAllPeripherals              
+0     00083beb  Device_enableUnbondedGPIOPullups         
+0     00083b7d  Device_enableUnbondedGPIOPullupsFor176Pin
+0     00082b48  Device_init                              
+0     000835ac  Device_initGPIO                          
+0     00083686  Device_verifyXTAL                        
+0     0008397c  EPWM_setEmulationMode                    
+0     0000c000  Flash_initModule                         
+0     00083d91  GPIO_init                                
+0     0008324e  GPIO_setControllerCore                   
+0     0008332a  GPIO_setDirectionMode                    
+0     00082e07  GPIO_setPadConfig                        
+0     00083285  GPIO_setPinConfig                        
+0     000832bc  GPIO_setQualificationMode                
+0     00083cb2  INTERRUPT_init                           
+0     00082f3a  INT_CPU1_ADCA_1_ISR                      
+0     0003b000  IPC_CPU1_To_CPU2_GetBuffer               
+0     0003a000  IPC_CPU1_To_CPU2_PutBuffer               
+0     00038000  IPC_CPU_To_CM_GetBuffer                  
+0     00039000  IPC_CPU_To_CM_PutBuffer                  
+0     00090488  IPC_Instance                             
+0     00083d9b  IPC_SYSCFG_init                          
+0     00083992  Interrupt_defaultHandler                 
+0     000832f3  Interrupt_enable                         
+0     00083d2b  Interrupt_illegalOperationHandler        
+0     0008319e  Interrupt_initModule                     
+0     000836a4  Interrupt_initVectorTable                
+0     00083d35  Interrupt_nmiHandler                     
+0     00082000  MEMCFG_init                              
+0     000827e3  MemCfg_getInitStatus                     
+0     000828fd  MemCfg_initSections                      
+0     000834b2  MemCfg_setGSRAMControllerSel             
+0     00083215  MemCfg_setLSRAMControllerSel             
+0     0008273a  MemCfg_setProtection                     
+0     00083d3f  PinMux_init                              
+0     00086122  RamfuncsLoadEnd                          
+abs   00000122  RamfuncsLoadSize                         
+0     00086000  RamfuncsLoadStart                        
+0     0000c122  RamfuncsRunEnd                           
+abs   00000122  RamfuncsRunSize                          
+0     0000c000  RamfuncsRunStart                         
+0     000835cd  SysCtl_controlCPU2Reset                  
+0     0000c11e  SysCtl_delay                             
+0     00082c8b  SysCtl_getAuxClock                       
+0     00082cec  SysCtl_getClock                          
+0     0008380c  SysCtl_getLowSpeedClock                  
+0     0008243f  SysCtl_isPLLValid                        
+0     0008309e  SysCtl_selectOscSource                   
+0     00082d4c  SysCtl_selectOscSourceAuxPLL             
+0     00083120  SysCtl_selectXTAL                        
+0     000834d8  SysCtl_selectXTALSingleEnded             
+0     00082557  SysCtl_setAuxClock                       
+0     00082304  SysCtl_setClock                          
+0     00083db8  __TI_CINIT_Base                          
+0     00083dc4  __TI_CINIT_Limit                         
+0     00083dc4  __TI_CINIT_Warm                          
+0     00083daa  __TI_Handler_Table_Base                  
+0     00083db0  __TI_Handler_Table_Limit                 
+0     000007f8  __TI_STACK_END                           
+abs   000003f8  __TI_STACK_SIZE                          
+0     000833e8  __TI_auto_init_nobinit_nopinit           
+0     0000a002  __TI_cleanup_ptr                         
+0     0008335b  __TI_decompress_lzss                     
+0     00083d6d  __TI_decompress_none                     
+0     0000a004  __TI_dtors_ptr                           
+0     0000a000  __TI_enable_exit_profile_output          
+abs   ffffffff  __TI_pprof_out_hndl                      
+abs   ffffffff  __TI_prof_data_size                      
+abs   ffffffff  __TI_prof_data_start                     
+0     00083ce6  __TI_zero_init_nomemset                  
+0     00082875  __c28xabi_divf                           
+n/a   UNDEFED   __c_args__                               
+0     00083d84  __error__                                
+0     00000400  __stack                                  
+0     00083cf3  _args_main                               
+0     0008383f  _c_int00                                 
+0     0000a006  _lock                                    
+0     00083d6c  _nop                                     
+0     00083d68  _register_lock                           
+0     00083d64  _register_unlock                         
+0     00083d9c  _system_post_cinit                       
+0     00083d99  _system_pre_init                         
+0     0000a008  _unlock                                  
+0     00083413  abort                                    
+0     00080000  code_start                               
+0     0000890e  duty                                     
+0     00083415  exit                                     
+0     00082ad5  initEPWM                                 
+0     00082c23  main                                     
+0     000836c2  memcpy                                   
+0     00083a65  myCLA0_init                              
+0     0000a00a  u32C28cnts                               
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+page  address   name                                     
+----  -------   ----                                     
+0     00000400  __stack                                  
+0     000007f8  __TI_STACK_END                           
+0     00008800  Cla1ConstLoadStart                       
+0     00008800  Cla1ConstRunStart                        
+0     0000890e  duty                                     
+0     0000a000  __TI_enable_exit_profile_output          
+0     0000a002  __TI_cleanup_ptr                         
+0     0000a004  __TI_dtors_ptr                           
+0     0000a006  _lock                                    
+0     0000a008  _unlock                                  
+0     0000a00a  u32C28cnts                               
+0     0000a800  Cla1funcsRunStart                        
+0     0000aa08  Cla1Task1                                
+0     0000c000  Flash_initModule                         
+0     0000c000  RamfuncsRunStart                         
+0     0000c11e  SysCtl_delay                             
+0     0000c122  RamfuncsRunEnd                           
+0     00038000  IPC_CPU_To_CM_GetBuffer                  
+0     00039000  IPC_CPU_To_CM_PutBuffer                  
+0     0003a000  IPC_CPU1_To_CPU2_PutBuffer               
+0     0003b000  IPC_CPU1_To_CPU2_GetBuffer               
+0     00080000  code_start                               
+0     00082000  MEMCFG_init                              
+0     0008219d  Device_enableAllPeripherals              
+0     00082304  SysCtl_setClock                          
+0     0008243f  SysCtl_isPLLValid                        
+0     00082557  SysCtl_setAuxClock                       
+0     0008266f  DCC_verifyClockFrequency                 
+0     0008273a  MemCfg_setProtection                     
+0     000827e3  MemCfg_getInitStatus                     
+0     00082875  __c28xabi_divf                           
+0     000828fd  MemCfg_initSections                      
+0     00082ad5  initEPWM                                 
+0     00082b48  Device_init                              
+0     00082bb7  ADC_setINLTrim                           
+0     00082c23  main                                     
+0     00082c8b  SysCtl_getAuxClock                       
+0     00082cec  SysCtl_getClock                          
+0     00082d4c  SysCtl_selectOscSourceAuxPLL             
+0     00082daa  ADC_setOffsetTrim                        
+0     00082e07  GPIO_setPadConfig                        
+0     00082f3a  INT_CPU1_ADCA_1_ISR                      
+0     00082fcc  CPU1_ADCA_init                           
+0     0008309e  SysCtl_selectOscSource                   
+0     00083120  SysCtl_selectXTAL                        
+0     0008319e  Interrupt_initModule                     
+0     00083215  MemCfg_setLSRAMControllerSel             
+0     0008324e  GPIO_setControllerCore                   
+0     00083285  GPIO_setPinConfig                        
+0     000832bc  GPIO_setQualificationMode                
+0     000832f3  Interrupt_enable                         
+0     0008332a  GPIO_setDirectionMode                    
+0     0008335b  __TI_decompress_lzss                     
+0     000833e8  __TI_auto_init_nobinit_nopinit           
+0     00083413  C$$EXIT                                  
+0     00083413  abort                                    
+0     00083415  exit                                     
+0     0008343c  ADC_setMode                              
+0     0008348c  CLA_setTriggerSource                     
+0     000834b2  MemCfg_setGSRAMControllerSel             
+0     000834d8  SysCtl_selectXTALSingleEnded             
+0     000835ac  Device_initGPIO                          
+0     000835cd  SysCtl_controlCPU2Reset                  
+0     00083686  Device_verifyXTAL                        
+0     000836a4  Interrupt_initVectorTable                
+0     000836c2  memcpy                                   
+0     0008380c  SysCtl_getLowSpeedClock                  
+0     0008383f  _c_int00                                 
+0     00083870  CLA_init                                 
+0     00083966  Device_bootCPU2                          
+0     0008397c  EPWM_setEmulationMode                    
+0     00083992  Interrupt_defaultHandler                 
+0     00083a65  myCLA0_init                              
+0     00083aa2  CPU1_LED_init                            
+0     00083ab6  CPU2_LED_init                            
+0     00083b7d  Device_enableUnbondedGPIOPullupsFor176Pin
+0     00083bda  Board_init                               
+0     00083beb  Device_enableUnbondedGPIOPullups         
+0     00083cb2  INTERRUPT_init                           
+0     00083ce6  __TI_zero_init_nomemset                  
+0     00083cf3  _args_main                               
+0     00083d2b  Interrupt_illegalOperationHandler        
+0     00083d35  Interrupt_nmiHandler                     
+0     00083d3f  PinMux_init                              
+0     00083d64  _register_unlock                         
+0     00083d68  _register_lock                           
+0     00083d6c  _nop                                     
+0     00083d6d  __TI_decompress_none                     
+0     00083d84  __error__                                
+0     00083d91  GPIO_init                                
+0     00083d96  ADC_init                                 
+0     00083d99  _system_pre_init                         
+0     00083d9b  IPC_SYSCFG_init                          
+0     00083d9c  _system_post_cinit                       
+0     00083daa  __TI_Handler_Table_Base                  
+0     00083db0  __TI_Handler_Table_Limit                 
+0     00083db8  __TI_CINIT_Base                          
+0     00083dc4  __TI_CINIT_Limit                         
+0     00083dc4  __TI_CINIT_Warm                          
+0     00086000  RamfuncsLoadStart                        
+0     00086122  RamfuncsLoadEnd                          
+0     00088000  Cla1funcsLoadStart                       
+0     0008824e  Cla1funcsLoadEnd                         
+0     00090488  IPC_Instance                             
+abs   00000000  Cla1ConstLoadSize                        
+abs   00000100  CLA_SCRATCHPAD_SIZE                      
+abs   00000122  RamfuncsLoadSize                         
+abs   00000122  RamfuncsRunSize                          
+abs   0000024e  Cla1funcsLoadSize                        
+abs   000003f8  __TI_STACK_SIZE                          
+abs   ffffffff  __TI_pprof_out_hndl                      
+abs   ffffffff  __TI_prof_data_size                      
+abs   ffffffff  __TI_prof_data_start                     
+n/a   UNDEFED   __c_args__                               
+
+[114 symbols]
